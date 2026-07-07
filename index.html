@@ -386,16 +386,35 @@ nav.links a.active{color:var(--yellow);}
 @media (max-width:960px){.belief-grid{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:600px){.belief-grid{grid-template-columns:1fr;}}
 .belief{
-  display:flex;flex-direction:column;gap:16px;padding:26px 24px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;
+  width:100%;padding:34px 24px;cursor:pointer;
   background:var(--panel);border:1px solid rgba(247,201,72,.14);border-radius:14px;
   box-shadow:0 6px 16px rgba(0,0,0,.2);
   transition:transform .35s var(--ease), background .35s, border-color .35s, box-shadow .35s;
+  font-family:inherit;color:inherit;
 }
-.belief:hover{transform:translateY(-5px);background:var(--yellow);border-color:var(--yellow);box-shadow:0 14px 26px rgba(0,0,0,.3);}
-.belief:hover p{color:var(--charcoal);}
-.belief:hover .um-icon{color:var(--charcoal);}
-.belief .um-icon{width:22px;height:22px;flex:none;color:var(--yellow);transition:color .35s;}
-.belief p{margin:0;font-size:16px;line-height:1.45;color:var(--cream);transition:color .35s;}
+.belief:hover{transform:translateY(-5px);border-color:var(--yellow);box-shadow:0 14px 26px rgba(0,0,0,.3);}
+.belief-icon{
+  width:56px;height:56px;border-radius:50%;background:rgba(247,201,72,.14);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .35s var(--ease), transform .5s var(--ease);
+}
+.belief:hover .belief-icon{transform:scale(1.08) rotate(-4deg);}
+.belief.open .belief-icon{background:var(--yellow);transform:scale(1.12);}
+.belief .um-icon{width:24px;height:24px;flex:none;color:var(--yellow);transition:color .35s;}
+.belief.open .um-icon{color:var(--charcoal);}
+.belief-hint{
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--cream-dim);margin-top:14px;transition:opacity .3s, max-height .3s;
+  max-height:20px;opacity:.7;
+}
+.belief.open .belief-hint{max-height:0;opacity:0;margin:0;overflow:hidden;}
+.belief p{
+  margin:0;font-size:16px;line-height:1.45;color:var(--cream);
+  max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .45s var(--ease), opacity .35s var(--ease), margin .35s var(--ease);
+}
+.belief.open p{max-height:200px;opacity:1;margin-top:16px;}
 
 /* ============ PROCESO ============ */
 .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
@@ -839,16 +858,16 @@ footer{padding:40px 0;border-top:1px solid var(--line-soft);}
       <p class="reveal">No son frases de pared. Son la forma en la que decidimos trabajar, todos los días.</p>
     </div>
     <div class="belief-grid" id="beliefGrid">
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>La comunicación lo atraviesa todo.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Los primeros que trabajamos para conectar con el cliente somos nosotros.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Más que una agencia de contenidos: un equipo que acompaña a cada marca de manera integral.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Vivir y contagiar lo que predicamos.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Practicar el anti marketing: vender sin vender.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Ser facilitadores de negocios y de ideas.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Observar todo lo que sucede alrededor nuestro y en el mundo.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Los nichos apagan las ideas.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Conectar marcas y personas. Conectar marcas con otras marcas.</p></div>
-      <div class="belief reveal"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg><p>Hacer que otros hablen de las marcas.</p></div>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>La comunicación lo atraviesa todo.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Los primeros que trabajamos para conectar con el cliente somos nosotros.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Más que una agencia de contenidos: un equipo que acompaña a cada marca de manera integral.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Vivir y contagiar lo que predicamos.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Practicar el anti marketing: vender sin vender.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Ser facilitadores de negocios y de ideas.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Observar todo lo que sucede alrededor nuestro y en el mundo.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Los nichos apagan las ideas.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Conectar marcas y personas. Conectar marcas con otras marcas.</p></button>
+      <button type="button" class="belief reveal" onclick="this.classList.toggle('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg></span><span class="belief-hint">Tocá para descubrir</span><p>Hacer que otros hablen de las marcas.</p></button>
     </div>
   </div>
 </section>
