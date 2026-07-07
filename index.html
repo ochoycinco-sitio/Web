@@ -382,13 +382,20 @@ nav.links a.active{color:var(--yellow);}
 .t-desc{font-size:14.5px;color:var(--cream-dim);line-height:1.55;}
 
 /* ============ CREEMOS (manifesto) ============ */
-.belief-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 60px;}
-@media (max-width:760px){.belief-grid{grid-template-columns:1fr;}}
+.belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:960px){.belief-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.belief-grid{grid-template-columns:1fr;}}
 .belief{
-  display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--line-soft);
+  display:flex;flex-direction:column;gap:16px;padding:26px 24px;
+  background:var(--panel);border:1px solid rgba(247,201,72,.14);border-radius:14px;
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+  transition:transform .35s var(--ease), background .35s, border-color .35s, box-shadow .35s;
 }
-.belief .um-icon{width:18px;height:18px;flex:none;margin-top:3px;color:var(--yellow);}
-.belief p{margin:0;font-size:16.5px;color:var(--cream);}
+.belief:hover{transform:translateY(-5px);background:var(--yellow);border-color:var(--yellow);box-shadow:0 14px 26px rgba(0,0,0,.3);}
+.belief:hover p{color:var(--charcoal);}
+.belief:hover .um-icon{color:var(--charcoal);}
+.belief .um-icon{width:22px;height:22px;flex:none;color:var(--yellow);transition:color .35s;}
+.belief p{margin:0;font-size:16px;line-height:1.45;color:var(--cream);transition:color .35s;}
 
 /* ============ PROCESO ============ */
 .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
