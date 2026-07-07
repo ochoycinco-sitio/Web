@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ochoycinco-sitio.github.io/Web/sitemap.xml
