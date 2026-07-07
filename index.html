@@ -7,7 +7,7 @@
 <meta name="description" content="Ocho y Cinco. Agencia de contenidos. Estrategia, creatividad y empatía para que las marcas se destaquen de verdad.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
 <style>
 /* ============ TOKENS ============ */
 :root{
@@ -30,7 +30,7 @@
   --max: 1180px;
   --display: "Bebas Neue", sans-serif;
   --body: "Plus Jakarta Sans", sans-serif;
-  --mono: "Space Grotesk", sans-serif;
+  --mono: "Plus Jakarta Sans", sans-serif;
   --script: "Caveat", cursive;
   --serif: "Fraunces", serif;
   --ease: cubic-bezier(.16,.84,.32,1);
@@ -63,6 +63,7 @@ a{color:inherit;text-decoration:none;}
 /* ============ UTILITY ============ */
 .eyebrow{
   font-family:var(--mono);
+  font-weight:700;
   font-size:12.5px;
   letter-spacing:.18em;
   text-transform:uppercase;
@@ -295,7 +296,7 @@ nav.links a.active{color:var(--yellow);}
 }
 @media (max-width:880px){.uh{display:none;}}
 .hero-eyebrow{
-  font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--yellow-pale);margin-bottom:26px;display:flex;align-items:center;gap:12px;
 }
 .hero h1{
