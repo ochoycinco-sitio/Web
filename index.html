@@ -380,15 +380,57 @@ nav.links a.active{color:var(--yellow);}
 /* ============ PROCESO ============ */
 .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
 @media (max-width:880px){.proc-grid{grid-template-columns:1fr;}}
-.proc-card{background:var(--ink);padding:42px 36px;position:relative;transition:background .4s;}
-.proc-card:hover{background:var(--ink-soft);}
-.proc-num{font-family:var(--mono);font-size:13px;color:var(--yellow);margin-bottom:30px;letter-spacing:.1em;}
-.proc-card h3{font-size:30px;margin-bottom:18px;}
-.proc-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
-.proc-card li{font-size:14.5px;color:var(--cream-dim);padding-left:18px;position:relative;}
-.proc-card li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--yellow);border-radius:50%;}
-.proc-foot{margin-top:50px;font-family:var(--display);font-size:clamp(22px,3vw,34px);color:var(--cream-dim);text-align:center;}
-.proc-foot span{color:var(--yellow);}
+.proc-card{
+  background:var(--ink);padding:42px 36px;position:relative;overflow:hidden;
+  transition:background .45s var(--ease), transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.proc-card::before{
+  content:"";position:absolute;top:0;left:0;height:3px;width:0;
+  background:linear-gradient(90deg, var(--yellow), var(--yellow-pale));
+  transition:width .5s var(--ease);
+}
+.proc-card::after{
+  content:attr(data-step);position:absolute;right:6px;top:-10px;
+  font-family:var(--display);font-size:120px;line-height:1;
+  color:rgba(247,201,72,.05);pointer-events:none;
+  transition:color .45s var(--ease), transform .5s var(--ease);
+}
+.proc-card:hover{background:var(--ink-soft);transform:translateY(-10px);box-shadow:0 24px 46px rgba(0,0,0,.4), 0 0 0 1px rgba(247,201,72,.14);}
+.proc-card:hover::before{width:100%;}
+.proc-card:hover::after{color:rgba(247,201,72,.14);transform:scale(1.08) translateY(-4px);}
+.proc-num{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--yellow);margin-bottom:30px;letter-spacing:.1em;transition:letter-spacing .4s var(--ease);}
+.proc-card:hover .proc-num{letter-spacing:.16em;}
+.proc-card h3{font-size:30px;margin-bottom:18px;position:relative;transition:color .35s var(--ease);}
+.proc-card:hover h3{color:var(--yellow);}
+.proc-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;position:relative;}
+.proc-card li{
+  font-size:14.5px;color:var(--cream-dim);padding-left:18px;position:relative;
+  transition:transform .4s var(--ease), color .35s var(--ease);
+  transition-delay:0s;
+}
+.proc-card li::before{
+  content:"";position:absolute;left:0;top:8px;width:6px;height:6px;
+  background:var(--yellow);border-radius:50%;
+  transition:transform .35s var(--ease);
+}
+.proc-card:hover li{transform:translateX(6px);color:var(--cream);}
+.proc-card:hover li::before{transform:scale(1.5);}
+.proc-card:hover li:nth-child(1){transition-delay:.02s;}
+.proc-card:hover li:nth-child(2){transition-delay:.07s;}
+.proc-card:hover li:nth-child(3){transition-delay:.12s;}
+.proc-card:hover li:nth-child(4){transition-delay:.17s;}
+.proc-foot{
+  margin-top:50px;font-family:var(--display);font-size:clamp(22px,3vw,34px);
+  color:var(--cream-dim);text-align:center;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.4em;
+}
+.proc-foot .pf-word{
+  display:inline-block;opacity:0;transform:translateY(16px) scale(.9);
+  transition:opacity .6s var(--ease), transform .6s var(--ease);
+  transition-delay:calc(var(--i,0) * 140ms);
+}
+.proc-foot.in .pf-word{opacity:1;transform:translateY(0) scale(1);}
+.proc-foot .hl{color:var(--yellow);}
 
 /* ============ OMNICANAL (mastermind grid) ============ */
 .mm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
@@ -765,8 +807,8 @@ footer{padding:40px 0;border-top:1px solid var(--line-soft);}
       <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg>Cómo hacemos lo que hacemos</div>
       <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Tres etapas, un mismo rumbo.</h2>
     </div>
-    <div class="proc-grid reveal">
-      <div class="proc-card">
+    <div class="proc-grid reveal-stagger">
+      <div class="proc-card reveal" data-step="01" style="--i:0">
         <div class="proc-num">01 — LA MARCA</div>
         <h3>Escuchar primero</h3>
         <ul>
@@ -776,7 +818,7 @@ footer{padding:40px 0;border-top:1px solid var(--line-soft);}
           <li>Hacemos equipo con el cliente</li>
         </ul>
       </div>
-      <div class="proc-card">
+      <div class="proc-card reveal" data-step="02" style="--i:1">
         <div class="proc-num">02 — ANÁLISIS</div>
         <h3>Diseñar el rumbo</h3>
         <ul>
@@ -786,7 +828,7 @@ footer{padding:40px 0;border-top:1px solid var(--line-soft);}
           <li>Configuramos el dashboard</li>
         </ul>
       </div>
-      <div class="proc-card">
+      <div class="proc-card reveal" data-step="03" style="--i:2">
         <div class="proc-num">03 — ESTRATEGIA</div>
         <h3>Acompañar y medir</h3>
         <ul>
@@ -797,7 +839,7 @@ footer{padding:40px 0;border-top:1px solid var(--line-soft);}
         </ul>
       </div>
     </div>
-    <p class="proc-foot reveal">Desafiar, <span>conectar</span> y sorprender.</p>
+    <p class="proc-foot reveal"><span class="pf-word" style="--i:0">Desafiar,</span> <span class="pf-word hl" style="--i:1">conectar</span> <span class="pf-word" style="--i:2">y sorprender.</span></p>
   </div>
 </section>
 
