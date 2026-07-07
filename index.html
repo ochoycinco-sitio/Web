@@ -332,13 +332,16 @@ nav.links a.active{color:var(--yellow);}
   padding:30px 0;overflow:hidden;white-space:nowrap;
   border-top:1px solid var(--charcoal);border-bottom:1px solid var(--charcoal);
 }
-.marquee-track{display:inline-flex;width:max-content;will-change:transform;}
+.marquee-track{display:flex;width:max-content;animation:marquee 22s linear infinite;}
+.marquee-band:hover .marquee-track{animation-play-state:paused;}
+.marquee-set{display:flex;flex:none;}
 .marquee-track span{
   font-family:var(--display);font-size:26px;letter-spacing:.04em;
   padding:0 28px;display:inline-flex;align-items:center;gap:28px;
   text-transform:uppercase;
 }
 .marquee-track span .um-icon{width:14px;height:14px;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ============ PROPOSITO / VISION ============ */
 .pv-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;}
@@ -680,14 +683,18 @@ footer{padding:40px 0;border-top:1px solid var(--line-soft);}
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-band">
   <div class="marquee-track">
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>DESAFIAR</span>
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>CONECTAR</span>
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>SORPRENDER</span>
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>VENDER SIN VENDER</span>
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>DESAFIAR</span>
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>CONECTAR</span>
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>SORPRENDER</span>
-    <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>VENDER SIN VENDER</span>
+    <div class="marquee-set">
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>DESAFIAR</span>
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>CONECTAR</span>
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>SORPRENDER</span>
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>VENDER SIN VENDER</span>
+    </div>
+    <div class="marquee-set" aria-hidden="true">
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>DESAFIAR</span>
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>CONECTAR</span>
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>SORPRENDER</span>
+      <span><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="#161513"/></svg>VENDER SIN VENDER</span>
+    </div>
   </div>
 </div>
 
@@ -1120,29 +1127,6 @@ window.addEventListener('load', () => {
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
-  }
-
-  // ===== JS Marquee (values band — DESAFIAR / CONECTAR / SORPRENDER / VENDER SIN VENDER) =====
-  const valuesTrack = document.querySelector('.marquee-track');
-  if(valuesTrack){
-    const V_SPEED = 0.7;
-    let vPos = 0;
-    let vPaused = false;
-    const vWrap = valuesTrack.closest('.marquee-band');
-    if(vWrap){
-      vWrap.addEventListener('mouseenter', ()=>{ vPaused=true; });
-      vWrap.addEventListener('mouseleave', ()=>{ vPaused=false; });
-    }
-    function vStep(){
-      if(!vPaused){
-        vPos += V_SPEED;
-        const vHalf = valuesTrack.scrollWidth / 2;
-        if(vPos >= vHalf) vPos = 0;
-        valuesTrack.style.transform = `translateX(-${vPos}px)`;
-      }
-      requestAnimationFrame(vStep);
-    }
-    requestAnimationFrame(vStep);
   }
 });
 </script>
