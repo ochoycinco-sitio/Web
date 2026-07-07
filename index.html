@@ -362,17 +362,22 @@ nav.links a.active{color:var(--yellow);}
 .pv-divider{width:1px;background:var(--line);}
 
 /* ============ HISTORIA ============ */
-.timeline-scroll{overflow-x:auto;padding-bottom:18px;margin:0 -32px;padding-left:32px;padding-right:32px;scrollbar-width:thin;}
-.timeline-scroll::-webkit-scrollbar{height:6px;}
-.timeline-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px;}
-.timeline{display:flex;gap:0;min-width:max-content;position:relative;}
-.t-node{width:260px;flex:none;padding-right:46px;position:relative;}
-.t-node:not(:last-child)::after{
-  content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:var(--line);
+.timeline-scroll{overflow:visible;padding:0;margin:0;}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:28px 22px;position:relative;padding-top:20px;}
+.timeline::before{content:"";position:absolute;top:26px;left:0;right:0;height:1px;background:var(--line);}
+@media (max-width:960px){.timeline{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:640px){
+  .timeline{grid-template-columns:1fr;gap:0;padding-top:0;}
+  .timeline::before{display:none;}
+  .t-node{padding:22px 0 22px 26px;border-left:2px solid var(--line);}
+  .t-node:first-child{padding-top:0;}
 }
+.t-node{width:auto;flex:none;padding-right:0;position:relative;transition:transform .35s var(--ease);}
+.t-node:hover{transform:translateY(-4px);}
 .t-dot{width:11px;height:11px;border-radius:50%;background:var(--ink);border:2px solid var(--yellow);position:relative;z-index:2;margin-bottom:22px;transition:background .4s, transform .4s;}
+@media (max-width:640px){.t-dot{position:absolute;left:-7px;top:26px;margin-bottom:0;}}
 .t-node.in .t-dot{background:var(--yellow);transform:scale(1.15);}
-.t-year{font-family:var(--mono);font-size:13px;color:var(--yellow);letter-spacing:.06em;margin-bottom:6px;}
+.t-year{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--yellow);letter-spacing:.06em;margin-bottom:6px;}
 .t-title{font-family:var(--display);font-size:27px;margin-bottom:10px;}
 .t-desc{font-size:14.5px;color:var(--cream-dim);line-height:1.55;}
 
