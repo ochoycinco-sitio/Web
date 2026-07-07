@@ -343,6 +343,11 @@ nav.links a.active{color:var(--yellow);}
 }
 .marquee-track span .um-icon{width:14px;height:14px;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (max-width:720px){
+  .marquee-track span{font-size:17px;padding:0 14px;gap:12px;}
+  .marquee-track span .um-icon{width:10px;height:10px;}
+  .marquee-band{padding:20px 0;}
+}
 
 /* ============ PROPOSITO / VISION ============ */
 .pv-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;}
