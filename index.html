@@ -48,23 +48,23 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué servicios ofrece Ocho y Cinco como agencia de marketing y comunicación?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Ocho y Cinco ofrece marketing de contenidos, branding, marketing digital, eventos corporativos, campañas de comunicación, employer branding, entrenamiento de equipos y desarrollo de ideas innovadoras, todo bajo una mirada omnicanal."}
+      "name": "¿Qué hace Ocho y Cinco?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ocho y Cinco trabaja en contenidos, branding, marketing digital, eventos, campañas, employer branding y desarrollo de ideas, siempre con una mirada omnicanal."}
     },
     {
       "@type": "Question",
-      "name": "¿En qué zona de Argentina trabaja Ocho y Cinco?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Ocho y Cinco es una agencia de marketing y comunicación con base en Argentina que trabaja de forma remota y presencial con marcas de todo el país."}
+      "name": "¿Dónde trabaja Ocho y Cinco?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ocho y Cinco tiene base en Argentina y acompaña marcas de todo el país, de forma remota, presencial o híbrida, según lo que cada proyecto necesita."}
     },
     {
       "@type": "Question",
-      "name": "¿Cómo trabaja Ocho y Cinco con sus clientes?",
-      "acceptedAnswer": {"@type": "Answer", "text": "El proceso tiene tres etapas: primero escuchamos a la marca y sus objetivos, luego diseñamos el rumbo estratégico con un dashboard de seguimiento, y finalmente acompañamos, planificamos, monitoreamos y mostramos resultados."}
+      "name": "¿Cómo empieza Ocho y Cinco con sus clientes?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Primero escuchamos. Después ordenamos el rumbo estratégico, planificamos, monitoreamos y mostramos avances con seguimiento claro."}
     },
     {
       "@type": "Question",
-      "name": "¿Qué diferencia a Ocho y Cinco de otras agencias de contenidos?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Combinamos estrategia, creatividad y empatía con una mirada omnicanal que integra branding, marketing digital, eventos y campañas, practicando lo que llamamos anti marketing: vender sin vender."}
+      "name": "¿Qué distingue a Ocho y Cinco?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ocho y Cinco combina estrategia, creatividad y empatía para construir marcas que conectan. Lo llamamos anti marketing: vender sin vender."}
     }
   ]
 }
@@ -519,6 +519,47 @@ nav.links a.active{color:var(--yellow);}
 @media (max-width:880px){.proc-grid{grid-template-columns:1fr;}}
 .faq-grid{grid-template-columns:repeat(2,1fr);}
 @media (max-width:720px){.faq-grid{grid-template-columns:1fr;}}
+.faq-grid{
+  gap:14px;background:transparent;border:0;
+}
+.proc-card.faq-card{
+  min-height:214px;padding:34px 34px 32px;border:1px solid var(--line-soft);
+  background:linear-gradient(145deg, rgba(47,45,41,.86), rgba(32,31,28,.94));
+  box-shadow:inset 0 1px 0 rgba(245,241,230,.05);
+}
+.proc-card.faq-card::before{height:1px;background:linear-gradient(90deg, var(--yellow), rgba(247,201,72,0));width:62%;}
+.proc-card.faq-card::after{
+  content:"";right:24px;top:24px;width:28px;height:28px;border-radius:50%;
+  border:1px solid rgba(247,201,72,.45);background:radial-gradient(circle at 50% 54%, rgba(247,201,72,.22) 0 18%, transparent 20%);
+  opacity:.55;
+}
+.proc-card.faq-card:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(0,0,0,.34), 0 0 0 1px rgba(247,201,72,.14);}
+.proc-card.faq-card:hover::before{width:82%;}
+.proc-card.faq-card:hover::after{transform:scale(1.08);opacity:.85;}
+.faq-kicker{
+  display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;
+  font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--yellow);
+}
+.faq-kicker::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow);
+  box-shadow:0 0 12px rgba(247,201,72,.36);
+}
+.proc-card.faq-card h3{
+  max-width:440px;margin:0 0 14px;font-size:clamp(21px,2vw,27px);line-height:1.12;
+  color:var(--cream);
+}
+.proc-card.faq-card:hover h3{color:var(--yellow);}
+.proc-card.faq-card p{
+  max-width:520px;margin:0;font-size:16px;line-height:1.55;color:var(--cream-dim);
+}
+.proc-card.faq-card strong{color:var(--cream);font-weight:700;}
+@media (max-width:720px){
+  .faq-grid{gap:12px;}
+  .proc-card.faq-card{min-height:auto;padding:28px 24px;}
+  .proc-card.faq-card h3{font-size:22px;}
+  .proc-card.faq-card p{font-size:15.5px;}
+}
 .proc-card{
   background:var(--ink);padding:42px 36px;position:relative;overflow:hidden;
   transition:background .45s var(--ease), transform .45s var(--ease), box-shadow .45s var(--ease);
@@ -1321,21 +1362,25 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
       <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Antes de escribirnos.</h2>
     </div>
     <div class="proc-grid faq-grid reveal-stagger">
-      <div class="proc-card reveal" style="--i:0">
-        <h3 style="font-size:20px;">¿Qué servicios ofrece Ocho y Cinco como agencia de marketing y comunicación?</h3>
-        <p style="font-size:14.5px;color:var(--cream-dim);">Marketing de contenidos, branding, marketing digital, eventos corporativos, campañas de comunicación, employer branding, entrenamiento de equipos y desarrollo de ideas innovadoras, todo bajo una mirada omnicanal.</p>
+      <div class="proc-card faq-card reveal" style="--i:0">
+        <span class="faq-kicker">Servicios</span>
+        <h3>¿Qué hace Ocho y Cinco?</h3>
+        <p>Trabajamos en <strong>contenidos, branding, marketing digital, eventos, campañas, employer branding</strong> y desarrollo de ideas, siempre con una mirada omnicanal.</p>
       </div>
-      <div class="proc-card reveal" style="--i:1">
-        <h3 style="font-size:20px;">¿En qué zona de Argentina trabaja Ocho y Cinco?</h3>
-        <p style="font-size:14.5px;color:var(--cream-dim);">Somos una agencia de marketing y comunicación con base en Argentina que trabaja de forma remota y presencial con marcas de todo el país.</p>
+      <div class="proc-card faq-card reveal" style="--i:1">
+        <span class="faq-kicker">Alcance</span>
+        <h3>¿Dónde trabajamos?</h3>
+        <p>Tenemos base en Argentina y acompañamos marcas de todo el país, de forma <strong>remota, presencial o híbrida</strong>, según lo que cada proyecto necesita.</p>
       </div>
-      <div class="proc-card reveal" style="--i:2">
-        <h3 style="font-size:20px;">¿Cómo trabaja Ocho y Cinco con sus clientes?</h3>
-        <p style="font-size:14.5px;color:var(--cream-dim);">Primero escuchamos a la marca y sus objetivos, luego diseñamos el rumbo estratégico con un dashboard de seguimiento, y finalmente acompañamos, planificamos, monitoreamos y mostramos resultados.</p>
+      <div class="proc-card faq-card reveal" style="--i:2">
+        <span class="faq-kicker">Proceso</span>
+        <h3>¿Cómo empezamos?</h3>
+        <p>Primero escuchamos. Después ordenamos el rumbo estratégico, planificamos, monitoreamos y mostramos avances con <strong>seguimiento claro</strong>.</p>
       </div>
-      <div class="proc-card reveal" style="--i:3">
-        <h3 style="font-size:20px;">¿Qué diferencia a Ocho y Cinco de otras agencias de contenidos?</h3>
-        <p style="font-size:14.5px;color:var(--cream-dim);">Combinamos estrategia, creatividad y empatía con una mirada omnicanal que integra branding, marketing digital, eventos y campañas, practicando el anti marketing: vender sin vender.</p>
+      <div class="proc-card faq-card reveal" style="--i:3">
+        <span class="faq-kicker">Diferencial</span>
+        <h3>¿Qué nos distingue?</h3>
+        <p>Combinamos <strong>estrategia, creatividad y empatía</strong> para construir marcas que conectan. Lo llamamos anti marketing: vender sin vender.</p>
       </div>
     </div>
   </div>
