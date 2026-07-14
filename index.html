@@ -127,23 +127,23 @@ a{color:inherit;text-decoration:none;}
 .eyebrow{
   font-family:var(--mono);
   font-weight:700;
-  font-size:12.5px;
-  letter-spacing:.18em;
+  font-size:14px;
+  letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--yellow);
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:11px;
   margin-bottom:18px;
 }
-.eyebrow .um-icon{width:13px;height:13px;flex:none;}
+.eyebrow .um-icon{width:14px;height:14px;flex:none;}
 h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:0;}
 .section{padding:120px 0;position:relative;}
 @media (max-width:720px){.section{padding:76px 0;}}
 .section-head{max-width:680px;margin-bottom:64px;}
 .section-head p{color:var(--cream-dim);font-size:17px;margin-top:18px;max-width:560px;}
 .btn{
-  display:inline-flex;align-items:center;gap:10px;
+  display:inline-flex;align-items:center;gap:11px;
   font-family:var(--body);font-weight:700;font-size:14.5px;
   letter-spacing:.02em;
   padding:15px 28px;border-radius:100px;
@@ -196,6 +196,38 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
 }
 @keyframes badgeRingSpin{to{transform:rotate(360deg);}}
 @keyframes badgeGlowPulse{0%,100%{opacity:.35;}50%{opacity:.85;}}
+.logo-badge--hero{
+  background:#161513;
+  box-shadow:inset 0 -16px 28px rgba(0,0,0,.18);
+}
+.logo-badge--hero .umbrella-shade{
+  position:absolute;inset:6%;border-radius:50%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(247,201,72,.035) 0 2%, transparent 5%),
+    conic-gradient(from -104deg,
+      rgba(247,201,72,.045) 0deg 18deg,
+      rgba(0,0,0,.16) 36deg 58deg,
+      rgba(245,241,230,.035) 74deg 88deg,
+      rgba(0,0,0,.13) 106deg 130deg,
+      rgba(247,201,72,.035) 148deg 164deg,
+      rgba(0,0,0,.17) 188deg 215deg,
+      rgba(245,241,230,.028) 232deg 248deg,
+      rgba(0,0,0,.14) 272deg 300deg,
+      rgba(247,201,72,.032) 318deg 336deg,
+      rgba(0,0,0,.10) 350deg 360deg);
+  opacity:.46;
+  filter:blur(7px);
+  -webkit-mask:radial-gradient(circle, transparent 0 5%, rgba(0,0,0,.72) 11%, #000 62%, transparent 86%);
+  mask:radial-gradient(circle, transparent 0 5%, rgba(0,0,0,.72) 11%, #000 62%, transparent 86%);
+}
+.logo-badge--hero .umbrella-center{
+  position:absolute;left:50%;top:52.5%;transform:translate(-50%,-50%);
+  width:5px;height:5px;border-radius:50%;z-index:0;pointer-events:none;
+  background:rgba(118,113,104,.52);
+  box-shadow:inset 0 1px 1px rgba(245,241,230,.12), 0 0 0 1px rgba(168,162,150,.11), 0 1px 5px rgba(0,0,0,.38);
+}
+.logo-badge--hero .lb-word,
+.logo-badge--hero .lb-tag{position:relative;z-index:1;text-shadow:0 1px 8px rgba(22,21,19,.92);}
 .logo-badge--hero .lb-word{font-size:13px;}
 .logo-badge--hero .lb-tag{font-size:6px;margin-top:4px;}
 @media (min-width:881px){
@@ -241,7 +273,7 @@ header.scrolled{
   box-shadow:0 8px 30px rgba(0,0,0,.35), 0 1px 0 rgba(247,201,72,.08);
 }
 .nav-row{display:flex;align-items:center;justify-content:space-between;}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:25px;letter-spacing:.03em;transition:transform .35s var(--ease);}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-size:25px;letter-spacing:.03em;transition:transform .35s var(--ease);}
 .brand:hover{transform:translateY(-1px);}
 .brand-name{font-family:var(--display);font-size:23px;letter-spacing:.04em;color:var(--cream);}
 .foot-brand{display:flex;align-items:center;gap:12px;}
@@ -360,7 +392,7 @@ nav.links a.active{color:var(--yellow);}
 @media (max-width:880px){.uh{display:none;}}
 .hero-eyebrow{
   font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--yellow-pale);margin-bottom:26px;display:flex;align-items:center;gap:12px;
+  color:var(--yellow);margin-bottom:26px;display:flex;align-items:center;gap:12px;
 }
 .hero h1{
   font-size:clamp(48px, 8.6vw, 118px);
@@ -375,7 +407,7 @@ nav.links a.active{color:var(--yellow);}
 .hero-ctas{display:flex;gap:16px;margin-top:42px;flex-wrap:wrap;}
 .hero-scrolldown{
   position:absolute;bottom:38px;right:32px;z-index:3;
-  display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;
+  display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:11.5px;
   letter-spacing:.15em;color:var(--cream-dim);text-transform:uppercase;
 }
 .scroll-line{width:1px;height:34px;background:linear-gradient(var(--yellow), transparent);position:relative;overflow:hidden;}
@@ -630,7 +662,7 @@ nav.links a.active{color:var(--yellow);}
   margin-top:38px;margin-left:calc(clamp(70px,9vw,120px) + 22px);
 }
 .quote-foot .line{width:46px;height:2px;background:var(--yellow-deep);flex:none;}
-.quote-by{font-family:var(--mono);font-size:12.5px;color:var(--steel-deep);letter-spacing:.08em;text-transform:uppercase;}
+.quote-by{font-family:var(--mono);font-size:14px;color:var(--steel-deep);letter-spacing:.08em;text-transform:uppercase;}
 .quote-by strong{color:var(--stone-text);font-weight:700;}
 @media (max-width:880px){
   .quote-layout{grid-template-columns:1fr;gap:44px;}
@@ -866,8 +898,12 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
 
   <!-- Badge: direct child of hero so top:50% is relative to 100vh section -->
   <div class="logo-badge logo-badge--hero" id="heroBadge">
+    <span class="umbrella-shade" aria-hidden="true"></span>
+    <span class="umbrella-center" aria-hidden="true"></span>
+
+
     <span class="lb-word">OCHO Y CINCO</span>
-    <span class="lb-tag">agencia de contenidos</span>
+    <span class="lb-tag">Agencia de Contenidos</span>
   </div>
 
   <div class="wrap hero-content">
@@ -877,7 +913,7 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
         Agencia de Marketing y Comunicación
       </div>
       <h1 class="reveal" id="heroH1"><span class="sr-only">Ocho y Cinco, agencia de marketing y comunicación: </span>DESTACARSE<br>NO ES<br>SUERTE.<br>ES <span class="hl">ESTRATEGIA</span>.</h1>
-      <p class="hero-sub reveal" id="heroSub">Como el paraguas amarillo de la foto: ninguna marca se destaca por casualidad. Diseñamos el por qué — con estrategia, creatividad y empatía, en partes iguales.</p>
+      <p class="hero-sub reveal" id="heroSub">Como el paraguas amarillo de la foto: ninguna marca se destaca por casualidad. Diseñamos el por qué, con estrategia, creatividad y empatía, en partes iguales.</p>
       <div class="hero-ctas reveal" id="heroCtas">
         <a href="#casos" class="btn btn-fill">Ver casos de éxito</a>
         <a href="#contacto" class="btn btn-line">Trabajemos juntos</a>
@@ -1310,7 +1346,7 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
   <div class="wrap">
     <div class="cta-circle reveal">
       <div class="cw">OCHO Y CINCO</div>
-      <div class="cs">agencia de contenidos</div>
+      <div class="cs">Agencia de Contenidos</div>
     </div>
     <p class="script reveal">Trabajemos juntos para que la comunicación transforme</p>
     <div class="cta-row reveal">
@@ -1325,7 +1361,7 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
     <div class="foot-brand">
       <div class="logo-badge logo-badge--footer">
         <span class="lb-word">OCHO Y CINCO</span>
-        <span class="lb-tag">agencia de contenidos</span>
+        <span class="lb-tag">Agencia de Contenidos</span>
       </div>
       <span class="brand-name">OCHO Y CINCO</span>
     </div>
@@ -1334,7 +1370,7 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
       <a href="#casos">Casos</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <div>© 2026 Ocho y Cinco · Agencia de contenidos</div>
+    <div>© 2026 Ocho y Cinco · agencia de contenidos</div>
   </div>
 </footer>
 
@@ -1524,3 +1560,11 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
+
+
+
+
+
+
+
