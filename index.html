@@ -468,13 +468,13 @@ body.theme-light{
   background:var(--ink);color:var(--cream);
 }
 body.theme-light header{
-  background:rgba(36,35,31,.94);
+  background:#24231f;
   border-bottom-color:rgba(247,201,72,.18);
   box-shadow:0 10px 26px rgba(20,18,13,.18);
   backdrop-filter:blur(16px);
 }
 body.theme-light header.scrolled{
-  background:rgba(36,35,31,.98);
+  background:#24231f;
   border-color:rgba(247,201,72,.2);
   box-shadow:0 12px 28px rgba(20,18,13,.24), 0 1px 0 rgba(247,201,72,.08);
 }
@@ -1149,7 +1149,19 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 @media (max-width:720px){.client-logo{height:40px;} .clients-track{gap:44px;}}
 
 /* ============ CTA FINAL ============ */
-.cta-final{padding:150px 0 110px;text-align:center;position:relative;}
+.cta-final{padding:130px 0 110px;text-align:center;position:relative;overflow:hidden;}
+.cta-final::before{
+  content:"";position:absolute;inset:0;z-index:0;opacity:.08;pointer-events:none;
+  background:
+    repeating-linear-gradient(88deg, rgba(247,201,72,.6) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(-4deg, rgba(175,115,13,.22) 0 1px, transparent 1px 5px);
+}
+.cta-final .wrap{position:relative;z-index:1;}
+.cta-team{
+  width:min(520px,100%);margin:0 auto 46px;border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 70px rgba(20,18,13,.22);
+}
+.cta-team img{display:block;width:100%;height:auto;}
 .cta-circle{
   width:216px;height:216px;border-radius:50%;border:2px solid var(--yellow);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -1161,6 +1173,23 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .cta-circle .cs{font-family:var(--body);font-size:11px;color:var(--cream-dim);margin-top:6px;white-space:nowrap;}
 .cta-final .script{font-family:var(--display);font-size:clamp(30px,5.6vw,62px);line-height:1.05;letter-spacing:.015em;color:var(--cream);margin:0 0 44px;font-weight:400;text-transform:uppercase;}
 .cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+body.theme-light .cta-final{
+  background:#eee9dd !important;
+  color:#171612;
+}
+body.theme-light .cta-final .script{color:#171612;}
+body.theme-light .cta-circle{
+  display:none;
+}
+body.theme-light .cta-final .btn-fill{
+  background:#100f0d;border-color:#100f0d;color:var(--yellow);
+}
+body.theme-light .cta-final .btn-line{
+  color:#171612;border-color:#171612;background:rgba(255,250,240,.22);
+}
+body.theme-light .cta-final .btn-line:hover{
+  background:#171612;color:var(--yellow);
+}
 
 footer{padding:40px 0;border-top:1px solid var(--line-soft);}
 .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:var(--display);font-size:17px;letter-spacing:.045em;text-transform:uppercase;color:var(--cream-dim);}
@@ -1784,6 +1813,9 @@ try{
 <!-- ============ CTA FINAL ============ -->
 <section class="cta-final" id="contacto">
   <div class="wrap">
+    <div class="cta-team reveal">
+      <img src="assets/cta-equipo-amarillo.png" alt="Equipo de Ocho y Cinco sobre fondo amarillo">
+    </div>
     <div class="cta-circle reveal">
       <div class="cw">OCHO Y CINCO</div>
       <div class="cs">Agencia de Contenidos</div>
