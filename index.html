@@ -1164,7 +1164,7 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 @media (max-width:720px){.client-logo{height:40px;} .clients-track{gap:44px;}}
 
 /* ============ CTA FINAL ============ */
-.cta-final{padding:130px 0 110px;text-align:center;position:relative;overflow:hidden;}
+.cta-final{padding:118px 0 110px;text-align:center;position:relative;overflow:hidden;}
 .cta-final::before{
   content:"";position:absolute;inset:0;z-index:0;opacity:.08;pointer-events:none;
   background:
@@ -1173,8 +1173,8 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 }
 .cta-final .wrap{position:relative;z-index:1;}
 .cta-team{
-  width:min(520px,100%);margin:0 auto 46px;border-radius:18px;overflow:hidden;
-  box-shadow:0 30px 70px rgba(20,18,13,.22);
+  width:min(720px,100%);margin:0 auto 46px;border-radius:18px;overflow:hidden;
+  box-shadow:0 34px 78px rgba(20,18,13,.24);
 }
 .cta-team img{display:block;width:100%;height:auto;}
 .cta-circle{
@@ -1186,13 +1186,20 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 @keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(247,201,72,.18);}50%{box-shadow:0 0 0 22px rgba(247,201,72,0);}}
 .cta-circle .cw{font-family:var(--display);font-size:21px;color:var(--cream);letter-spacing:.02em;white-space:nowrap;}
 .cta-circle .cs{font-family:var(--body);font-size:11px;color:var(--cream-dim);margin-top:6px;white-space:nowrap;}
-.cta-final .script{font-family:var(--display);font-size:clamp(30px,5.6vw,62px);line-height:1.05;letter-spacing:.015em;color:var(--cream);margin:0 0 44px;font-weight:400;text-transform:uppercase;}
+.cta-final .script{font-family:var(--display);font-size:clamp(30px,5.6vw,62px);line-height:1.05;letter-spacing:.015em;color:var(--cream);margin:0 0 42px;font-weight:400;text-transform:uppercase;}
 .cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
 body.theme-light .cta-final{
-  background:#e4dccd !important;
+  background:var(--yellow) !important;
   color:#171612;
 }
+body.theme-light .cta-final::before{
+  opacity:.16;
+  background:
+    repeating-linear-gradient(88deg, rgba(255,240,122,.55) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(-4deg, rgba(130,86,6,.18) 0 1px, transparent 1px 5px);
+}
 body.theme-light .cta-final .script{color:#171612;}
+body.theme-light .cta-team{width:min(780px,100%);box-shadow:0 34px 78px rgba(86,60,8,.24);}
 body.theme-light .cta-circle{
   display:none;
 }
