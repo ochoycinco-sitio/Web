@@ -355,12 +355,12 @@ body.theme-light .theme-toggle .theme-icon-moon{display:inline;}
 @keyframes themePulse{0%,100%{box-shadow:0 0 0 1px rgba(247,201,72,.08), 0 12px 28px rgba(0,0,0,.18);}50%{box-shadow:0 0 0 7px rgba(247,201,72,0), 0 12px 28px rgba(0,0,0,.18);}}
 .nav-cta .btn-fill{
   position:relative;overflow:hidden;animation:navCtaPulse 4.5s ease-in-out infinite;
-  border:2px solid rgba(247,201,72,.96);
-  box-shadow:0 0 0 1px rgba(20,18,13,.75), 0 12px 26px rgba(0,0,0,.22);
+  border:2px solid rgba(247,241,227,.92);
+  box-shadow:0 0 0 1px rgba(247,241,227,.28), 0 12px 26px rgba(0,0,0,.22);
 }
 .nav-cta .btn-fill:hover{
   border-color:var(--cream);
-  box-shadow:0 0 0 1px rgba(247,201,72,.9), 0 15px 30px rgba(0,0,0,.28);
+  box-shadow:0 0 0 2px rgba(247,241,227,.38), 0 15px 30px rgba(0,0,0,.28);
 }
 .nav-cta .btn-fill::after{
   content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
@@ -421,12 +421,19 @@ body.theme-light .theme-toggle .theme-icon-moon{display:inline;}
   transform:scale(1.08);
   filter:saturate(1.05);
 }
+body:not(.theme-light) .hero-bg{
+  opacity:1;
+  visibility:visible;
+  background-size:cover;
+  background-position:center 40%;
+  filter:saturate(1.05) contrast(1.04) brightness(1.06);
+}
 .hero-bg::after{content:"";}
 .hero-scrim{
   position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(180deg, rgba(22,21,19,.55) 0%, rgba(22,21,19,.72) 38%, rgba(22,21,19,.93) 78%, var(--ink) 100%),
-    linear-gradient(100deg, rgba(22,21,19,.55) 0%, rgba(22,21,19,.18) 45%, rgba(22,21,19,.5) 100%);
+    linear-gradient(180deg, rgba(22,21,19,.38) 0%, rgba(22,21,19,.58) 42%, rgba(22,21,19,.86) 80%, var(--ink) 100%),
+    linear-gradient(100deg, rgba(22,21,19,.46) 0%, rgba(22,21,19,.12) 45%, rgba(22,21,19,.42) 100%);
 }
 .hero-content{position:relative;z-index:3;width:100%;display:flex;flex-direction:column;align-items:flex-start;pointer-events:none;min-height:460px;padding-bottom:48px;}
 .hero-text{width:100%;min-width:0;}
@@ -1130,14 +1137,14 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   cursor:pointer;transform:translate(-50%,-50%);
   transition:backdrop-filter .32s var(--ease), -webkit-backdrop-filter .32s var(--ease);
   outline:0;
-  -webkit-mask-image:radial-gradient(ellipse 62% 68% at 50% 42%, #000 74%, rgba(0,0,0,.78) 88%, transparent 104%);
-  mask-image:radial-gradient(ellipse 62% 68% at 50% 42%, #000 74%, rgba(0,0,0,.78) 88%, transparent 104%);
+  -webkit-mask-image:radial-gradient(ellipse 72% 84% at 50% 45%, #000 78%, rgba(0,0,0,.82) 93%, transparent 112%);
+  mask-image:radial-gradient(ellipse 72% 84% at 50% 45%, #000 78%, rgba(0,0,0,.82) 93%, transparent 112%);
 }
 .team-member:hover,
 .team-member:focus-visible,
 .team-member.is-active{
-  backdrop-filter:brightness(4.4) saturate(2.3) contrast(1.06);
-  -webkit-backdrop-filter:brightness(4.4) saturate(2.3) contrast(1.06);
+  backdrop-filter:brightness(4.8) saturate(2.2) contrast(1.08);
+  -webkit-backdrop-filter:brightness(4.8) saturate(2.2) contrast(1.08);
 }
 .team-member:focus-visible{outline:0;}
 .team-info-card{
@@ -1306,11 +1313,19 @@ body.theme-light .team-caption{color:#171612;}
 .client-logo-mark.script{font-family:Georgia, 'Times New Roman', serif;font-style:italic;font-weight:800;letter-spacing:-.05em;}
 .client-logo-mark.logo-facebook{color:#1877f2;font-size:27px;font-weight:900;}
 .client-logo-mark.logo-sura{color:#153e8a;font-size:28px;font-weight:600;letter-spacing:.01em;}
-.client-logo-mark.logo-hsbc{color:#111;font-size:22px;gap:8px;letter-spacing:.02em;}
-.client-logo-mark.logo-hsbc::before{
-  content:"";width:24px;height:24px;display:block;background:#db0011;
-  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);
+.client-logo-mark.logo-hsbc{color:#111;font-size:17px;gap:10px;letter-spacing:.02em;font-weight:800;}
+.hsbc-symbol{
+  width:34px;height:22px;position:relative;display:inline-block;flex:none;
+  background:
+    linear-gradient(135deg, transparent 0 49%, #db0011 50%) left/50% 100% no-repeat,
+    linear-gradient(225deg, transparent 0 49%, #db0011 50%) right/50% 100% no-repeat;
 }
+.hsbc-symbol::before,
+.hsbc-symbol::after{
+  content:"";position:absolute;top:0;width:50%;height:100%;background:#db0011;
+}
+.hsbc-symbol::before{left:0;clip-path:polygon(0 50%,100% 0,100% 100%);}
+.hsbc-symbol::after{right:0;clip-path:polygon(0 0,100% 50%,0 100%);}
 .client-logo-mark.logo-quilmes{color:#063f86;font-size:27px;}
 .client-logo-mark.logo-kentucky{color:#b21d1d;font-size:28px;}
 .client-logo-mark.logo-chubb{color:#0057b8;font-size:25px;font-weight:500;letter-spacing:.09em;}
@@ -1415,25 +1430,31 @@ body.theme-light .cta-final .btn-line:hover{
   background:#171612;color:var(--yellow);
 }
 
-footer{padding:46px 0;border-top:1px solid var(--line-soft);background:#2b2a25;}
+footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:#2b2a25;}
 .foot-row{
-  display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:24px;
+  display:grid;grid-template-columns:240px minmax(360px,1fr) 240px;align-items:center;gap:42px;
   font-family:var(--display);font-size:17px;letter-spacing:.045em;text-transform:uppercase;color:var(--cream-dim);
 }
 .foot-row .brand{font-size:17px;}
-.foot-links{display:flex;gap:16px 18px;justify-content:center;align-items:center;flex-wrap:wrap;}
+.foot-links{display:flex;gap:14px 24px;justify-content:center;align-items:center;flex-wrap:wrap;max-width:620px;margin:0 auto;}
 .foot-links a:hover{color:var(--yellow);}
+.foot-social-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.foot-title{
+  font-size:15px;letter-spacing:.12em;color:var(--yellow);line-height:1;
+}
 .foot-social{display:flex;align-items:center;justify-content:flex-end;gap:10px;}
 .social-link{
-  width:38px;height:38px;border-radius:50%;border:1px solid rgba(247,241,227,.18);
-  display:inline-flex;align-items:center;justify-content:center;color:var(--cream);
-  background:rgba(16,15,13,.46);transition:color .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
+  width:38px;height:38px;border-radius:50%;border:1px solid rgba(247,241,227,.32);
+  display:inline-flex;align-items:center;justify-content:center;color:rgba(247,241,227,.86);
+  background:rgba(16,15,13,.68);transition:color .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
 }
 .social-link:hover{color:var(--yellow);border-color:rgba(247,201,72,.6);background:#100f0d;transform:translateY(-2px);}
 .social-link svg{width:18px;height:18px;display:block;fill:currentColor;}
-.foot-copy{font-size:15px;color:rgba(247,241,227,.62);text-align:right;}
+.foot-copy{font-size:14px;color:rgba(247,241,227,.62);text-align:right;letter-spacing:.055em;}
 @media (max-width:980px){
   .foot-row{grid-template-columns:1fr;justify-items:center;text-align:center;}
+  .foot-links{max-width:560px;}
+  .foot-social-wrap{align-items:center;}
   .foot-social{justify-content:center;}
   .foot-copy{text-align:center;}
 }
@@ -1889,12 +1910,12 @@ try{
       <div class="team-interactive">
         <div class="team-wide-frame">
           <img src="assets/equipo-ocho-y-cinco-retoque.jpg" alt="Equipo de Ocho y Cinco">
-          <button class="team-member" type="button" style="--left:9%;--top:48%;--w:16%;--h:74%;" data-member="equipo-1" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
-          <button class="team-member" type="button" style="--left:26%;--top:48%;--w:16%;--h:74%;" data-member="equipo-2" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
-          <button class="team-member" type="button" style="--left:44%;--top:48%;--w:16%;--h:74%;" data-member="silvina" data-name="Silvina Cardoso" data-role="Directora de Ocho y Cinco" aria-label="Ver biografía de Silvina Cardoso"></button>
-          <button class="team-member" type="button" style="--left:60%;--top:48%;--w:15%;--h:74%;" data-member="equipo-3" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
-          <button class="team-member" type="button" style="--left:76%;--top:48%;--w:15%;--h:74%;" data-member="equipo-4" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
-          <button class="team-member" type="button" style="--left:91%;--top:48%;--w:14%;--h:74%;" data-member="equipo-5" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:9%;--top:43%;--w:19%;--h:88%;" data-member="equipo-1" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:26%;--top:43%;--w:18%;--h:88%;" data-member="equipo-2" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:44%;--top:43%;--w:18%;--h:88%;" data-member="silvina" data-name="Silvina Cardoso" data-role="Directora de Ocho y Cinco" aria-label="Ver biografía de Silvina Cardoso"></button>
+          <button class="team-member" type="button" style="--left:60%;--top:43%;--w:17%;--h:88%;" data-member="equipo-3" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:76%;--top:43%;--w:17%;--h:88%;" data-member="equipo-4" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:91%;--top:43%;--w:16%;--h:88%;" data-member="equipo-5" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
         </div>
         <aside class="team-info-card" id="teamInfoCard" aria-live="polite">
           <div class="team-info-kicker">Nuestro equipo</div>
@@ -1958,7 +1979,7 @@ try{
           <div class="client-logo-card" aria-label="Kentucky"><span class="client-logo-mark logo-kentucky">Kentucky</span></div>
           <div class="client-logo-card" aria-label="La Toscana"><span class="client-logo-mark logo-latoscana">La Toscana</span></div>
           <div class="client-logo-card" aria-label="SURA"><span class="client-logo-mark logo-sura">SURA</span></div>
-          <div class="client-logo-card logo-icon" aria-label="HSBC"><img class="client-logo-img" src="https://cdn.simpleicons.org/hsbc" alt="HSBC" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-hsbc">HSBC</span></div>
+          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><span class="hsbc-symbol" aria-hidden="true"></span><span>HSBC</span></span></div>
           <div class="client-logo-card" aria-label="Lucchetti"><span class="client-logo-mark logo-lucchetti">Lucchetti</span></div>
           <div class="client-logo-card" aria-label="Carnave"><span class="client-logo-mark logo-carnave">Carnave</span></div>
           <div class="client-logo-card" aria-label="Cementos Avellaneda"><span class="client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
@@ -1983,7 +2004,7 @@ try{
           <div class="client-logo-card" aria-label="Kentucky"><span class="client-logo-mark logo-kentucky">Kentucky</span></div>
           <div class="client-logo-card" aria-label="La Toscana"><span class="client-logo-mark logo-latoscana">La Toscana</span></div>
           <div class="client-logo-card" aria-label="SURA"><span class="client-logo-mark logo-sura">SURA</span></div>
-          <div class="client-logo-card logo-icon" aria-label="HSBC"><img class="client-logo-img" src="https://cdn.simpleicons.org/hsbc" alt="HSBC" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-hsbc">HSBC</span></div>
+          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><span class="hsbc-symbol" aria-hidden="true"></span><span>HSBC</span></span></div>
           <div class="client-logo-card" aria-label="Lucchetti"><span class="client-logo-mark logo-lucchetti">Lucchetti</span></div>
           <div class="client-logo-card" aria-label="Carnave"><span class="client-logo-mark logo-carnave">Carnave</span></div>
           <div class="client-logo-card" aria-label="Cementos Avellaneda"><span class="client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
@@ -2040,18 +2061,21 @@ try{
       <a href="#faq">FAQ</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <div class="foot-social" aria-label="Redes sociales">
-      <a class="social-link" href="https://www.instagram.com/ochoycinco.agencia/" target="_blank" rel="noopener" aria-label="Instagram de Ocho y Cinco">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.1A4.9 4.9 0 1 1 7.1 12 4.9 4.9 0 0 1 12 7.1Zm0 2A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1Zm5.15-2.25a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z"/></svg>
-      </a>
-      <a class="social-link" href="#" aria-label="Facebook de Ocho y Cinco">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.1 22v-8.1h2.75l.42-3.16H14.1V8.72c0-.91.26-1.54 1.58-1.54h1.68V4.35A22.6 22.6 0 0 0 14.9 4c-2.43 0-4.1 1.48-4.1 4.2v2.54H8.05v3.16h2.75V22h3.3Z"/></svg>
-      </a>
-      <a class="social-link" href="#" aria-label="LinkedIn de Ocho y Cinco">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.35 8.9H2.2V22h3.15V8.9ZM3.77 2.4a1.83 1.83 0 1 0 0 3.66 1.83 1.83 0 0 0 0-3.66ZM22 14.52c0-3.52-1.88-5.16-4.38-5.16a3.77 3.77 0 0 0-3.4 1.87h-.05V8.9h-3.02V22h3.15v-6.48c0-1.71.32-3.36 2.44-3.36 2.08 0 2.11 1.95 2.11 3.47V22H22v-7.48Z"/></svg>
-      </a>
+    <div class="foot-social-wrap">
+      <div class="foot-title">Redes</div>
+      <div class="foot-social" aria-label="Redes sociales">
+        <a class="social-link" href="https://www.instagram.com/ochoycinco.agencia/" target="_blank" rel="noopener" aria-label="Instagram de Ocho y Cinco">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.1A4.9 4.9 0 1 1 7.1 12 4.9 4.9 0 0 1 12 7.1Zm0 2A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1Zm5.15-2.25a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z"/></svg>
+        </a>
+        <a class="social-link" href="#" aria-label="Facebook de Ocho y Cinco">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.1 22v-8.1h2.75l.42-3.16H14.1V8.72c0-.91.26-1.54 1.58-1.54h1.68V4.35A22.6 22.6 0 0 0 14.9 4c-2.43 0-4.1 1.48-4.1 4.2v2.54H8.05v3.16h2.75V22h3.3Z"/></svg>
+        </a>
+        <a class="social-link" href="#" aria-label="LinkedIn de Ocho y Cinco">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.35 8.9H2.2V22h3.15V8.9ZM3.77 2.4a1.83 1.83 0 1 0 0 3.66 1.83 1.83 0 0 0 0-3.66ZM22 14.52c0-3.52-1.88-5.16-4.38-5.16a3.77 3.77 0 0 0-3.4 1.87h-.05V8.9h-3.02V22h3.15v-6.48c0-1.71.32-3.36 2.44-3.36 2.08 0 2.11 1.95 2.11 3.47V22H22v-7.48Z"/></svg>
+        </a>
+      </div>
+      <div class="foot-copy">&copy; 2026 OCHO Y CINCO</div>
     </div>
-    <div class="foot-copy">&copy; 2026 OCHO Y CINCO</div>
   </div>
 </footer>
 
@@ -2089,7 +2113,7 @@ function startDarkTransition(){
   }
   if (themeToggle) themeToggle.disabled = true;
   if (transitionPhoto && heroBg){
-    transitionPhoto.style.backgroundImage = heroBg.style.backgroundImage;
+    transitionPhoto.style.backgroundImage = getComputedStyle(heroBg).backgroundImage;
   }
   themeTransition.setAttribute('aria-hidden', 'false');
   themeTransition.classList.remove('show-photo');
@@ -2367,7 +2391,3 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
-
-
-
-
