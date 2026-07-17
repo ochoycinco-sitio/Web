@@ -460,6 +460,41 @@ body.theme-light .theme-toggle .theme-icon-moon{display:inline;}
   text-shadow:0 2px 40px rgba(0,0,0,.3);
 }
 .hero h1 .hl{color:var(--yellow);}
+.hero-title-line{
+  display:block;opacity:0;transform:translateY(28px);
+  animation:heroLineIn .82s var(--ease) forwards;
+  animation-delay:calc(.18s + var(--line) * .13s);
+}
+.hero-title-dot{
+  display:inline-block;color:currentColor;
+  animation:strategyDotBlink 1.05s steps(1,end) infinite;
+}
+body.theme-light .hero-title-dot{animation-name:strategyDotBlinkLight;}
+@keyframes heroLineIn{
+  0%{opacity:0;transform:translateY(28px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+@keyframes strategyDotBlink{
+  0%,49%{color:var(--cream);}
+  50%,100%{color:#0f0e0c;}
+}
+@keyframes strategyDotBlinkLight{
+  0%,49%{color:var(--charcoal);}
+  50%,100%{color:#fffaf0;}
+}
+.hero-eyebrow,
+.hero-sub,
+.hero-ctas{
+  opacity:0;transform:translateY(16px);
+  animation:heroSoftIn .72s var(--ease) forwards;
+}
+.hero-eyebrow{animation-delay:.08s;}
+.hero-sub{animation-delay:.88s;}
+.hero-ctas{animation-delay:1.02s;}
+@keyframes heroSoftIn{
+  0%{opacity:0;transform:translateY(16px);}
+  100%{opacity:1;transform:translateY(0);}
+}
 .hero-sub{
   max-width:520px;margin-top:28px;font-size:18px;color:var(--cream-dim);
 }
@@ -1500,7 +1535,7 @@ try{
         <svg class="um-icon" width="14" height="14" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg>
         Agencia de Marketing y Comunicación
       </div>
-      <h1 class="reveal" id="heroH1"><span class="sr-only">Ocho y Cinco, agencia de marketing y comunicación: </span>DESTACARSE<br>NO ES<br>SUERTE.<br>ES <span class="hl">ESTRATEGIA</span>.</h1>
+      <h1 class="reveal" id="heroH1"><span class="sr-only">Ocho y Cinco, agencia de marketing y comunicación: Destacarse no es suerte. Es estrategia.</span><span class="hero-title-line" style="--line:0">DESTACARSE</span><span class="hero-title-line" style="--line:1">NO ES</span><span class="hero-title-line" style="--line:2">SUERTE.</span><span class="hero-title-line" style="--line:3">ES <span class="hl">ESTRATEGIA</span><span class="hero-title-dot">.</span></span></h1>
       <p class="hero-sub reveal" id="heroSub">Como el paraguas amarillo de la foto:<br>Ninguna marca se destaca por casualidad. Detrás de cada marca memorable hay estrategia, creatividad y empatía.</p>
       <div class="hero-ctas reveal" id="heroCtas">
         <a href="#casos" class="btn btn-fill">Ver casos de éxito</a>
