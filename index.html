@@ -1177,6 +1177,9 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   box-shadow:0 34px 78px rgba(20,18,13,.24);
 }
 .cta-team img{display:block;width:100%;height:auto;}
+.cta-team-light{display:none !important;}
+body.theme-light .cta-team-dark{display:none !important;}
+body.theme-light .cta-team-light{display:block !important;}
 .cta-circle{
   width:216px;height:216px;border-radius:50%;border:2px solid var(--yellow);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -1840,7 +1843,8 @@ try{
 <section class="cta-final" id="contacto">
   <div class="wrap">
     <div class="cta-team reveal">
-      <img src="assets/cta-equipo-amarillo.png" alt="Equipo de Ocho y Cinco sobre fondo amarillo">
+      <img class="cta-team-dark" src="assets/fondo-oficina-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
+      <img class="cta-team-light" src="assets/cta-equipo-amarillo.png" alt="Equipo de Ocho y Cinco sobre fondo amarillo">
     </div>
     <div class="cta-circle reveal">
       <div class="cw">OCHO Y CINCO</div>
