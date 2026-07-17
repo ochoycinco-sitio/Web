@@ -1391,20 +1391,16 @@ body.theme-light .cta-people-map{display:block;}
 .cta-person-spark{
   position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);
   transform:translate(-50%,-50%);
-  border-radius:48% 48% 42% 42%;
+  border-radius:50%;
   background:
-    radial-gradient(ellipse at 50% 16%, rgba(255,255,255,.58), transparent 29%),
-    radial-gradient(ellipse at 50% 54%, rgba(255,255,255,.26), transparent 62%),
-    radial-gradient(ellipse at 50% 64%, rgba(20,18,13,.10), transparent 70%);
-  box-shadow:0 0 0 1px rgba(255,255,255,.18), 0 0 32px rgba(255,255,255,.26), 0 0 44px rgba(20,18,13,.12);
-  opacity:.46;filter:blur(.15px);
-  animation:personGlow 3.4s ease-in-out infinite, personDrift 5.2s ease-in-out infinite;
+    radial-gradient(ellipse at 50% 18%, rgba(255,255,255,.34), transparent 30%),
+    radial-gradient(ellipse at 50% 56%, rgba(247,241,227,.16), transparent 62%);
+  mix-blend-mode:screen;opacity:.32;filter:blur(.2px);
+  animation:personAppear 7.2s ease-in-out infinite;
   animation-delay:var(--d);
 }
 .cta-person-spark::before{
-  content:"";position:absolute;inset:-16% -10%;border-radius:50%;
-  border:1px solid rgba(255,255,255,.38);opacity:.44;
-  animation:personHalo 4.8s ease-in-out infinite;animation-delay:var(--d);
+  display:none;
 }
 .cta-person-spark::after{
   content:"";position:absolute;inset:16% 20%;border-radius:50%;
@@ -1422,6 +1418,11 @@ body.theme-light .cta-people-map{display:block;}
 @keyframes personGlow{
   0%,100%{opacity:.28;transform:translate(-50%,-50%) scale(.97);}
   45%{opacity:.72;transform:translate(-50%,-54%) scale(1.06);}
+}
+@keyframes personAppear{
+  0%,18%,100%{opacity:0;transform:translate(-50%,-50%) scale(.96);}
+  28%,58%{opacity:.42;transform:translate(-50%,-52%) scale(1.02);}
+  72%{opacity:.16;transform:translate(-50%,-50%) scale(1);}
 }
 @keyframes personDrift{
   0%,100%{filter:blur(.15px) brightness(1);}
@@ -1460,20 +1461,21 @@ body.theme-light .cta-final::before{
 body.theme-light .cta-final .script{color:#171612;}
 body.theme-light .cta-team{
   width:min(1080px, calc(100vw - 64px));
-  aspect-ratio:16/8.9;
+  aspect-ratio:16/7.6;
   height:auto;
   margin:0 auto 36px;
   border-radius:18px;
-  background:rgba(247,201,72,.58);
+  background:rgba(255,240,122,.16);
   box-shadow:0 34px 78px rgba(86,60,8,.24);
 }
 body.theme-light .cta-team img{
   width:100%;
   height:100%;
   min-height:0;
-  object-fit:contain;
-  object-position:center center;
-  animation:ctaImageAlive 6.5s ease-in-out infinite;
+  object-fit:cover;
+  object-position:54% 18%;
+  transform:none;
+  animation:none;
 }
 body.theme-light .cta-final .script{
   font-size:clamp(34px,4.8vw,62px);
