@@ -658,6 +658,14 @@ body.theme-light .grain-overlay{opacity:.025;mix-blend-mode:multiply;}
   padding:30px 0;overflow:hidden;white-space:nowrap;
   border-top:1px solid var(--charcoal);border-bottom:1px solid var(--charcoal);
 }
+body.theme-light .marquee-band{
+  background:var(--charcoal);
+  color:var(--yellow);
+  border-top-color:var(--yellow);
+  border-bottom-color:var(--yellow);
+  box-shadow:0 12px 28px rgba(20,18,13,.16);
+}
+body.theme-light .marquee-track span .um-icon path{fill:var(--yellow);}
 .marquee-track{display:flex;width:max-content;animation:marquee 90s linear infinite;}
 .marquee-band:hover .marquee-track{animation-play-state:paused;}
 .marquee-set{display:flex;flex:none;}
