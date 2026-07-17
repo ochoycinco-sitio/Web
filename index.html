@@ -1018,6 +1018,8 @@ body.theme-light .marquee-track span .um-icon path{fill:var(--yellow);}
   padding:120px 0;background:var(--stone);position:relative;overflow:hidden;
 }
 .quote-sec .wrap{position:relative;}
+.quote-sec .section-head{margin-bottom:52px;}
+.quote-sec .section-head h2{font-size:clamp(34px,4.8vw,58px);}
 .quote-layout{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:center;}
 .quote-photo{position:relative;cursor:pointer;}
 .quote-photo .ph-frame{
@@ -1070,6 +1072,7 @@ body.theme-light .marquee-track span .um-icon path{fill:var(--yellow);}
 }
 @media (max-width:720px){
   .quote-sec{padding:90px 0 80px;}
+  .quote-sec .section-head{margin-bottom:36px;}
   .quote-grid{grid-template-columns:1fr;gap:8px;}
   .quote-mark{font-size:56px;}
   .quote-foot{margin-left:0;margin-top:30px;}
@@ -1237,6 +1240,7 @@ try{
     <nav class="links">
       <a href="#proposito">Propósito</a>
       <a href="#historia">Historia</a>
+      <a href="#equipo">Nuestro Equipo</a>
       <a href="#proceso">Cómo trabajamos</a>
       <a href="#casos">Casos</a>
       <a href="#clientes">Clientes</a>
@@ -1258,6 +1262,7 @@ try{
 <div class="mobile-menu" id="mobileMenu">
   <a href="#proposito">Propósito</a>
   <a href="#historia">Historia</a>
+  <a href="#equipo">Nuestro Equipo</a>
   <a href="#proceso">Cómo trabajamos</a>
   <a href="#casos">Casos</a>
   <a href="#clientes">Clientes</a>
@@ -1569,9 +1574,13 @@ try{
   </div>
 </section>
 
-<!-- ============ QUOTE ============ -->
-<section class="quote-sec">
+<!-- ============ EQUIPO ============ -->
+<section class="quote-sec" id="equipo">
   <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg>Nuestro Equipo</div>
+      <h2 class="reveal">Las personas detrás de las ideas.</h2>
+    </div>
     <div class="quote-layout">
       <div class="quote-photo reveal" id="silvinaPhoto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver biografía de Silvina Cardoso">
         <div class="ph-accent" aria-hidden="true"></div>
