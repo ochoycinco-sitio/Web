@@ -336,13 +336,23 @@ nav.links a.active{color:var(--yellow);}
 
 .nav-cta{display:flex;align-items:center;gap:22px;margin-left:28px;flex-shrink:0;}
 .theme-toggle{
-  width:42px;height:42px;border-radius:50%;border:1px solid rgba(247,201,72,.48);
-  background:rgba(22,21,19,.34);color:var(--yellow);
-  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
+  min-width:128px;height:46px;padding:0 16px;border-radius:100px;border:1px solid rgba(247,201,72,.74);
+  background:rgba(247,201,72,.11);color:var(--yellow);
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;
+  font-family:var(--body);font-size:13px;font-weight:800;letter-spacing:.02em;
+  box-shadow:0 0 0 1px rgba(247,201,72,.08), 0 12px 28px rgba(0,0,0,.18);
+  animation:themePulse 4s ease-in-out infinite;
   transition:transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
 }
-.theme-toggle:hover{transform:translateY(-2px);background:var(--yellow);color:var(--charcoal);box-shadow:0 10px 24px rgba(0,0,0,.2);}
+.theme-toggle:hover{transform:translateY(-2px);background:var(--yellow);color:var(--charcoal);border-color:var(--yellow);box-shadow:0 14px 30px rgba(0,0,0,.24), 0 0 0 6px rgba(247,201,72,.1);}
 .theme-toggle svg{width:18px;height:18px;display:block;}
+.theme-toggle .theme-icon-sun{display:inline;}
+.theme-toggle .theme-icon-moon{display:none;}
+body.theme-light .theme-toggle .theme-icon-sun{display:none;}
+body.theme-light .theme-toggle .theme-icon-moon{display:inline;}
+.theme-toggle .theme-label{white-space:nowrap;}
+.theme-toggle:disabled{opacity:.72;cursor:wait;animation:none;}
+@keyframes themePulse{0%,100%{box-shadow:0 0 0 1px rgba(247,201,72,.08), 0 12px 28px rgba(0,0,0,.18);}50%{box-shadow:0 0 0 7px rgba(247,201,72,0), 0 12px 28px rgba(0,0,0,.18);}}
 .nav-cta .btn-fill{position:relative;overflow:hidden;animation:navCtaPulse 4.5s ease-in-out infinite;}
 .nav-cta .btn-fill::after{
   content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
@@ -376,7 +386,8 @@ nav.links a.active{color:var(--yellow);}
   nav.links{display:none;}
   .nav-cta .btn{display:none;}
   .burger{display:block;}
-  .theme-toggle{width:38px;height:38px;}
+  .theme-toggle{min-width:46px;width:46px;height:42px;padding:0;}
+  .theme-toggle .theme-label{display:none;}
 }
 @media (min-width:881px) and (max-width:1140px){
   .nav-row{gap:18px;}
@@ -502,7 +513,8 @@ body.theme-light nav.links a::before{background:rgba(247,201,72,.12);}
 body.theme-light nav.links a:hover,
 body.theme-light nav.links a.active{color:var(--yellow);}
 body.theme-light .theme-toggle{
-  background:var(--charcoal);color:var(--yellow);border-color:var(--charcoal);
+  background:#100f0d;color:var(--yellow);border-color:var(--yellow);
+  box-shadow:0 0 0 1px rgba(247,201,72,.12), 0 12px 28px rgba(0,0,0,.24);
 }
 body.theme-light .burger span{background:#f7f1e3;}
 body.theme-light .mobile-menu{
@@ -1287,11 +1299,15 @@ try{
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar versión clara" aria-pressed="false">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="true">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 4.5V2m0 20v-2.5M4.5 12H2m20 0h-2.5M6.7 6.7 4.9 4.9m14.2 14.2-1.8-1.8M17.3 6.7l1.8-1.8M4.9 19.1l1.8-1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <g class="theme-icon-sun">
+            <path d="M12 4.5V2m0 20v-2.5M4.5 12H2m20 0h-2.5M6.7 6.7 4.9 4.9m14.2 14.2-1.8-1.8M17.3 6.7l1.8-1.8M4.9 19.1l1.8-1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          </g>
+          <path class="theme-icon-moon" d="M20 14.6A7.7 7.7 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
         </svg>
+        <span class="theme-label">Modo oscuro</span>
       </button>
       <a href="#contacto" class="btn btn-fill">Hablemos</a>
       <button class="burger" id="burgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -1866,8 +1882,10 @@ function setThemeMode(mode, persist = true){
   const isLight = mode === 'light';
   document.body.classList.toggle('theme-light', isLight);
   if (themeToggle){
+    const themeLabel = themeToggle.querySelector('.theme-label');
     themeToggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
-    themeToggle.setAttribute('aria-label', isLight ? 'Activar versión oscura' : 'Activar versión clara');
+    themeToggle.setAttribute('aria-label', isLight ? 'Activar modo oscuro' : 'Activar modo claro');
+    if (themeLabel) themeLabel.textContent = isLight ? 'Modo oscuro' : 'Modo claro';
   }
   if (persist){
     try{ localStorage.setItem('oyc-theme', isLight ? 'light' : 'dark'); }catch(e){}
