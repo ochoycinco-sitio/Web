@@ -1123,21 +1123,21 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   display:block;width:100%;aspect-ratio:16/8.6;object-fit:cover;object-position:center 48%;
   transition:filter .28s var(--ease), transform .28s var(--ease);
 }
-.team-wide-frame.is-spotlighting img{filter:brightness(.42) saturate(.72) contrast(1.05);}
+.team-wide-frame.is-spotlighting img{filter:brightness(.32) saturate(.5) contrast(1.08);}
 .team-member{
   position:absolute;top:var(--top);left:var(--left);width:var(--w);height:var(--h);
-  border:0;border-radius:44% 44% 38% 38%;background:rgba(247,201,72,0);
+  border:0;background:transparent;
   cursor:pointer;transform:translate(-50%,-50%);
-  transition:background .28s var(--ease), filter .28s var(--ease), opacity .28s var(--ease), box-shadow .28s var(--ease);
+  transition:backdrop-filter .32s var(--ease), -webkit-backdrop-filter .32s var(--ease);
   outline:0;
+  -webkit-mask-image:radial-gradient(ellipse 48% 50% at 50% 46%, #000 42%, rgba(0,0,0,.55) 62%, transparent 88%);
+  mask-image:radial-gradient(ellipse 48% 50% at 50% 46%, #000 42%, rgba(0,0,0,.55) 62%, transparent 88%);
 }
 .team-member:hover,
 .team-member:focus-visible,
 .team-member.is-active{
-  background:radial-gradient(ellipse at 50% 48%, rgba(255,250,230,.26) 0 24%, rgba(255,250,230,.13) 42%, rgba(255,250,230,0) 72%);
-  backdrop-filter:brightness(2.25) saturate(1.08) contrast(1.05);
-  -webkit-backdrop-filter:brightness(2.25) saturate(1.08) contrast(1.05);
-  box-shadow:inset 0 0 0 1.4px rgba(255,250,230,.72), 0 0 30px rgba(255,250,230,.22);
+  backdrop-filter:brightness(3.1) saturate(1.95) contrast(.98);
+  -webkit-backdrop-filter:brightness(3.1) saturate(1.95) contrast(.98);
 }
 .team-member:focus-visible{outline:0;}
 .team-info-card{
@@ -1417,11 +1417,11 @@ body.theme-light .cta-final .btn-line:hover{
 
 footer{padding:46px 0;border-top:1px solid var(--line-soft);background:#2b2a25;}
 .foot-row{
-  display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:26px;
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:24px;
   font-family:var(--display);font-size:17px;letter-spacing:.045em;text-transform:uppercase;color:var(--cream-dim);
 }
 .foot-row .brand{font-size:17px;}
-.foot-links{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap;}
+.foot-links{display:flex;gap:16px 18px;justify-content:center;align-items:center;flex-wrap:wrap;}
 .foot-links a:hover{color:var(--yellow);}
 .foot-social{display:flex;align-items:center;justify-content:flex-end;gap:10px;}
 .social-link{
@@ -2123,6 +2123,7 @@ const bioModalBody = document.getElementById('bioModalBody');
 const teamInfoCard = document.getElementById('teamInfoCard');
 const teamInfoName = document.getElementById('teamInfoName');
 const teamInfoRole = document.getElementById('teamInfoRole');
+const teamWideFrame = document.querySelector('.team-wide-frame');
 const silvinaBioHtml = bioModalBody ? bioModalBody.innerHTML : '';
 const teamBios = {
   silvina: {
@@ -2161,6 +2162,7 @@ function setTeamInfo(memberId){
   if (teamInfoName) teamInfoName.textContent = bio.name;
   if (teamInfoRole) teamInfoRole.textContent = bio.role;
   if (teamInfoCard) teamInfoCard.classList.add('is-visible');
+  if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
   document.querySelectorAll('.team-member').forEach(member => {
     member.classList.toggle('is-active', member.dataset.member === memberId);
   });
@@ -2169,6 +2171,7 @@ function resetTeamInfo(){
   if (teamInfoName) teamInfoName.textContent = 'Elegí una persona';
   if (teamInfoRole) teamInfoRole.textContent = 'Pasá por arriba de la foto para ver su nombre y cargo.';
   if (teamInfoCard) teamInfoCard.classList.remove('is-visible');
+  if (teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
   document.querySelectorAll('.team-member.is-active').forEach(member => member.classList.remove('is-active'));
 }
 function openBioModal(memberId = 'silvina'){
@@ -2179,12 +2182,14 @@ function openBioModal(memberId = 'silvina'){
   document.querySelectorAll('.team-member').forEach(member => {
     member.classList.toggle('is-active', member.dataset.member === memberId);
   });
+  if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
   bioModal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeBioModal(){
   bioModal.classList.remove('open');
   document.querySelectorAll('.team-member.is-active').forEach(member => member.classList.remove('is-active'));
+  if (teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
   document.body.style.overflow = '';
 }
 if (silvinaPhoto){
@@ -2345,7 +2350,6 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
-
 
 
 
