@@ -816,20 +816,24 @@ body.theme-light .grain-overlay{opacity:.025;mix-blend-mode:multiply;}
 }
 .theme-transition.active{opacity:1;visibility:visible;}
 .transition-rain{
-  position:absolute;inset:-20%;z-index:1;opacity:0;
+  position:absolute;inset:-18%;z-index:1;opacity:0;
   background:
-    repeating-linear-gradient(102deg, rgba(245,241,230,.22) 0 1px, transparent 1px 24px),
-    repeating-linear-gradient(102deg, rgba(247,201,72,.2) 0 1px, transparent 1px 38px);
-  background-size:120px 220px, 180px 260px;
-  filter:blur(.2px);
-  transform:translate3d(-6%, -8%, 0);
+    radial-gradient(ellipse 2px 9px at 16px 24px, rgba(245,241,230,.56) 0 42%, transparent 58%),
+    radial-gradient(ellipse 1.5px 7px at 74px 92px, rgba(245,241,230,.34) 0 45%, transparent 62%),
+    radial-gradient(ellipse 2px 10px at 132px 54px, rgba(247,201,72,.32) 0 40%, transparent 58%),
+    radial-gradient(ellipse 1px 5px at 188px 146px, rgba(245,241,230,.44) 0 45%, transparent 62%),
+    radial-gradient(ellipse 2.5px 12px at 238px 34px, rgba(245,241,230,.28) 0 42%, transparent 60%),
+    radial-gradient(ellipse 1.5px 8px at 306px 118px, rgba(247,201,72,.22) 0 42%, transparent 60%);
+  background-size:260px 190px, 320px 230px, 380px 260px, 230px 210px, 440px 300px, 300px 250px;
+  filter:blur(.45px) drop-shadow(0 8px 10px rgba(0,0,0,.18));
+  transform:translate3d(-4%, -10%, 0) rotate(-8deg);
 }
 .theme-transition.active .transition-rain{
-  opacity:1;animation:rainFall .95s linear infinite;
+  opacity:1;animation:rainFall .78s linear infinite;
 }
 @keyframes rainFall{
-  from{background-position:0 -240px, 0 -280px;}
-  to{background-position:-90px 260px, -120px 320px;}
+  from{background-position:0 -260px, 40px -320px, -80px -280px, 90px -220px, -120px -360px, 20px -300px;}
+  to{background-position:-110px 260px, -70px 280px, -190px 300px, -20px 320px, -230px 240px, -90px 280px;}
 }
 .transition-photo{
   position:absolute;inset:0;z-index:0;opacity:0;
@@ -1480,12 +1484,11 @@ body.theme-light .cta-team img{
   transform:none;
   opacity:1;
 }
-body.theme-light .cta-team.reveal img{opacity:0;transform:translateY(14px) scale(1.015);}
 body.theme-light .cta-team.reveal.in{
   animation:ctaTeamFloat 7s ease-in-out infinite 1.2s;
 }
 body.theme-light .cta-team.reveal.in img{
-  animation:ctaImageSettle 1.2s ease forwards;
+  animation:ctaImageSettle 1.2s ease both;
 }
 @keyframes ctaImageSettle{
   from{opacity:0;transform:translateY(14px) scale(1.015);}
