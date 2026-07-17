@@ -1381,7 +1381,7 @@ body.theme-light .team-caption{color:#171612;}
 }
 .cta-team{
   width:min(820px,100%);height:clamp(360px,38vw,500px);margin:0 auto 46px;border-radius:18px;overflow:hidden;
-  position:relative;display:flex;align-items:center;justify-content:center;background:rgba(247,201,72,.08);
+  position:relative;display:flex;align-items:center;justify-content:center;background:#c7c2b3;
   box-shadow:0 34px 78px rgba(20,18,13,.24);
   transform-origin:center;
 }
@@ -1404,10 +1404,6 @@ body.theme-light .team-caption{color:#171612;}
   100%{opacity:0;background-position:-30% 50%;}
 }
 .cta-team img{display:block;width:100%;height:100%;object-fit:contain;}
-.cta-team-dark{
-  -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-  mask-image:linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-}
 .cta-team.reveal.in img{
   animation:ctaImageSettle 1.2s ease both, ctaKenBurns 17s ease-in-out infinite alternate 1.2s;
 }
@@ -1548,11 +1544,11 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 .foot-row .brand{font-size:17px;}
 .foot-links{display:flex;gap:14px 24px;justify-content:center;align-items:center;flex-wrap:wrap;max-width:620px;margin:0 auto;}
 .foot-links a:hover{color:var(--yellow);}
-.foot-social-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.foot-social-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;width:fit-content;margin:0 auto;}
 .foot-title{
   font-size:15px;letter-spacing:.12em;color:var(--yellow);line-height:1;
 }
-.foot-social{display:flex;align-items:center;justify-content:flex-end;gap:10px;}
+.foot-social{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;}
 .social-link{
   width:38px;height:38px;border-radius:50%;border:1px solid rgba(247,241,227,.32);
   display:inline-flex;align-items:center;justify-content:center;color:rgba(247,241,227,.86);
@@ -1560,7 +1556,7 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 }
 .social-link:hover{color:var(--yellow);border-color:rgba(247,201,72,.6);background:#100f0d;transform:translateY(-2px);}
 .social-link svg{width:18px;height:18px;display:block;fill:currentColor;}
-.foot-copy{font-size:14px;color:rgba(247,241,227,.62);text-align:right;letter-spacing:.055em;}
+.foot-copy{font-size:14px;color:rgba(247,241,227,.62);text-align:center;letter-spacing:.055em;}
 @media (max-width:980px){
   .foot-row{grid-template-columns:1fr;justify-items:center;text-align:center;}
   .foot-links{max-width:560px;}
