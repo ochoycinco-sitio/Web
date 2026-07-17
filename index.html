@@ -298,9 +298,9 @@ header.scrolled{
   box-shadow:0 8px 30px rgba(0,0,0,.35), 0 1px 0 rgba(247,201,72,.08);
 }
 .nav-row{display:flex;align-items:center;justify-content:space-between;}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-size:25px;letter-spacing:.03em;transition:transform .35s var(--ease);}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-size:25px;letter-spacing:.03em;transition:transform .35s var(--ease);flex-shrink:0;}
 .brand:hover{transform:translateY(-1px);}
-.brand-name{font-family:var(--display);font-size:23px;letter-spacing:.04em;color:var(--cream);}
+.brand-name{font-family:var(--display);font-size:23px;letter-spacing:.04em;color:var(--cream);white-space:nowrap;}
 .foot-brand{display:flex;align-items:center;gap:11px;}
 .foot-brand .brand-name{font-size:23px;letter-spacing:.04em;}
 .brand .um-icon{width:23px;height:23px;}
@@ -480,10 +480,14 @@ body.theme-light .logo-badge{
   background:var(--yellow);border-color:var(--charcoal);box-shadow:0 12px 22px rgba(115,75,8,.22);
 }
 body.theme-light .logo-badge .lb-word,
-body.theme-light .logo-badge .lb-tag,
-body.theme-light .brand-name{color:#f7f1e3;text-shadow:none;}
+body.theme-light .logo-badge .lb-tag{
+  color:var(--charcoal);
+  text-shadow:none;
+}
+body.theme-light header .brand-name,
 body.theme-light footer .brand-name{
   color:#f7f1e3;
+  text-shadow:none;
 }
 body.theme-light .logo-badge--nav::before{
   background:conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--charcoal) 302deg, rgba(20,18,13,.55) 330deg, transparent 360deg);
@@ -1795,7 +1799,6 @@ try{
     <div class="foot-brand">
       <div class="logo-badge logo-badge--nav logo-badge--footer" aria-hidden="true">
         <span class="lb-word">OCHO Y CINCO</span>
-        <span class="lb-tag">Agencia de Contenidos</span>
       </div>
       <span class="brand-name">OCHO Y CINCO</span>
     </div>
@@ -1804,7 +1807,7 @@ try{
       <a href="#casos">Casos</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <div>© 2026 Ocho y Cinco · agencia de contenidos</div>
+    <div>© 2026 OCHO Y CINCO</div>
   </div>
 </footer>
 
