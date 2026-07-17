@@ -1470,7 +1470,6 @@ body.theme-light .cta-team{
     repeating-linear-gradient(-4deg, rgba(160,105,10,.28) 0 1px, transparent 1px 5px),
     #f2b807;
   box-shadow:0 34px 78px rgba(86,60,8,.24);
-  clip-path:inset(0 0 0 0 round 18px);
 }
 body.theme-light .cta-team img{
   width:100%;
@@ -1479,18 +1478,17 @@ body.theme-light .cta-team img{
   object-fit:contain;
   object-position:center;
   transform:none;
+  opacity:1;
 }
-body.theme-light .cta-team.reveal{clip-path:inset(0 100% 0 0 round 18px);}
+body.theme-light .cta-team.reveal img{opacity:0;transform:translateY(14px) scale(1.015);}
 body.theme-light .cta-team.reveal.in{
-  animation:ctaTeamWipe 1.5s cubic-bezier(.65,0,.35,1) forwards, ctaTeamFloat 7s ease-in-out infinite 1.5s;
+  animation:ctaTeamFloat 7s ease-in-out infinite 1.2s;
 }
-body.theme-light .cta-team.reveal.in img{animation:ctaImageSettle 1.2s ease both;}
-@keyframes ctaTeamWipe{
-  from{clip-path:inset(0 100% 0 0 round 18px);}
-  to{clip-path:inset(0 0 0 0 round 18px);}
+body.theme-light .cta-team.reveal.in img{
+  animation:ctaImageSettle 1.2s ease forwards;
 }
 @keyframes ctaImageSettle{
-  from{opacity:.82;transform:translateY(14px) scale(1.015);}
+  from{opacity:0;transform:translateY(14px) scale(1.015);}
   to{opacity:1;transform:translateY(0) scale(1);}
 }
 .cta-logo-ring{
