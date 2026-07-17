@@ -481,6 +481,9 @@ body.theme-light .logo-badge{
 body.theme-light .logo-badge .lb-word,
 body.theme-light .logo-badge .lb-tag,
 body.theme-light .brand-name{color:var(--charcoal);text-shadow:none;}
+body.theme-light footer .brand-name{
+  color:#f7f1e3;
+}
 body.theme-light .logo-badge--nav::before{
   background:conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--charcoal) 302deg, rgba(20,18,13,.55) 330deg, transparent 360deg);
 }
@@ -697,6 +700,18 @@ body.theme-light footer{
   background:#24231f !important;
   border-top-color:rgba(247,201,72,.18);
   box-shadow:0 -18px 42px rgba(20,18,13,.16);
+}
+body.theme-light footer .logo-badge{
+  background:var(--yellow);
+  border-color:var(--charcoal);
+  box-shadow:0 12px 22px rgba(0,0,0,.28);
+}
+body.theme-light footer .logo-badge::before{
+  background:conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--charcoal) 302deg, rgba(20,18,13,.55) 330deg, transparent 360deg);
+}
+body.theme-light footer .logo-badge .lb-word,
+body.theme-light footer .logo-badge .lb-tag{
+  color:var(--charcoal);
 }
 body.theme-light .foot-row,
 body.theme-light .foot-links a{font-family:var(--display);font-size:18px;letter-spacing:.05em;text-transform:uppercase;color:#f7f1e3;}
