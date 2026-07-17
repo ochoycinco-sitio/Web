@@ -1424,27 +1424,6 @@ body.theme-light .team-caption{color:#171612;}
 .cta-team-light{display:none !important;}
 body.theme-light .cta-team-dark{display:none !important;}
 body.theme-light .cta-team-light{display:block !important;}
-.cta-logo-ring{
-  position:absolute;left:50%;top:14%;height:20%;aspect-ratio:1/1;
-  transform:translate(-50%,-50%);
-  border-radius:50%;pointer-events:none;z-index:2;
-}
-.cta-logo-ring::before{
-  content:"";position:absolute;inset:-6%;border-radius:50%;
-  background:conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--yellow) 300deg, var(--yellow-pale) 330deg, transparent 360deg);
-  -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
-  mask:radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
-  animation:badgeRingSpin 6s linear infinite;
-  opacity:.9;
-}
-.cta-logo-ring::after{
-  content:"";position:absolute;inset:-6%;border-radius:50%;
-  box-shadow:0 0 22px 3px rgba(247,201,72,.3);
-  animation:badgeGlowPulse 5s ease-in-out infinite;
-}
-body.theme-light .cta-logo-ring{left:49%;top:15%;height:27%;}
-body.theme-light .cta-logo-ring::before{background:conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--yellow-deep) 300deg, #fff3c4 330deg, transparent 360deg);}
-body.theme-light .cta-logo-ring::after{box-shadow:0 0 22px 3px rgba(201,135,15,.32);}
 .cta-people-map{
   position:absolute;inset:0;z-index:2;pointer-events:none;display:none;
 }
@@ -1549,7 +1528,6 @@ body.theme-light .cta-final .script{
 @media (max-width:640px){
   body.theme-light .cta-team{aspect-ratio:auto;height:auto;}
   body.theme-light .cta-team img{height:auto;}
-  body.theme-light .cta-logo-ring{left:49%;top:15%;height:27%;}
 }
 body.theme-light .cta-circle{
   display:none;
@@ -2163,7 +2141,6 @@ try{
     <div class="cta-team reveal">
       <img class="cta-team-dark" src="assets/fondo-oficina-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
       <img class="cta-team-light" src="assets/cta-equipo-amarillo.png" alt="Equipo de Ocho y Cinco sobre fondo amarillo">
-      <div class="cta-logo-ring" aria-hidden="true"></div>
       <div class="cta-people-map" aria-hidden="true">
         <span class="cta-person-spark" style="--x:12%;--y:71%;--w:15%;--h:46%;--d:.1s"></span>
         <span class="cta-person-spark" style="--x:28%;--y:61%;--w:14%;--h:52%;--d:.5s"></span>
