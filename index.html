@@ -1380,7 +1380,8 @@ body.theme-light .cta-final::before{
 }
 body.theme-light .cta-final .script{color:#171612;}
 body.theme-light .cta-team{
-  width:min(760px, calc(100vw - 48px));
+  width:min(980px, calc(100vw - 32px));
+  aspect-ratio:16/9.5;
   height:auto;
   margin-bottom:52px;
   border-radius:18px;
@@ -1389,11 +1390,15 @@ body.theme-light .cta-team{
 }
 body.theme-light .cta-team img{
   width:100%;
-  height:auto;
+  height:100%;
   min-height:0;
-  object-fit:contain;
-  object-position:center;
+  object-fit:cover;
+  object-position:50% 14%;
   transform:none;
+}
+@media (max-width:640px){
+  body.theme-light .cta-team{aspect-ratio:4/3.4;}
+  body.theme-light .cta-team img{object-position:50% 10%;}
 }
 body.theme-light .cta-circle{
   display:none;
