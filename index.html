@@ -424,9 +424,10 @@ body.theme-light .theme-toggle .theme-icon-moon{display:inline;}
 body:not(.theme-light) .hero-bg{
   opacity:1;
   visibility:visible;
+  background-image:url('assets/fondo-paraguas-oscuro.png') !important;
   background-size:cover;
-  background-position:center 40%;
-  filter:saturate(1.05) contrast(1.04) brightness(1.06);
+  background-position:center center;
+  filter:saturate(1.02) contrast(1.04) brightness(.9);
 }
 .hero-bg::after{content:"";}
 .hero-scrim{
@@ -437,8 +438,8 @@ body:not(.theme-light) .hero-bg{
 }
 body:not(.theme-light) .hero-scrim{
   background:
-    linear-gradient(180deg, rgba(22,21,19,.24) 0%, rgba(22,21,19,.42) 44%, rgba(22,21,19,.74) 82%, var(--ink) 100%),
-    linear-gradient(100deg, rgba(22,21,19,.28) 0%, rgba(22,21,19,.06) 45%, rgba(22,21,19,.30) 100%);
+    linear-gradient(180deg, rgba(22,21,19,.18) 0%, rgba(22,21,19,.30) 44%, rgba(22,21,19,.70) 88%, var(--ink) 100%),
+    linear-gradient(100deg, rgba(22,21,19,.34) 0%, rgba(22,21,19,.04) 45%, rgba(22,21,19,.22) 100%);
 }
 .hero-content{position:relative;z-index:3;width:100%;display:flex;flex-direction:column;align-items:flex-start;pointer-events:none;min-height:460px;padding-bottom:48px;}
 .hero-text{width:100%;min-width:0;}
