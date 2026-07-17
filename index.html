@@ -1319,22 +1319,20 @@ body.theme-light .cta-final::before{
 }
 body.theme-light .cta-final .script{color:#171612;}
 body.theme-light .cta-team{
-  width:min(1280px, calc(100vw - 56px));
-  height:clamp(440px, 42vw, 640px);
+  width:min(620px, calc(100vw - 48px));
+  height:auto;
   margin-bottom:52px;
   border-radius:18px;
-  background:
-    linear-gradient(rgba(247,201,72,.08), rgba(247,201,72,.08)),
-    url("assets/cta-equipo-amarillo.png") center 34% / cover no-repeat;
+  background:rgba(255,240,122,.16);
   box-shadow:0 34px 78px rgba(86,60,8,.24);
 }
 body.theme-light .cta-team img{
   width:100%;
   height:auto;
-  min-height:100%;
-  object-fit:cover;
-  object-position:center 38%;
-  transform:translateY(-10%);
+  min-height:0;
+  object-fit:contain;
+  object-position:center;
+  transform:none;
 }
 body.theme-light .cta-circle{
   display:none;
