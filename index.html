@@ -497,18 +497,14 @@ body:not(.theme-light) .hero-scrim{
   display:inline-block;color:currentColor;
   animation:strategyDotBlink 1.05s steps(1,end) infinite;
 }
-body.theme-light .hero-title-dot{animation-name:strategyDotBlinkLight;}
+body.theme-light .hero-title-dot{animation-name:strategyDotBlink;}
 @keyframes heroLineIn{
   0%{opacity:0;transform:translateY(28px);}
   100%{opacity:1;transform:translateY(0);}
 }
 @keyframes strategyDotBlink{
-  0%,49%{color:var(--cream);}
-  50%,100%{color:#0f0e0c;}
-}
-@keyframes strategyDotBlinkLight{
-  0%,49%{color:var(--charcoal);}
-  50%,100%{color:#fffaf0;}
+  0%,49%{color:#fff;}
+  50%,100%{color:#000;}
 }
 .hero-eyebrow,
 .hero-sub,
@@ -1676,6 +1672,7 @@ try{
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
+  <a href="./" onclick="location.reload();return false;">Inicio</a>
   <a href="#proposito">Propósito</a>
   <a href="#historia">Historia</a>
   <a href="#equipo">Nuestro Equipo</a>
