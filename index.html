@@ -1130,14 +1130,14 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   cursor:pointer;transform:translate(-50%,-50%);
   transition:backdrop-filter .32s var(--ease), -webkit-backdrop-filter .32s var(--ease);
   outline:0;
-  -webkit-mask-image:radial-gradient(ellipse 55% 56% at 50% 46%, #000 62%, rgba(0,0,0,.7) 82%, transparent 102%);
-  mask-image:radial-gradient(ellipse 55% 56% at 50% 46%, #000 62%, rgba(0,0,0,.7) 82%, transparent 102%);
+  -webkit-mask-image:radial-gradient(ellipse 62% 68% at 50% 42%, #000 74%, rgba(0,0,0,.78) 88%, transparent 104%);
+  mask-image:radial-gradient(ellipse 62% 68% at 50% 42%, #000 74%, rgba(0,0,0,.78) 88%, transparent 104%);
 }
 .team-member:hover,
 .team-member:focus-visible,
 .team-member.is-active{
-  backdrop-filter:brightness(4.1) saturate(2.2) contrast(1.05);
-  -webkit-backdrop-filter:brightness(4.1) saturate(2.2) contrast(1.05);
+  backdrop-filter:brightness(4.4) saturate(2.3) contrast(1.06);
+  -webkit-backdrop-filter:brightness(4.4) saturate(2.3) contrast(1.06);
 }
 .team-member:focus-visible{outline:0;}
 .team-info-card{
@@ -1375,14 +1375,14 @@ body.theme-light .cta-final{
   padding-top:86px;
 }
 body.theme-light .cta-final::before{
-  opacity:.24;
+  opacity:.18;
   background:
-    linear-gradient(rgba(247,201,72,.46), rgba(247,201,72,.46)),
-    url("assets/cta-equipo-amarillo.png") center 76% / cover no-repeat;
+    repeating-linear-gradient(88deg, rgba(255,245,132,.52) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(-4deg, rgba(160,105,10,.18) 0 1px, transparent 1px 5px);
 }
 body.theme-light .cta-final .script{color:#171612;}
 body.theme-light .cta-team{
-  width:min(1060px, calc(100vw - 32px));
+  width:min(1220px, calc(100vw - 32px));
   aspect-ratio:16/9.5;
   height:auto;
   margin-bottom:52px;
@@ -1395,7 +1395,7 @@ body.theme-light .cta-team img{
   height:100%;
   min-height:0;
   object-fit:cover;
-  object-position:50% 14%;
+  object-position:50% 8%;
   transform:none;
 }
 @media (max-width:640px){
@@ -2367,7 +2367,6 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
-
 
 
 
