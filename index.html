@@ -275,9 +275,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
 @keyframes badgeEnter{from{opacity:0;}to{opacity:1;}}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(247,201,72,.12);}50%{box-shadow:0 0 0 18px rgba(247,201,72,0);}}
 
-.logo-badge--footer{width:70px;height:70px;}
-.logo-badge--footer .lb-word{font-size:8.6px;}
-.logo-badge--footer .lb-tag{font-size:5px;margin-top:3px;}
+.logo-badge--footer{width:58px;height:58px;}
+.logo-badge--footer .lb-word{font-size:7px;}
+.logo-badge--footer .lb-tag{font-size:4.2px;margin-top:2px;}
 
 /* umbrella icon */
 .um-icon{display:inline-block;width:16px;height:16px;flex:none;vertical-align:middle;}
@@ -301,7 +301,8 @@ header.scrolled{
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-size:25px;letter-spacing:.03em;transition:transform .35s var(--ease);}
 .brand:hover{transform:translateY(-1px);}
 .brand-name{font-family:var(--display);font-size:23px;letter-spacing:.04em;color:var(--cream);}
-.foot-brand{display:flex;align-items:center;gap:12px;}
+.foot-brand{display:flex;align-items:center;gap:11px;}
+.foot-brand .brand-name{font-size:23px;letter-spacing:.04em;}
 .brand .um-icon{width:23px;height:23px;}
 
 /* nav-logo dynamic ring (mini version of hero badge) */
@@ -1791,7 +1792,7 @@ try{
 <footer>
   <div class="wrap foot-row">
     <div class="foot-brand">
-      <div class="logo-badge logo-badge--footer">
+      <div class="logo-badge logo-badge--nav logo-badge--footer" aria-hidden="true">
         <span class="lb-word">OCHO Y CINCO</span>
         <span class="lb-tag">Agencia de Contenidos</span>
       </div>
