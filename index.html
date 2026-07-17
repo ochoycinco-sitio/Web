@@ -1366,13 +1366,47 @@ body.theme-light .team-caption{color:#171612;}
 .cta-final .wrap{position:relative;z-index:1;}
 .cta-team{
   width:min(820px,100%);height:clamp(360px,38vw,500px);margin:0 auto 46px;border-radius:18px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;background:rgba(247,201,72,.08);
+  position:relative;display:flex;align-items:center;justify-content:center;background:rgba(247,201,72,.08);
   box-shadow:0 34px 78px rgba(20,18,13,.24);
+  transform-origin:center;
+  animation:ctaTeamFloat 7s ease-in-out infinite;
 }
 .cta-team img{display:block;width:100%;height:100%;object-fit:contain;}
 .cta-team-light{display:none !important;}
 body.theme-light .cta-team-dark{display:none !important;}
 body.theme-light .cta-team-light{display:block !important;}
+.cta-people-map{
+  position:absolute;inset:0;z-index:2;pointer-events:none;display:none;
+}
+body.theme-light .cta-people-map{display:block;}
+.cta-person-spark{
+  position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(255,255,255,.34), transparent 30%),
+    radial-gradient(ellipse at 50% 56%, rgba(247,241,227,.16), transparent 62%);
+  mix-blend-mode:screen;opacity:.38;filter:blur(.2px);
+  animation:personGlow 4.6s ease-in-out infinite;
+  animation-delay:var(--d);
+}
+.cta-person-spark::after{
+  content:"";position:absolute;inset:16% 20%;border-radius:50%;
+  background:radial-gradient(ellipse at 50% 24%, rgba(255,255,255,.38), transparent 42%);
+  opacity:.36;animation:personBob 5.4s ease-in-out infinite;animation-delay:var(--d);
+}
+@keyframes ctaTeamFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+@keyframes personGlow{
+  0%,100%{opacity:.22;transform:translate(-50%,-50%) scale(.98);}
+  45%{opacity:.52;transform:translate(-50%,-52%) scale(1.04);}
+}
+@keyframes personBob{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-7px);}
+}
 .cta-circle{
   width:216px;height:216px;border-radius:50%;border:2px solid var(--yellow);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -1397,7 +1431,7 @@ body.theme-light .cta-final::before{
 }
 body.theme-light .cta-final .script{color:#171612;}
 body.theme-light .cta-team{
-  width:min(1220px, calc(100vw - 32px));
+  width:min(1240px, calc(100vw - 48px));
   aspect-ratio:16/9.5;
   height:auto;
   margin-bottom:52px;
@@ -1410,7 +1444,7 @@ body.theme-light .cta-team img{
   height:100%;
   min-height:0;
   object-fit:cover;
-  object-position:50% 8%;
+  object-position:54% 2%;
   transform:none;
 }
 @media (max-width:640px){
@@ -2029,6 +2063,14 @@ try{
     <div class="cta-team reveal">
       <img class="cta-team-dark" src="assets/fondo-oficina-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
       <img class="cta-team-light" src="assets/cta-equipo-amarillo.png" alt="Equipo de Ocho y Cinco sobre fondo amarillo">
+      <div class="cta-people-map" aria-hidden="true">
+        <span class="cta-person-spark" style="--x:12%;--y:63%;--w:16%;--h:46%;--d:.1s"></span>
+        <span class="cta-person-spark" style="--x:29%;--y:54%;--w:14%;--h:50%;--d:.5s"></span>
+        <span class="cta-person-spark" style="--x:42%;--y:54%;--w:13%;--h:44%;--d:.9s"></span>
+        <span class="cta-person-spark" style="--x:52%;--y:67%;--w:14%;--h:48%;--d:1.3s"></span>
+        <span class="cta-person-spark" style="--x:70%;--y:45%;--w:16%;--h:52%;--d:1.7s"></span>
+        <span class="cta-person-spark" style="--x:88%;--y:61%;--w:16%;--h:52%;--d:2.1s"></span>
+      </div>
     </div>
     <div class="cta-circle reveal">
       <div class="cw">OCHO Y CINCO</div>
