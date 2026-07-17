@@ -813,10 +813,23 @@ body.theme-light .marquee-track span .um-icon path{fill:var(--yellow);}
 /* ============ PROPOSITO / VISION ============ */
 .pv-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;}
 @media (max-width:880px){.pv-grid{grid-template-columns:1fr;gap:50px;}}
-.pv-image{width:100%;border-radius:14px;overflow:hidden;margin-bottom:48px;border:1px solid var(--line);background:#24231f;}
-.pv-image img{width:100%;height:auto;object-fit:initial;display:block;filter:grayscale(.08) contrast(1.04) brightness(.92);}
-body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
-@media (max-width:720px){.pv-image{margin-bottom:34px;}}
+.pv-image{
+  width:100vw;margin:0 calc(50% - 50vw) 58px;padding:48px max(22px,calc((100vw - 1180px)/2));
+  overflow:hidden;border-block:1px solid var(--line);background:#24231f;
+  display:flex;align-items:center;justify-content:center;
+}
+.pv-image img{
+  width:min(980px,100%);height:auto;max-height:860px;object-fit:contain;display:block;
+  filter:grayscale(.04) contrast(1.04) brightness(.9);border-radius:16px;
+  box-shadow:0 28px 70px rgba(0,0,0,.26);
+}
+.pv-img-light{display:none;}
+body.theme-light .pv-image{
+  background:var(--yellow);border-color:rgba(23,22,18,.16);
+}
+body.theme-light .pv-img-dark{display:none;}
+body.theme-light .pv-img-light{display:block;filter:saturate(1.04) contrast(1.02);box-shadow:0 28px 60px rgba(104,71,9,.2);}
+@media (max-width:720px){.pv-image{margin-bottom:34px;padding:28px 16px;} .pv-image img{border-radius:12px;}}
 .pv-card .tag{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--cream-dim);text-transform:uppercase;display:block;margin-bottom:16px;}
 .pv-card p{font-size:22px;line-height:1.4;font-weight:500;color:var(--cream);}
 .pv-card.vision p{font-size:26px;line-height:1.38;}
@@ -1436,7 +1449,8 @@ try{
   <div class="wrap">
     <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg>Por qué existimos</div>
     <div class="pv-image reveal">
-      <img src="assets/ocho-y-cinco-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
+      <img class="pv-img-dark" src="assets/fondo-oficina-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
+      <img class="pv-img-light" src="assets/cta-equipo-amarillo.png" alt="Equipo de Ocho y Cinco sobre fondo amarillo">
     </div>
     <div class="pv-grid">
       <div class="pv-card reveal">
