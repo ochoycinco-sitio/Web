@@ -1281,6 +1281,24 @@ body.theme-light .team-caption{color:#171612;}
   font-family:Arial, Helvetica, sans-serif;font-size:24px;font-weight:800;letter-spacing:-.03em;
   max-width:138px;min-height:36px;color:#171612;
 }
+.client-logo-img{
+  display:block;max-width:128px;max-height:48px;width:auto;height:auto;object-fit:contain;
+  filter:none;opacity:0;position:absolute;pointer-events:none;transition:opacity .25s ease;
+}
+.client-logo-card{position:relative;}
+.client-logo-card.has-logo .client-logo-img{opacity:1;position:static;}
+.client-logo-card.has-logo .client-logo-fallback{display:none;}
+.client-logo-card.has-logo.logo-icon{gap:10px;padding:0 14px;}
+.client-logo-card.logo-icon .client-logo-img{max-width:34px;max-height:34px;}
+.client-logo-card.has-logo.logo-icon .client-logo-fallback{
+  display:flex;font-size:14px;font-weight:800;letter-spacing:.01em;max-width:86px;
+}
+.client-logo-card.logo-wide .client-logo-img{max-width:138px;max-height:48px;}
+.client-logo-fallback{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:Arial, Helvetica, sans-serif;font-size:18px;font-weight:800;line-height:1.05;
+  color:#171612;max-width:138px;
+}
 .client-logo-mark.small{font-size:17px;letter-spacing:.01em;}
 .client-logo-mark.tall{flex-direction:column;gap:4px;font-size:18px;letter-spacing:.02em;}
 .client-logo-mark.script{font-family:Georgia, 'Times New Roman', serif;font-style:italic;font-weight:800;letter-spacing:-.05em;}
@@ -1907,54 +1925,54 @@ try{
   <div class="clients-marquee-wrap reveal" aria-label="Marcas clientes de Ocho y Cinco">
     <div class="clients-track">
       <div class="clients-logo-set">
-          <div class="client-logo-card" aria-label="Sagrado Corazon"><span class="client-logo-mark logo-sagrado tall">Sagrado Corazon</span></div>
-          <div class="client-logo-card" aria-label="Chubb"><span class="client-logo-mark logo-chubb">Chubb</span></div>
-          <div class="client-logo-card" aria-label="Nitragin"><span class="client-logo-mark logo-nitragin">Nitragin</span></div>
-          <div class="client-logo-card" aria-label="Timbo"><span class="client-logo-mark logo-timbo">Timbo</span></div>
-          <div class="client-logo-card" aria-label="Maxirest"><span class="client-logo-mark logo-maxirest">Maxirest</span></div>
-          <div class="client-logo-card" aria-label="QBE"><span class="client-logo-mark logo-qbe">QBE</span></div>
-          <div class="client-logo-card" aria-label="Kentucky"><span class="client-logo-mark logo-kentucky script">Kentucky</span></div>
-          <div class="client-logo-card" aria-label="La Toscana"><span class="client-logo-mark logo-latoscana tall">La Toscana</span></div>
-          <div class="client-logo-card" aria-label="sura"><span class="client-logo-mark logo-sura">sura</span></div>
-          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc">HSBC</span></div>
-          <div class="client-logo-card" aria-label="Lucchetti"><span class="client-logo-mark logo-lucchetti">Lucchetti</span></div>
-          <div class="client-logo-card" aria-label="carnave"><span class="client-logo-mark logo-carnave small">carnave</span></div>
-          <div class="client-logo-card" aria-label="Cementos Avellaneda"><span class="client-logo-mark logo-cemento tall">Cementos Avellaneda</span></div>
-          <div class="client-logo-card" aria-label="von franken"><span class="client-logo-mark logo-vonfranken small">von franken</span></div>
-          <div class="client-logo-card" aria-label="Quilmes"><span class="client-logo-mark logo-quilmes script">Quilmes</span></div>
-          <div class="client-logo-card" aria-label="GENSER"><span class="client-logo-mark logo-genser">GENSER</span></div>
-          <div class="client-logo-card" aria-label="facebook"><span class="client-logo-mark logo-facebook">facebook</span></div>
-          <div class="client-logo-card" aria-label="Celusal"><span class="client-logo-mark logo-celusal small">Celusal</span></div>
-          <div class="client-logo-card" aria-label="BOKANZ"><span class="client-logo-mark logo-bokanz">BOKANZ</span></div>
-          <div class="client-logo-card" aria-label="SAS Asesores"><span class="client-logo-mark logo-sas tall">SAS Asesores</span></div>
-          <div class="client-logo-card" aria-label="Baalbek"><span class="client-logo-mark logo-baalbek script">Baalbek</span></div>
-          <div class="client-logo-card" aria-label="Novozymes"><span class="client-logo-mark logo-novozymes">Novozymes</span></div>
-          <div class="client-logo-card" aria-label="HOMS"><span class="client-logo-mark logo-homs">HOMS</span></div>
+          <div class="client-logo-card " aria-label="Sagrado Corazon"><span class="client-logo-fallback">Sagrado Corazon</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Chubb"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=chubb.com&sz=256" alt="Chubb" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Chubb</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Nitragin"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=upl-ltd.com&sz=256" alt="Nitragin" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Nitragin</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Timbo"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=timbo.com.ar&sz=256" alt="Timbo" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Timbo</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Maxirest"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=maxirest.com&sz=256" alt="Maxirest" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Maxirest</span></div>
+          <div class="client-logo-card logo-icon" aria-label="QBE"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=qbe.com&sz=256" alt="QBE" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">QBE</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Kentucky"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=kentucky.com.ar&sz=256" alt="Kentucky" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Kentucky</span></div>
+          <div class="client-logo-card logo-icon" aria-label="La Toscana"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=latoscana.com.ar&sz=256" alt="La Toscana" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">La Toscana</span></div>
+          <div class="client-logo-card logo-icon" aria-label="SURA"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=sura.com&sz=256" alt="SURA" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">SURA</span></div>
+          <div class="client-logo-card logo-wide" aria-label="HSBC"><img class="client-logo-img" src="https://cdn.simpleicons.org/hsbc" alt="HSBC" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">HSBC</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Lucchetti"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=lucchetti.com.ar&sz=256" alt="Lucchetti" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Lucchetti</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Carnave"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=carnave.com.ar&sz=256" alt="Carnave" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Carnave</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Cementos Avellaneda"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=cementosavellaneda.com.ar&sz=256" alt="Cementos Avellaneda" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Cementos Avellaneda</span></div>
+          <div class="client-logo-card logo-icon" aria-label="von franken"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=vonfranken.com.ar&sz=256" alt="von franken" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">von franken</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Quilmes"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=quilmes.com.ar&sz=256" alt="Quilmes" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Quilmes</span></div>
+          <div class="client-logo-card logo-icon" aria-label="GENSER"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=genser.com.ar&sz=256" alt="GENSER" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">GENSER</span></div>
+          <div class="client-logo-card logo-wide" aria-label="facebook"><img class="client-logo-img" src="https://cdn.simpleicons.org/facebook/1877F2" alt="facebook" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">facebook</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Celusal"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=celusal.com&sz=256" alt="Celusal" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Celusal</span></div>
+          <div class="client-logo-card logo-icon" aria-label="BOKANZ"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=bokanz.com&sz=256" alt="BOKANZ" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">BOKANZ</span></div>
+          <div class="client-logo-card logo-icon" aria-label="SAS Asesores"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=sasasesores.com.ar&sz=256" alt="SAS Asesores" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">SAS Asesores</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Baalbek"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=baalbek.com.ar&sz=256" alt="Baalbek" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Baalbek</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Novozymes"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=novozymes.com&sz=256" alt="Novozymes" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Novozymes</span></div>
+          <div class="client-logo-card logo-icon" aria-label="HOMS"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=homs.com.ar&sz=256" alt="HOMS" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">HOMS</span></div>
       </div>
       <div class="clients-logo-set" aria-hidden="true">
-          <div class="client-logo-card" aria-label="Sagrado Corazon"><span class="client-logo-mark logo-sagrado tall">Sagrado Corazon</span></div>
-          <div class="client-logo-card" aria-label="Chubb"><span class="client-logo-mark logo-chubb">Chubb</span></div>
-          <div class="client-logo-card" aria-label="Nitragin"><span class="client-logo-mark logo-nitragin">Nitragin</span></div>
-          <div class="client-logo-card" aria-label="Timbo"><span class="client-logo-mark logo-timbo">Timbo</span></div>
-          <div class="client-logo-card" aria-label="Maxirest"><span class="client-logo-mark logo-maxirest">Maxirest</span></div>
-          <div class="client-logo-card" aria-label="QBE"><span class="client-logo-mark logo-qbe">QBE</span></div>
-          <div class="client-logo-card" aria-label="Kentucky"><span class="client-logo-mark logo-kentucky script">Kentucky</span></div>
-          <div class="client-logo-card" aria-label="La Toscana"><span class="client-logo-mark logo-latoscana tall">La Toscana</span></div>
-          <div class="client-logo-card" aria-label="sura"><span class="client-logo-mark logo-sura">sura</span></div>
-          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc">HSBC</span></div>
-          <div class="client-logo-card" aria-label="Lucchetti"><span class="client-logo-mark logo-lucchetti">Lucchetti</span></div>
-          <div class="client-logo-card" aria-label="carnave"><span class="client-logo-mark logo-carnave small">carnave</span></div>
-          <div class="client-logo-card" aria-label="Cementos Avellaneda"><span class="client-logo-mark logo-cemento tall">Cementos Avellaneda</span></div>
-          <div class="client-logo-card" aria-label="von franken"><span class="client-logo-mark logo-vonfranken small">von franken</span></div>
-          <div class="client-logo-card" aria-label="Quilmes"><span class="client-logo-mark logo-quilmes script">Quilmes</span></div>
-          <div class="client-logo-card" aria-label="GENSER"><span class="client-logo-mark logo-genser">GENSER</span></div>
-          <div class="client-logo-card" aria-label="facebook"><span class="client-logo-mark logo-facebook">facebook</span></div>
-          <div class="client-logo-card" aria-label="Celusal"><span class="client-logo-mark logo-celusal small">Celusal</span></div>
-          <div class="client-logo-card" aria-label="BOKANZ"><span class="client-logo-mark logo-bokanz">BOKANZ</span></div>
-          <div class="client-logo-card" aria-label="SAS Asesores"><span class="client-logo-mark logo-sas tall">SAS Asesores</span></div>
-          <div class="client-logo-card" aria-label="Baalbek"><span class="client-logo-mark logo-baalbek script">Baalbek</span></div>
-          <div class="client-logo-card" aria-label="Novozymes"><span class="client-logo-mark logo-novozymes">Novozymes</span></div>
-          <div class="client-logo-card" aria-label="HOMS"><span class="client-logo-mark logo-homs">HOMS</span></div>
+          <div class="client-logo-card " aria-label="Sagrado Corazon"><span class="client-logo-fallback">Sagrado Corazon</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Chubb"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=chubb.com&sz=256" alt="Chubb" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Chubb</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Nitragin"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=upl-ltd.com&sz=256" alt="Nitragin" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Nitragin</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Timbo"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=timbo.com.ar&sz=256" alt="Timbo" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Timbo</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Maxirest"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=maxirest.com&sz=256" alt="Maxirest" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Maxirest</span></div>
+          <div class="client-logo-card logo-icon" aria-label="QBE"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=qbe.com&sz=256" alt="QBE" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">QBE</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Kentucky"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=kentucky.com.ar&sz=256" alt="Kentucky" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Kentucky</span></div>
+          <div class="client-logo-card logo-icon" aria-label="La Toscana"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=latoscana.com.ar&sz=256" alt="La Toscana" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">La Toscana</span></div>
+          <div class="client-logo-card logo-icon" aria-label="SURA"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=sura.com&sz=256" alt="SURA" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">SURA</span></div>
+          <div class="client-logo-card logo-wide" aria-label="HSBC"><img class="client-logo-img" src="https://cdn.simpleicons.org/hsbc" alt="HSBC" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">HSBC</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Lucchetti"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=lucchetti.com.ar&sz=256" alt="Lucchetti" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Lucchetti</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Carnave"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=carnave.com.ar&sz=256" alt="Carnave" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Carnave</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Cementos Avellaneda"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=cementosavellaneda.com.ar&sz=256" alt="Cementos Avellaneda" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Cementos Avellaneda</span></div>
+          <div class="client-logo-card logo-icon" aria-label="von franken"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=vonfranken.com.ar&sz=256" alt="von franken" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">von franken</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Quilmes"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=quilmes.com.ar&sz=256" alt="Quilmes" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Quilmes</span></div>
+          <div class="client-logo-card logo-icon" aria-label="GENSER"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=genser.com.ar&sz=256" alt="GENSER" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">GENSER</span></div>
+          <div class="client-logo-card logo-wide" aria-label="facebook"><img class="client-logo-img" src="https://cdn.simpleicons.org/facebook/1877F2" alt="facebook" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">facebook</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Celusal"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=celusal.com&sz=256" alt="Celusal" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Celusal</span></div>
+          <div class="client-logo-card logo-icon" aria-label="BOKANZ"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=bokanz.com&sz=256" alt="BOKANZ" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">BOKANZ</span></div>
+          <div class="client-logo-card logo-icon" aria-label="SAS Asesores"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=sasasesores.com.ar&sz=256" alt="SAS Asesores" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">SAS Asesores</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Baalbek"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=baalbek.com.ar&sz=256" alt="Baalbek" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Baalbek</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Novozymes"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=novozymes.com&sz=256" alt="Novozymes" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">Novozymes</span></div>
+          <div class="client-logo-card logo-icon" aria-label="HOMS"><img class="client-logo-img" src="https://www.google.com/s2/favicons?domain=homs.com.ar&sz=256" alt="HOMS" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback">HOMS</span></div>
       </div>
     </div>
   </div>
