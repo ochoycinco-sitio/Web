@@ -808,7 +808,8 @@ body.theme-light .marquee-track span .um-icon path{fill:var(--yellow);}
 .pv-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;}
 @media (max-width:880px){.pv-grid{grid-template-columns:1fr;gap:50px;}}
 .pv-image{width:100%;border-radius:14px;overflow:hidden;margin-bottom:48px;border:1px solid var(--line);}
-.pv-image img{width:100%;height:380px;object-fit:cover;display:block;filter:grayscale(.25) contrast(1.05);}
+.pv-image img{width:100%;height:380px;object-fit:cover;display:block;filter:grayscale(.08) contrast(1.04) brightness(.92);}
+body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 @media (max-width:720px){.pv-image img{height:220px;}}
 .pv-card .tag{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--cream-dim);text-transform:uppercase;display:block;margin-bottom:16px;}
 .pv-card p{font-size:22px;line-height:1.4;font-weight:500;color:var(--cream);}
@@ -1400,7 +1401,7 @@ try{
   <div class="wrap">
     <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/></svg>Por qué existimos</div>
     <div class="pv-image reveal">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80" alt="Personas conectando en una conversación genuina">
+      <img src="assets/ocho-y-cinco-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
     </div>
     <div class="pv-grid">
       <div class="pv-card reveal">
