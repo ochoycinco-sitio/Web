@@ -1393,16 +1393,17 @@ body.theme-light .cta-people-map{display:block;}
   transform:translate(-50%,-50%);
   border-radius:48% 48% 42% 42%;
   background:
-    radial-gradient(ellipse at 50% 16%, rgba(255,255,255,.46), transparent 28%),
-    radial-gradient(ellipse at 50% 54%, rgba(255,255,255,.22), transparent 62%),
-    radial-gradient(ellipse at 50% 64%, rgba(247,201,72,.34), transparent 70%);
-  mix-blend-mode:screen;opacity:.34;filter:blur(.4px);
-  animation:personGlow 4.2s ease-in-out infinite, personDrift 6.2s ease-in-out infinite;
+    radial-gradient(ellipse at 50% 16%, rgba(255,255,255,.58), transparent 29%),
+    radial-gradient(ellipse at 50% 54%, rgba(255,255,255,.26), transparent 62%),
+    radial-gradient(ellipse at 50% 64%, rgba(20,18,13,.10), transparent 70%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.18), 0 0 32px rgba(255,255,255,.26), 0 0 44px rgba(20,18,13,.12);
+  opacity:.46;filter:blur(.15px);
+  animation:personGlow 3.4s ease-in-out infinite, personDrift 5.2s ease-in-out infinite;
   animation-delay:var(--d);
 }
 .cta-person-spark::before{
   content:"";position:absolute;inset:-16% -10%;border-radius:50%;
-  border:1px solid rgba(255,255,255,.22);opacity:.28;
+  border:1px solid rgba(255,255,255,.38);opacity:.44;
   animation:personHalo 4.8s ease-in-out infinite;animation-delay:var(--d);
 }
 .cta-person-spark::after{
@@ -1414,13 +1415,17 @@ body.theme-light .cta-people-map{display:block;}
   0%,100%{transform:translateY(0);}
   50%{transform:translateY(-8px);}
 }
+@keyframes ctaImageAlive{
+  0%,100%{transform:translateY(0) scale(1);}
+  50%{transform:translateY(-7px) scale(1.012);}
+}
 @keyframes personGlow{
-  0%,100%{opacity:.18;transform:translate(-50%,-50%) scale(.98);}
-  45%{opacity:.52;transform:translate(-50%,-52%) scale(1.04);}
+  0%,100%{opacity:.28;transform:translate(-50%,-50%) scale(.97);}
+  45%{opacity:.72;transform:translate(-50%,-54%) scale(1.06);}
 }
 @keyframes personDrift{
-  0%,100%{filter:blur(.4px) brightness(1);}
-  50%{filter:blur(.2px) brightness(1.16);}
+  0%,100%{filter:blur(.15px) brightness(1);}
+  50%{filter:blur(0) brightness(1.22);}
 }
 @keyframes personHalo{
   0%,100%{opacity:.14;transform:scale(.94);}
@@ -1455,20 +1460,20 @@ body.theme-light .cta-final::before{
 body.theme-light .cta-final .script{color:#171612;}
 body.theme-light .cta-team{
   width:min(1080px, calc(100vw - 64px));
-  aspect-ratio:16/7.6;
+  aspect-ratio:16/8.9;
   height:auto;
   margin:0 auto 36px;
   border-radius:18px;
-  background:rgba(255,240,122,.16);
+  background:rgba(247,201,72,.58);
   box-shadow:0 34px 78px rgba(86,60,8,.24);
 }
 body.theme-light .cta-team img{
   width:100%;
   height:100%;
   min-height:0;
-  object-fit:cover;
-  object-position:54% 18%;
-  transform:none;
+  object-fit:contain;
+  object-position:center center;
+  animation:ctaImageAlive 6.5s ease-in-out infinite;
 }
 body.theme-light .cta-final .script{
   font-size:clamp(34px,4.8vw,62px);
