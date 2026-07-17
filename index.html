@@ -1077,6 +1077,24 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 }
 .quote-photo:hover .ph-cta{opacity:1;transform:translateY(0);}
 .quote-photo .ph-cta svg{width:13px;height:13px;flex:none;}
+.team-wide{
+  margin-top:70px;
+}
+.team-wide-frame{
+  border-radius:16px;overflow:hidden;border:1px solid rgba(247,201,72,.22);
+  background:#24231f;box-shadow:0 34px 78px rgba(0,0,0,.28);
+}
+.team-wide-frame img{
+  display:block;width:100%;aspect-ratio:16/8.6;object-fit:cover;object-position:center 48%;
+}
+.team-caption{
+  margin-top:18px;font-family:var(--mono);font-size:14px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--yellow);font-weight:800;
+}
+body.theme-light .team-wide-frame{
+  border-color:rgba(23,22,18,.16);background:#e4dccd;box-shadow:0 30px 70px rgba(86,60,8,.18);
+}
+body.theme-light .team-caption{color:#171612;}
 .quote-content{min-width:0;}
 .quote-grid{
   display:grid;grid-template-columns:auto 1fr;gap:0 22px;align-items:start;
@@ -1688,6 +1706,12 @@ try{
         </div>
       </div>
     </div>
+    <figure class="team-wide reveal">
+      <div class="team-wide-frame">
+        <img src="assets/equipo-ocho-y-cinco-retoque.jpg" alt="Equipo de Ocho y Cinco">
+      </div>
+      <figcaption class="team-caption">Equipo Ocho y Cinco</figcaption>
+    </figure>
   </div>
 </section>
 
