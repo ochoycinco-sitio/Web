@@ -1368,7 +1368,9 @@ body.theme-light .team-caption{color:#171612;}
     repeating-linear-gradient(88deg, rgba(247,201,72,.6) 0 1px, transparent 1px 7px),
     repeating-linear-gradient(-4deg, rgba(175,115,13,.22) 0 1px, transparent 1px 5px);
 }
-.cta-final .wrap{position:relative;z-index:1;}
+.cta-final .wrap{
+  position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;
+}
 .cta-team{
   width:min(820px,100%);height:clamp(360px,38vw,500px);margin:0 auto 46px;border-radius:18px;overflow:hidden;
   position:relative;display:flex;align-items:center;justify-content:center;background:rgba(247,201,72,.08);
@@ -1389,13 +1391,19 @@ body.theme-light .cta-people-map{display:block;}
 .cta-person-spark{
   position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);
   transform:translate(-50%,-50%);
-  border-radius:50%;
+  border-radius:48% 48% 42% 42%;
   background:
-    radial-gradient(ellipse at 50% 18%, rgba(255,255,255,.34), transparent 30%),
-    radial-gradient(ellipse at 50% 56%, rgba(247,241,227,.16), transparent 62%);
-  mix-blend-mode:screen;opacity:.38;filter:blur(.2px);
-  animation:personGlow 4.6s ease-in-out infinite;
+    radial-gradient(ellipse at 50% 16%, rgba(255,255,255,.46), transparent 28%),
+    radial-gradient(ellipse at 50% 54%, rgba(255,255,255,.22), transparent 62%),
+    radial-gradient(ellipse at 50% 64%, rgba(247,201,72,.34), transparent 70%);
+  mix-blend-mode:screen;opacity:.34;filter:blur(.4px);
+  animation:personGlow 4.2s ease-in-out infinite, personDrift 6.2s ease-in-out infinite;
   animation-delay:var(--d);
+}
+.cta-person-spark::before{
+  content:"";position:absolute;inset:-16% -10%;border-radius:50%;
+  border:1px solid rgba(255,255,255,.22);opacity:.28;
+  animation:personHalo 4.8s ease-in-out infinite;animation-delay:var(--d);
 }
 .cta-person-spark::after{
   content:"";position:absolute;inset:16% 20%;border-radius:50%;
@@ -1407,8 +1415,16 @@ body.theme-light .cta-people-map{display:block;}
   50%{transform:translateY(-8px);}
 }
 @keyframes personGlow{
-  0%,100%{opacity:.22;transform:translate(-50%,-50%) scale(.98);}
+  0%,100%{opacity:.18;transform:translate(-50%,-50%) scale(.98);}
   45%{opacity:.52;transform:translate(-50%,-52%) scale(1.04);}
+}
+@keyframes personDrift{
+  0%,100%{filter:blur(.4px) brightness(1);}
+  50%{filter:blur(.2px) brightness(1.16);}
+}
+@keyframes personHalo{
+  0%,100%{opacity:.14;transform:scale(.94);}
+  50%{opacity:.38;transform:scale(1.04);}
 }
 @keyframes personBob{
   0%,100%{transform:translateY(0);}
@@ -1423,12 +1439,12 @@ body.theme-light .cta-people-map{display:block;}
 @keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(247,201,72,.18);}50%{box-shadow:0 0 0 22px rgba(247,201,72,0);}}
 .cta-circle .cw{font-family:var(--display);font-size:21px;color:var(--cream);letter-spacing:.02em;white-space:nowrap;}
 .cta-circle .cs{font-family:var(--body);font-size:11px;color:var(--cream-dim);margin-top:6px;white-space:nowrap;}
-.cta-final .script{font-family:var(--display);font-size:clamp(30px,5.6vw,62px);line-height:1.05;letter-spacing:.015em;color:var(--cream);margin:0 0 42px;font-weight:400;text-transform:uppercase;}
+.cta-final .script{font-family:var(--display);font-size:clamp(30px,5.6vw,62px);line-height:1.05;letter-spacing:.015em;color:var(--cream);margin:0 auto 42px;font-weight:400;text-transform:uppercase;max-width:1040px;text-align:center;}
 .cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
 body.theme-light .cta-final{
   background:var(--yellow) !important;
   color:#171612;
-  padding-top:86px;
+  padding:72px 0 88px;
 }
 body.theme-light .cta-final::before{
   opacity:.18;
@@ -1438,10 +1454,10 @@ body.theme-light .cta-final::before{
 }
 body.theme-light .cta-final .script{color:#171612;}
 body.theme-light .cta-team{
-  width:min(1240px, calc(100vw - 48px));
-  aspect-ratio:16/9.5;
+  width:min(1080px, calc(100vw - 64px));
+  aspect-ratio:16/7.6;
   height:auto;
-  margin-bottom:52px;
+  margin:0 auto 36px;
   border-radius:18px;
   background:rgba(255,240,122,.16);
   box-shadow:0 34px 78px rgba(86,60,8,.24);
@@ -1451,8 +1467,13 @@ body.theme-light .cta-team img{
   height:100%;
   min-height:0;
   object-fit:cover;
-  object-position:54% 2%;
+  object-position:54% 18%;
   transform:none;
+}
+body.theme-light .cta-final .script{
+  font-size:clamp(34px,4.8vw,62px);
+  max-width:1060px;
+  margin-bottom:32px;
 }
 @media (max-width:640px){
   body.theme-light .cta-team{aspect-ratio:4/3.4;}
@@ -2071,12 +2092,12 @@ try{
       <img class="cta-team-dark" src="assets/fondo-oficina-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
       <img class="cta-team-light" src="assets/cta-equipo-amarillo.png" alt="Equipo de Ocho y Cinco sobre fondo amarillo">
       <div class="cta-people-map" aria-hidden="true">
-        <span class="cta-person-spark" style="--x:12%;--y:63%;--w:16%;--h:46%;--d:.1s"></span>
-        <span class="cta-person-spark" style="--x:29%;--y:54%;--w:14%;--h:50%;--d:.5s"></span>
-        <span class="cta-person-spark" style="--x:42%;--y:54%;--w:13%;--h:44%;--d:.9s"></span>
-        <span class="cta-person-spark" style="--x:52%;--y:67%;--w:14%;--h:48%;--d:1.3s"></span>
-        <span class="cta-person-spark" style="--x:70%;--y:45%;--w:16%;--h:52%;--d:1.7s"></span>
-        <span class="cta-person-spark" style="--x:88%;--y:61%;--w:16%;--h:52%;--d:2.1s"></span>
+        <span class="cta-person-spark" style="--x:12%;--y:71%;--w:15%;--h:46%;--d:.1s"></span>
+        <span class="cta-person-spark" style="--x:28%;--y:61%;--w:14%;--h:52%;--d:.5s"></span>
+        <span class="cta-person-spark" style="--x:41%;--y:59%;--w:13%;--h:45%;--d:.9s"></span>
+        <span class="cta-person-spark" style="--x:52%;--y:70%;--w:14%;--h:47%;--d:1.3s"></span>
+        <span class="cta-person-spark" style="--x:70%;--y:49%;--w:16%;--h:54%;--d:1.7s"></span>
+        <span class="cta-person-spark" style="--x:89%;--y:68%;--w:16%;--h:48%;--d:2.1s"></span>
       </div>
     </div>
     <div class="cta-circle reveal">
