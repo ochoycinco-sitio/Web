@@ -425,8 +425,9 @@ body:not(.theme-light) .hero-bg{
   opacity:1;
   visibility:visible;
   background-image:url('assets/fondo-paraguas-oscuro.png') !important;
-  background-size:cover;
-  background-position:center center;
+  background-size:100% auto;
+  background-position:center top;
+  background-repeat:no-repeat;
   filter:saturate(1.02) contrast(1.04) brightness(.9);
 }
 .hero-bg::after{content:"";}
@@ -1383,10 +1384,10 @@ body.theme-light .cta-people-map{display:block;}
   transform:translate(-50%,-50%);
   border-radius:50%;
   background:
-    radial-gradient(ellipse at 50% 18%, rgba(255,255,255,.34), transparent 30%),
-    radial-gradient(ellipse at 50% 56%, rgba(247,241,227,.16), transparent 62%);
-  mix-blend-mode:screen;opacity:.32;filter:blur(.2px);
-  animation:personAppear 7.2s ease-in-out infinite;
+    radial-gradient(ellipse at 50% 20%, rgba(255,255,255,.62), transparent 34%),
+    radial-gradient(ellipse at 50% 58%, rgba(255,247,199,.34), transparent 66%);
+  mix-blend-mode:screen;opacity:0;filter:blur(.2px);
+  animation:personAppear 8.4s ease-in-out infinite;
   animation-delay:var(--d);
 }
 .cta-person-spark::before{
@@ -1394,8 +1395,8 @@ body.theme-light .cta-people-map{display:block;}
 }
 .cta-person-spark::after{
   content:"";position:absolute;inset:16% 20%;border-radius:50%;
-  background:radial-gradient(ellipse at 50% 24%, rgba(255,255,255,.38), transparent 42%);
-  opacity:.36;animation:personBob 5.4s ease-in-out infinite;animation-delay:var(--d);
+  background:radial-gradient(ellipse at 50% 24%, rgba(255,255,255,.55), transparent 46%);
+  opacity:.45;animation:personBob 5.4s ease-in-out infinite;animation-delay:var(--d);
 }
 @keyframes ctaTeamFloat{
   0%,100%{transform:translateY(0);}
@@ -1410,9 +1411,9 @@ body.theme-light .cta-people-map{display:block;}
   45%{opacity:.72;transform:translate(-50%,-54%) scale(1.06);}
 }
 @keyframes personAppear{
-  0%,18%,100%{opacity:0;transform:translate(-50%,-50%) scale(.96);}
-  28%,58%{opacity:.42;transform:translate(-50%,-52%) scale(1.02);}
-  72%{opacity:.16;transform:translate(-50%,-50%) scale(1);}
+  0%,14%,100%{opacity:0;transform:translate(-50%,-50%) scale(.94);}
+  24%,54%{opacity:.76;transform:translate(-50%,-53%) scale(1.04);}
+  68%{opacity:.18;transform:translate(-50%,-50%) scale(1);}
 }
 @keyframes personDrift{
   0%,100%{filter:blur(.15px) brightness(1);}
@@ -1463,9 +1464,14 @@ body.theme-light .cta-team img{
   height:100%;
   min-height:0;
   object-fit:cover;
-  object-position:54% 18%;
+  object-position:54% top;
   transform:none;
-  animation:none;
+  animation:ctaImageSettle 1.2s ease both;
+}
+body.theme-light .cta-team.reveal.in img{animation:ctaImageSettle 1.2s ease both;}
+@keyframes ctaImageSettle{
+  from{opacity:.82;transform:translateY(14px) scale(1.015);}
+  to{opacity:1;transform:translateY(0) scale(1);}
 }
 body.theme-light .cta-final .script{
   font-size:clamp(34px,4.8vw,62px);
@@ -2038,7 +2044,7 @@ try{
           <div class="client-logo-card" aria-label="Kentucky"><span class="client-logo-mark logo-kentucky">Kentucky</span></div>
           <div class="client-logo-card" aria-label="La Toscana"><span class="client-logo-mark logo-latoscana">La Toscana</span></div>
           <div class="client-logo-card" aria-label="SURA"><span class="client-logo-mark logo-sura">SURA</span></div>
-          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><span class="hsbc-symbol" aria-hidden="true"></span><span>HSBC</span></span></div>
+          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><svg class="hsbc-symbol" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><polygon fill="#db0011" points="0,0 20,20 0,40"/><polygon fill="#db0011" points="72,0 52,20 72,40"/><polygon fill="#db0011" points="0,0 36,0 20,20"/><polygon fill="#db0011" points="72,0 36,0 52,20"/><polygon fill="#db0011" points="0,40 36,40 20,20"/><polygon fill="#db0011" points="72,40 36,40 52,20"/></svg><span>HSBC</span></span></div>
           <div class="client-logo-card" aria-label="Lucchetti"><span class="client-logo-mark logo-lucchetti">Lucchetti</span></div>
           <div class="client-logo-card" aria-label="Carnave"><span class="client-logo-mark logo-carnave">Carnave</span></div>
           <div class="client-logo-card" aria-label="Cementos Avellaneda"><span class="client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
@@ -2063,7 +2069,7 @@ try{
           <div class="client-logo-card" aria-label="Kentucky"><span class="client-logo-mark logo-kentucky">Kentucky</span></div>
           <div class="client-logo-card" aria-label="La Toscana"><span class="client-logo-mark logo-latoscana">La Toscana</span></div>
           <div class="client-logo-card" aria-label="SURA"><span class="client-logo-mark logo-sura">SURA</span></div>
-          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><span class="hsbc-symbol" aria-hidden="true"></span><span>HSBC</span></span></div>
+          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><svg class="hsbc-symbol" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><polygon fill="#db0011" points="0,0 20,20 0,40"/><polygon fill="#db0011" points="72,0 52,20 72,40"/><polygon fill="#db0011" points="0,0 36,0 20,20"/><polygon fill="#db0011" points="72,0 36,0 52,20"/><polygon fill="#db0011" points="0,40 36,40 20,20"/><polygon fill="#db0011" points="72,40 36,40 52,20"/></svg><span>HSBC</span></span></div>
           <div class="client-logo-card" aria-label="Lucchetti"><span class="client-logo-mark logo-lucchetti">Lucchetti</span></div>
           <div class="client-logo-card" aria-label="Carnave"><span class="client-logo-mark logo-carnave">Carnave</span></div>
           <div class="client-logo-card" aria-label="Cementos Avellaneda"><span class="client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
@@ -2169,8 +2175,9 @@ function setThemeMode(mode, persist = true){
   const currentHeroBg = document.getElementById('heroBg');
   if (currentHeroBg && !isLight && darkHeroBackground){
     currentHeroBg.style.backgroundImage = darkHeroBackground;
-    currentHeroBg.style.backgroundSize = 'cover';
-    currentHeroBg.style.backgroundPosition = 'center center';
+    currentHeroBg.style.backgroundSize = '100% auto';
+    currentHeroBg.style.backgroundPosition = 'center top';
+    currentHeroBg.style.backgroundRepeat = 'no-repeat';
   }
   if (themeToggle){
     const themeLabel = themeToggle.querySelector('.theme-label');
@@ -2190,8 +2197,9 @@ function startDarkTransition(){
   if (themeToggle) themeToggle.disabled = true;
   if (transitionPhoto && darkHeroBackground){
     transitionPhoto.style.backgroundImage = darkHeroBackground;
-    transitionPhoto.style.backgroundSize = 'cover';
-    transitionPhoto.style.backgroundPosition = 'center center';
+    transitionPhoto.style.backgroundSize = '100% auto';
+    transitionPhoto.style.backgroundPosition = 'center top';
+    transitionPhoto.style.backgroundRepeat = 'no-repeat';
   }
   themeTransition.setAttribute('aria-hidden', 'false');
   themeTransition.classList.remove('show-photo');
