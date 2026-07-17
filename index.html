@@ -1081,6 +1081,9 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .team-wide{
   margin-top:70px;
 }
+.team-interactive{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,300px);gap:26px;align-items:stretch;
+}
 .team-wide-frame{
   position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(247,201,72,.22);
   background:#24231f;box-shadow:0 34px 78px rgba(0,0,0,.28);
@@ -1095,13 +1098,6 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   transition:background .28s var(--ease), box-shadow .28s var(--ease), outline-color .28s var(--ease), opacity .28s var(--ease);
   outline:1px solid rgba(247,201,72,0);
 }
-.team-member::after{
-  content:attr(data-name);position:absolute;left:50%;bottom:8px;transform:translate(-50%,8px);
-  white-space:nowrap;border-radius:100px;padding:7px 11px;
-  background:rgba(20,18,13,.86);color:var(--yellow);
-  font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-  opacity:0;transition:opacity .25s var(--ease), transform .25s var(--ease);
-}
 .team-member:hover,
 .team-member:focus-visible,
 .team-member.is-active{
@@ -1109,12 +1105,27 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   outline-color:rgba(247,201,72,.82);
   box-shadow:0 0 0 2px rgba(247,201,72,.55), 0 0 34px 8px rgba(247,201,72,.42);
 }
-.team-member:hover::after,
-.team-member:focus-visible::after,
-.team-member.is-active::after{
-  opacity:1;transform:translate(-50%,0);
-}
 .team-member:focus-visible{outline-width:2px;}
+.team-info-card{
+  align-self:stretch;min-height:220px;border:1px solid rgba(247,201,72,.26);border-radius:16px;
+  background:rgba(20,18,13,.88);color:var(--cream);
+  display:flex;flex-direction:column;justify-content:center;gap:10px;
+  padding:28px 26px;box-shadow:0 28px 62px rgba(0,0,0,.22);
+  opacity:.72;transition:opacity .28s var(--ease), transform .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease);
+}
+.team-info-card.is-visible{
+  opacity:1;transform:translateY(-2px);border-color:rgba(247,201,72,.78);
+  background:linear-gradient(145deg, rgba(20,18,13,.94), rgba(43,42,37,.96));
+}
+.team-info-kicker{
+  font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);
+}
+.team-info-name{
+  font-family:var(--display);font-size:clamp(24px,2.3vw,34px);line-height:.95;color:var(--cream);
+}
+.team-info-role{
+  font-family:var(--body);font-size:15px;line-height:1.5;color:var(--cream-dim);
+}
 .team-caption{
   margin-top:18px;font-family:var(--mono);font-size:14px;letter-spacing:.12em;
   text-transform:uppercase;color:var(--yellow);font-weight:800;
@@ -1122,7 +1133,17 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 body.theme-light .team-wide-frame{
   border-color:rgba(23,22,18,.16);background:#e4dccd;box-shadow:0 30px 70px rgba(86,60,8,.18);
 }
+body.theme-light .team-info-card{
+  background:#2b2a25;border-color:rgba(23,22,18,.18);box-shadow:0 26px 58px rgba(86,60,8,.18);
+}
+body.theme-light .team-info-card.is-visible{
+  background:#24231f;border-color:rgba(247,201,72,.72);
+}
 body.theme-light .team-caption{color:#171612;}
+@media (max-width:980px){
+  .team-interactive{grid-template-columns:1fr;}
+  .team-info-card{min-height:150px;}
+}
 .quote-content{min-width:0;}
 .quote-grid{
   display:grid;grid-template-columns:auto 1fr;gap:0 22px;align-items:start;
@@ -1747,14 +1768,21 @@ try{
       </div>
     </div>
     <figure class="team-wide reveal">
-      <div class="team-wide-frame">
-        <img src="assets/equipo-ocho-y-cinco-retoque.jpg" alt="Equipo de Ocho y Cinco">
-        <button class="team-member" type="button" style="--left:9%;--top:48%;--w:16%;--h:74%;" data-member="equipo-1" data-name="Equipo Ocho y Cinco" aria-label="Ver biografía de integrante del equipo"></button>
-        <button class="team-member" type="button" style="--left:26%;--top:48%;--w:16%;--h:74%;" data-member="equipo-2" data-name="Equipo Ocho y Cinco" aria-label="Ver biografía de integrante del equipo"></button>
-        <button class="team-member" type="button" style="--left:44%;--top:48%;--w:16%;--h:74%;" data-member="silvina" data-name="Silvina Cardoso" aria-label="Ver biografía de Silvina Cardoso"></button>
-        <button class="team-member" type="button" style="--left:60%;--top:48%;--w:15%;--h:74%;" data-member="equipo-3" data-name="Equipo Ocho y Cinco" aria-label="Ver biografía de integrante del equipo"></button>
-        <button class="team-member" type="button" style="--left:76%;--top:48%;--w:15%;--h:74%;" data-member="equipo-4" data-name="Equipo Ocho y Cinco" aria-label="Ver biografía de integrante del equipo"></button>
-        <button class="team-member" type="button" style="--left:91%;--top:48%;--w:14%;--h:74%;" data-member="equipo-5" data-name="Equipo Ocho y Cinco" aria-label="Ver biografía de integrante del equipo"></button>
+      <div class="team-interactive">
+        <div class="team-wide-frame">
+          <img src="assets/equipo-ocho-y-cinco-retoque.jpg" alt="Equipo de Ocho y Cinco">
+          <button class="team-member" type="button" style="--left:9%;--top:48%;--w:16%;--h:74%;" data-member="equipo-1" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:26%;--top:48%;--w:16%;--h:74%;" data-member="equipo-2" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:44%;--top:48%;--w:16%;--h:74%;" data-member="silvina" data-name="Silvina Cardoso" data-role="Directora de Ocho y Cinco" aria-label="Ver biografía de Silvina Cardoso"></button>
+          <button class="team-member" type="button" style="--left:60%;--top:48%;--w:15%;--h:74%;" data-member="equipo-3" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:76%;--top:48%;--w:15%;--h:74%;" data-member="equipo-4" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+          <button class="team-member" type="button" style="--left:91%;--top:48%;--w:14%;--h:74%;" data-member="equipo-5" data-name="Equipo Ocho y Cinco" data-role="Cargo a definir" aria-label="Ver biografía de integrante del equipo"></button>
+        </div>
+        <aside class="team-info-card" id="teamInfoCard" aria-live="polite">
+          <div class="team-info-kicker">Nuestro equipo</div>
+          <div class="team-info-name" id="teamInfoName">Elegí una persona</div>
+          <div class="team-info-role" id="teamInfoRole">Pasá por arriba de la foto para ver su nombre y cargo.</div>
+        </aside>
       </div>
       <figcaption class="team-caption">Equipo Ocho y Cinco</figcaption>
     </figure>
@@ -2046,6 +2074,9 @@ const bioModalBackdrop = document.getElementById('bioModalBackdrop');
 const bioModalName = document.getElementById('bioModalName');
 const bioModalRole = document.getElementById('bioModalRole');
 const bioModalBody = document.getElementById('bioModalBody');
+const teamInfoCard = document.getElementById('teamInfoCard');
+const teamInfoName = document.getElementById('teamInfoName');
+const teamInfoRole = document.getElementById('teamInfoRole');
 const silvinaBioHtml = bioModalBody ? bioModalBody.innerHTML : '';
 const teamBios = {
   silvina: {
@@ -2055,30 +2086,45 @@ const teamBios = {
   },
   'equipo-1': {
     name: 'Equipo Ocho y Cinco',
-    role: 'Biografia en construccion',
+    role: 'Cargo a definir',
     body: '<p>Muy pronto vas a poder conocer la historia, el rol y la mirada de esta persona dentro de Ocho y Cinco.</p><p>Estamos preparando las biografias del equipo para que cada perfil tenga su propio espacio.</p>'
   },
   'equipo-2': {
     name: 'Equipo Ocho y Cinco',
-    role: 'Biografia en construccion',
+    role: 'Cargo a definir',
     body: '<p>Muy pronto vas a poder conocer la historia, el rol y la mirada de esta persona dentro de Ocho y Cinco.</p><p>Estamos preparando las biografias del equipo para que cada perfil tenga su propio espacio.</p>'
   },
   'equipo-3': {
     name: 'Equipo Ocho y Cinco',
-    role: 'Biografia en construccion',
+    role: 'Cargo a definir',
     body: '<p>Muy pronto vas a poder conocer la historia, el rol y la mirada de esta persona dentro de Ocho y Cinco.</p><p>Estamos preparando las biografias del equipo para que cada perfil tenga su propio espacio.</p>'
   },
   'equipo-4': {
     name: 'Equipo Ocho y Cinco',
-    role: 'Biografia en construccion',
+    role: 'Cargo a definir',
     body: '<p>Muy pronto vas a poder conocer la historia, el rol y la mirada de esta persona dentro de Ocho y Cinco.</p><p>Estamos preparando las biografias del equipo para que cada perfil tenga su propio espacio.</p>'
   },
   'equipo-5': {
     name: 'Equipo Ocho y Cinco',
-    role: 'Biografia en construccion',
+    role: 'Cargo a definir',
     body: '<p>Muy pronto vas a poder conocer la historia, el rol y la mirada de esta persona dentro de Ocho y Cinco.</p><p>Estamos preparando las biografias del equipo para que cada perfil tenga su propio espacio.</p>'
   }
 };
+function setTeamInfo(memberId){
+  const bio = teamBios[memberId] || teamBios.silvina;
+  if (teamInfoName) teamInfoName.textContent = bio.name;
+  if (teamInfoRole) teamInfoRole.textContent = bio.role;
+  if (teamInfoCard) teamInfoCard.classList.add('is-visible');
+  document.querySelectorAll('.team-member').forEach(member => {
+    member.classList.toggle('is-active', member.dataset.member === memberId);
+  });
+}
+function resetTeamInfo(){
+  if (teamInfoName) teamInfoName.textContent = 'Elegí una persona';
+  if (teamInfoRole) teamInfoRole.textContent = 'Pasá por arriba de la foto para ver su nombre y cargo.';
+  if (teamInfoCard) teamInfoCard.classList.remove('is-visible');
+  document.querySelectorAll('.team-member.is-active').forEach(member => member.classList.remove('is-active'));
+}
 function openBioModal(memberId = 'silvina'){
   const bio = teamBios[memberId] || teamBios.silvina;
   if (bioModalName) bioModalName.textContent = bio.name;
@@ -2105,6 +2151,10 @@ if (silvinaPhoto){
   });
 }
 document.querySelectorAll('.team-member').forEach(member => {
+  member.addEventListener('mouseenter', () => setTeamInfo(member.dataset.member));
+  member.addEventListener('focus', () => setTeamInfo(member.dataset.member));
+  member.addEventListener('mouseleave', resetTeamInfo);
+  member.addEventListener('blur', resetTeamInfo);
   member.addEventListener('click', () => openBioModal(member.dataset.member));
 });
 bioModalClose.addEventListener('click', closeBioModal);
