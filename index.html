@@ -523,6 +523,9 @@ body.theme-light .hero-title-dot{animation-name:strategyDotBlink;}
   max-width:440px;margin-top:28px;font-size:18px;color:var(--cream-dim);
   text-shadow:0 2px 10px rgba(0,0,0,.55);
 }
+.hero-sub-light{display:none;}
+body.theme-light .hero-sub-dark{display:none;}
+body.theme-light .hero-sub-light{display:block;}
 .hero-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
 .hero-scrolldown{
   position:absolute;bottom:38px;right:32px;z-index:3;
@@ -1749,7 +1752,8 @@ try{
         Agencia de Marketing y Comunicación
       </div>
       <h1 class="reveal" id="heroH1"><span class="sr-only">Ocho y Cinco, agencia de marketing y comunicación: Destacarse no es suerte. Es estrategia.</span><span class="hero-title-line" style="--line:0">DESTACARSE</span><span class="hero-title-line" style="--line:1">NO ES</span><span class="hero-title-line" style="--line:2">SUERTE.</span><span class="hero-title-line" style="--line:3">ES <span class="hl">ESTRATEGIA</span><span class="hero-title-dot">.</span></span></h1>
-      <p class="hero-sub reveal" id="heroSub">Como el paraguas amarillo de la foto:<br>Ninguna marca se destaca por casualidad. Detrás de cada marca memorable hay estrategia, creatividad y empatía.</p>
+      <p class="hero-sub reveal hero-sub-dark" id="heroSub">Como el paraguas amarillo de la foto:<br>Ninguna marca se destaca por casualidad. Detrás de cada marca memorable hay estrategia, creatividad y empatía.</p>
+      <p class="hero-sub reveal hero-sub-light" id="heroSubLight">El amarillo nunca pasa desapercibido, y las marcas con estrategia tampoco.<br>Detrás de cada marca memorable hay creatividad, empatía y un plan claro.</p>
       <div class="hero-ctas reveal" id="heroCtas">
         <a href="#casos" class="btn btn-fill">Ver casos de éxito</a>
         <a href="#contacto" class="btn btn-line">Trabajemos juntos</a>
@@ -2410,7 +2414,7 @@ document.querySelectorAll('.t-node').forEach(el=>tio.observe(el));
 
 // hero entrance (fires once on load, not on scroll)
 window.addEventListener('load', () => {
-  ['heroBadge','heroH1','heroSub','heroCtas'].forEach((id,i)=>{
+  ['heroBadge','heroH1','heroSub','heroSubLight','heroCtas'].forEach((id,i)=>{
     const el = document.getElementById(id);
     if(el) setTimeout(()=>el.classList.add('in'), 200 + i*160);
   });
