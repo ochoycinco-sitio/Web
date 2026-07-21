@@ -1647,7 +1647,7 @@ body.theme-light .cta-people-map{display:block;}
 .cta-circle .cw{font-family:var(--display);font-size:21px;color:var(--cream);letter-spacing:.02em;white-space:nowrap;}
 .cta-circle .cs{font-family:var(--body);font-size:11px;color:var(--cream-dim);margin-top:6px;white-space:nowrap;}
 .cta-final .script{font-family:var(--display);font-size:clamp(30px,5.6vw,62px);line-height:1.05;letter-spacing:.015em;color:var(--cream);margin:0 auto 42px;font-weight:400;text-transform:uppercase;max-width:1040px;text-align:center;}
-.cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+.cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;scroll-margin-top:42vh;}
 .contact-mail{margin-top:18px;font-size:15px;font-weight:700;text-align:center;color:rgba(20,18,13,.82);}
 .contact-mail a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
 .contact-mail a:hover{color:var(--charcoal);}
@@ -1833,7 +1833,7 @@ try{
         </svg>
         <span class="theme-label">Modo oscuro</span>
       </button>
-      <a href="#contacto" class="btn btn-fill">Hablemos</a>
+      <a href="#contact-buttons" class="btn btn-fill">Hablemos</a>
       <button class="burger" id="burgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -1848,7 +1848,7 @@ try{
   <a href="#casos">Casos</a>
   <a href="#clientes">Clientes</a>
   <a href="#faq">FAQ</a>
-  <a href="#contacto" class="btn btn-fill">Hablemos</a>
+  <a href="#contact-buttons" class="btn btn-fill">Hablemos</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -2358,7 +2358,7 @@ try{
       </div>
     </div>
     <p class="script reveal">Trabajemos juntos para que la comunicación transforme</p>
-    <div class="cta-row reveal">
+    <div class="cta-row reveal" id="contact-buttons">
       <a id="emailButton" href="https://mail.google.com/mail/?view=cm&fs=1&to=ochoycinco.marketing@gmail.com&su=Quiero%20contactarme%20con%20Ocho%20y%20Cinco" target="_blank" rel="noopener" class="btn btn-fill">Escribinos un mail</a>
       <a href="https://wa.me/5490000000000" target="_blank" class="btn btn-line">Hablar por WhatsApp</a>
     </div>
