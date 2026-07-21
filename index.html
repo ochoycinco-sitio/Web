@@ -405,7 +405,7 @@ nav.links a.active{color:var(--yellow);}
 
 .nav-cta{display:flex;align-items:center;gap:22px;margin-left:28px;flex-shrink:0;}
 .theme-toggle{
-  width:46px;min-width:46px;height:46px;padding:0 14px;border-radius:100px;border:1px solid rgba(247,241,227,.8);
+  width:48px;min-width:48px;height:46px;padding:0 14px;border-radius:100px;border:1px solid rgba(247,241,227,.8);
   background:rgba(247,201,72,.11);color:var(--yellow);
   display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;
   font-family:var(--body);font-size:13px;font-weight:800;letter-spacing:.02em;
@@ -416,11 +416,11 @@ nav.links a.active{color:var(--yellow);}
 }
 .theme-toggle:hover,
 .theme-toggle:focus-visible{
-  width:138px;min-width:138px;transform:translateY(-2px);
+  width:156px;min-width:156px;transform:translateY(-2px);
   background:var(--yellow);color:var(--charcoal);border-color:var(--yellow);
   box-shadow:0 14px 30px rgba(0,0,0,.24), 0 0 0 6px rgba(247,201,72,.1);
 }
-.theme-toggle svg{width:18px;height:18px;display:block;}
+.theme-toggle svg{width:20px;height:20px;display:block;flex:0 0 20px;}
 .theme-toggle .theme-icon-sun{display:inline;}
 .theme-toggle .theme-icon-moon{display:none;}
 body.theme-light .theme-toggle .theme-icon-sun{display:none;}
@@ -431,7 +431,7 @@ body.theme-light .theme-toggle .theme-icon-moon{display:inline;}
 }
 .theme-toggle:hover .theme-label,
 .theme-toggle:focus-visible .theme-label{
-  max-width:94px;opacity:1;
+  max-width:112px;opacity:1;
 }
 .theme-toggle:disabled{opacity:.72;cursor:wait;animation:none;}
 @keyframes themePulse{0%,100%{box-shadow:0 0 0 1px rgba(247,201,72,.08), 0 12px 28px rgba(0,0,0,.18);}50%{box-shadow:0 0 0 7px rgba(247,201,72,0), 0 12px 28px rgba(0,0,0,.18);}}
@@ -1823,7 +1823,7 @@ try{
             <path d="M12 4.5V2m0 20v-2.5M4.5 12H2m20 0h-2.5M6.7 6.7 4.9 4.9m14.2 14.2-1.8-1.8M17.3 6.7l1.8-1.8M4.9 19.1l1.8-1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
             <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
           </g>
-          <path class="theme-icon-moon" d="M20 14.6A7.7 7.7 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path class="theme-icon-moon" d="M20 14.6A7.7 7.7 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
         </svg>
         <span class="theme-label">Modo oscuro</span>
       </button>
