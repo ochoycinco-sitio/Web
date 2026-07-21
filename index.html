@@ -1169,6 +1169,7 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .team-wide-frame{
   position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(247,201,72,.22);
   background:#24231f;box-shadow:0 34px 78px rgba(0,0,0,.28);
+  clip-path:inset(0 round 16px);contain:paint;isolation:isolate;
 }
 .team-wide-frame img{
   display:block;width:100%;aspect-ratio:16/8.6;object-fit:cover;object-position:center 48%;
@@ -1181,8 +1182,9 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   cursor:pointer;transform:translate(-50%,-50%);
   transition:backdrop-filter .32s var(--ease), -webkit-backdrop-filter .32s var(--ease);
   outline:0;
-  -webkit-mask-image:radial-gradient(ellipse 72% 84% at 50% 45%, #000 78%, rgba(0,0,0,.82) 93%, transparent 112%);
-  mask-image:radial-gradient(ellipse 72% 84% at 50% 45%, #000 78%, rgba(0,0,0,.82) 93%, transparent 112%);
+  -webkit-mask-image:radial-gradient(ellipse 72% 84% at 50% 45%, #000 68%, rgba(0,0,0,.78) 84%, transparent 100%);
+  mask-image:radial-gradient(ellipse 72% 84% at 50% 45%, #000 68%, rgba(0,0,0,.78) 84%, transparent 100%);
+  clip-path:inset(0 round 999px);
 }
 .team-member:hover,
 .team-member:focus-visible,
@@ -1221,6 +1223,11 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .team-info-role{
   font-family:var(--body);font-size:15px;line-height:1.5;color:rgba(247,241,227,.76);
 }
+.team-info-quote{
+  display:none;margin-top:2px;font-family:var(--body);font-size:14px;line-height:1.45;
+  color:rgba(247,241,227,.88);
+}
+.team-info-quote.is-visible{display:block;}
 .team-caption{
   margin-top:18px;font-family:var(--mono);font-size:14px;letter-spacing:.12em;
   text-transform:uppercase;color:var(--yellow);font-weight:800;
@@ -1237,6 +1244,7 @@ body.theme-light .team-info-card.is-visible{
 }
 body.theme-light .team-info-name{color:#f7f1e3;}
 body.theme-light .team-info-role{color:rgba(247,241,227,.78);}
+body.theme-light .team-info-quote{color:rgba(247,241,227,.9);}
 body.theme-light .team-caption{color:#171612;}
 @media (max-width:980px){
   .team-interactive{grid-template-columns:1fr;}
@@ -2066,7 +2074,8 @@ try{
             <img id="teamInfoPhoto" src="" alt="">
           </div>
           <div class="team-info-name" id="teamInfoName">Elegí una persona</div>
-          <div class="team-info-role" id="teamInfoRole">Pasá por arriba de la foto para ver su nombre, cargo y foto individual.</div>
+          <div class="team-info-role" id="teamInfoRole">Hacé click sobre una persona para ver su nombre, cargo y foto individual.</div>
+          <div class="team-info-quote" id="teamInfoQuote"></div>
         </aside>
       </div>
       <figcaption class="team-caption">Equipo Ocho y Cinco</figcaption>
@@ -2327,10 +2336,12 @@ const bioModalBody = document.getElementById('bioModalBody');
 const teamInfoCard = document.getElementById('teamInfoCard');
 const teamInfoName = document.getElementById('teamInfoName');
 const teamInfoRole = document.getElementById('teamInfoRole');
+const teamInfoQuote = document.getElementById('teamInfoQuote');
 const teamInfoPhoto = document.getElementById('teamInfoPhoto');
 const teamWideFrame = document.querySelector('.team-wide-frame');
 const bioModalPhoto = document.getElementById('bioModalPhoto');
 const silvinaBioHtml = bioModalBody ? bioModalBody.innerHTML : '';
+let pinnedTeamMember = null;
 const teamBios = {
   silvina: {
     name: 'Silvina Cardoso',
@@ -2371,10 +2382,14 @@ const teamBios = {
     body: '<p>&ldquo;Pongo en palabras la voz de cada marca.&rdquo;</p><p>Malena encuentra las palabras que hacen que una marca suene como ella misma.</p>'
   }
 };
-function setTeamInfo(memberId){
+function setTeamInfo(memberId, showQuote = false){
   const bio = teamBios[memberId] || teamBios.silvina;
   if (teamInfoName) teamInfoName.textContent = bio.name;
-  if (teamInfoRole) teamInfoRole.textContent = bio.teamText ? `${bio.teamRole || bio.role}. ${bio.teamText}` : bio.role;
+  if (teamInfoRole) teamInfoRole.textContent = bio.teamRole || bio.role;
+  if (teamInfoQuote){
+    teamInfoQuote.textContent = showQuote ? (bio.teamText || '') : '';
+    teamInfoQuote.classList.toggle('is-visible', Boolean(showQuote && bio.teamText));
+  }
   if (teamInfoPhoto && bio.photo){
     teamInfoPhoto.src = bio.photo;
     teamInfoPhoto.alt = `${bio.name}, ${bio.role}`;
@@ -2386,8 +2401,16 @@ function setTeamInfo(memberId){
   });
 }
 function resetTeamInfo(){
+  if (pinnedTeamMember){
+    setTeamInfo(pinnedTeamMember, true);
+    return;
+  }
   if (teamInfoName) teamInfoName.textContent = 'Elegí una persona';
-  if (teamInfoRole) teamInfoRole.textContent = 'Pasá por arriba de la foto para ver su nombre, cargo y foto individual.';
+  if (teamInfoRole) teamInfoRole.textContent = 'Hacé click sobre una persona para ver su nombre, cargo y foto individual.';
+  if (teamInfoQuote){
+    teamInfoQuote.textContent = '';
+    teamInfoQuote.classList.remove('is-visible');
+  }
   if (teamInfoPhoto){
     teamInfoPhoto.removeAttribute('src');
     teamInfoPhoto.alt = '';
@@ -2425,11 +2448,10 @@ if (silvinaPhoto){
   });
 }
 document.querySelectorAll('.team-member').forEach(member => {
-  member.addEventListener('mouseenter', () => setTeamInfo(member.dataset.member));
-  member.addEventListener('focus', () => setTeamInfo(member.dataset.member));
-  member.addEventListener('mouseleave', resetTeamInfo);
-  member.addEventListener('blur', resetTeamInfo);
-  member.addEventListener('click', () => openBioModal(member.dataset.member));
+  member.addEventListener('click', () => {
+    pinnedTeamMember = member.dataset.member;
+    setTeamInfo(member.dataset.member, true);
+  });
 });
 bioModalClose.addEventListener('click', closeBioModal);
 bioModalBackdrop.addEventListener('click', closeBioModal);
