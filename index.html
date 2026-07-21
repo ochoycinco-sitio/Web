@@ -2446,6 +2446,18 @@ if (silvinaPhoto){
   });
 }
 document.querySelectorAll('.team-member').forEach(member => {
+  member.addEventListener('mouseenter', () => {
+    if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
+  });
+  member.addEventListener('focus', () => {
+    if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
+  });
+  member.addEventListener('mouseleave', () => {
+    if (!pinnedTeamMember && teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
+  });
+  member.addEventListener('blur', () => {
+    if (!pinnedTeamMember && teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
+  });
   member.addEventListener('click', () => {
     pinnedTeamMember = member.dataset.member;
     setTeamInfo(member.dataset.member, true);
