@@ -2444,18 +2444,19 @@ if (silvinaPhoto){
 document.querySelectorAll('.team-member').forEach(member => {
   member.addEventListener('mouseenter', () => {
     if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
+    setTeamInfo(member.dataset.member, false);
   });
   member.addEventListener('focus', () => {
     if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
+    setTeamInfo(member.dataset.member, false);
   });
   member.addEventListener('mouseleave', () => {
-    if (teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
+    resetTeamInfo();
   });
   member.addEventListener('blur', () => {
-    if (teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
+    resetTeamInfo();
   });
   member.addEventListener('click', () => {
-    pinnedTeamMember = member.dataset.member;
     setTeamInfo(member.dataset.member, false);
     openBioModal(member.dataset.member);
   });
