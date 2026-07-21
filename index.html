@@ -568,17 +568,26 @@ body.theme-light .hero-title-dot{animation-name:strategyDotBlink;}
 body.theme-light .hero-sub-dark{display:none;}
 body.theme-light .hero-sub-light{
   display:inline-block;
-  color:#fdf6e3;
-  font-weight:600;
+  position:relative;
+  color:var(--charcoal);
+  font-weight:800;
   text-shadow:none;
-  background:rgba(20,17,10,.72);
-  padding:14px 18px;
-  border-radius:10px;
-  line-height:1.5;
-  box-shadow:0 8px 22px rgba(20,17,10,.22);
+  background:rgba(255,250,240,.84);
+  border:1px solid rgba(20,18,13,.72);
+  border-left:8px solid var(--charcoal);
+  padding:18px 24px 18px 26px;
+  border-radius:4px;
+  line-height:1.45;
+  box-shadow:10px 10px 0 rgba(20,18,13,.18), 0 18px 36px rgba(20,17,10,.16);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
   opacity:0;
   transform:translateY(16px);
   animation:heroSubLightIn .9s var(--ease,ease-out) 1.05s forwards;
+}
+body.theme-light .hero-sub-light::before{
+  content:"";position:absolute;left:26px;right:24px;top:-7px;height:4px;
+  background:var(--yellow);box-shadow:0 1px 0 rgba(20,18,13,.28);
 }
 @keyframes heroSubLightIn{
   from{opacity:0;transform:translateY(16px);}
@@ -692,7 +701,7 @@ body.theme-light .hero h1,
 body.theme-light .hero h1 .hl,
 body.theme-light .hero-sub,
 body.theme-light .hero-scrolldown{color:var(--charcoal);text-shadow:none;}
-body.theme-light .hero-sub.hero-sub-light{color:var(--yellow-pale)!important;text-shadow:none;}
+body.theme-light .hero-sub.hero-sub-light{color:var(--charcoal)!important;text-shadow:none;}
 body.theme-light .scroll-line{background:linear-gradient(var(--charcoal), transparent);}
 body.theme-light .scroll-line::after{background:var(--charcoal);}
 body.theme-light .btn-line{border-color:var(--charcoal);color:var(--charcoal);}
