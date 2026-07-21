@@ -240,28 +240,41 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
   background:
     radial-gradient(circle at 50% 52%, rgba(247,201,72,.12) 0 2.5%, transparent 4.8%),
     conic-gradient(from -90deg,
-      rgba(247,201,72,.035) 0deg 18deg,
-      rgba(0,0,0,.16) 18deg 45deg,
-      rgba(245,241,230,.04) 45deg 63deg,
-      rgba(0,0,0,.14) 63deg 90deg,
-      rgba(247,201,72,.035) 90deg 108deg,
-      rgba(0,0,0,.17) 108deg 135deg,
-      rgba(245,241,230,.035) 135deg 153deg,
-      rgba(0,0,0,.14) 153deg 180deg,
-      rgba(247,201,72,.032) 180deg 198deg,
-      rgba(0,0,0,.15) 198deg 225deg,
-      rgba(245,241,230,.035) 225deg 243deg,
-      rgba(0,0,0,.13) 243deg 270deg,
-      rgba(247,201,72,.035) 270deg 288deg,
-      rgba(0,0,0,.15) 288deg 315deg,
-      rgba(245,241,230,.032) 315deg 333deg,
-      rgba(0,0,0,.12) 333deg 360deg);
+      rgba(247,201,72,.03) 0deg 20deg,
+      rgba(0,0,0,.13) 20deg 45deg,
+      rgba(245,241,230,.035) 45deg 65deg,
+      rgba(0,0,0,.12) 65deg 90deg,
+      rgba(247,201,72,.03) 90deg 110deg,
+      rgba(0,0,0,.14) 110deg 135deg,
+      rgba(245,241,230,.032) 135deg 155deg,
+      rgba(0,0,0,.12) 155deg 180deg,
+      rgba(247,201,72,.03) 180deg 200deg,
+      rgba(0,0,0,.13) 200deg 225deg,
+      rgba(245,241,230,.032) 225deg 245deg,
+      rgba(0,0,0,.12) 245deg 270deg,
+      rgba(247,201,72,.03) 270deg 290deg,
+      rgba(0,0,0,.13) 290deg 315deg,
+      rgba(245,241,230,.032) 315deg 335deg,
+      rgba(0,0,0,.11) 335deg 360deg);
   opacity:.46;
   filter:blur(7px);
   -webkit-mask:radial-gradient(circle, transparent 0 5%, rgba(0,0,0,.72) 11%, #000 62%, transparent 86%);
   mask:radial-gradient(circle, transparent 0 5%, rgba(0,0,0,.72) 11%, #000 62%, transparent 86%);
   transform-origin:50% 52%;
   transition:transform .65s var(--ease), opacity .45s var(--ease), filter .45s var(--ease);
+}
+.logo-badge--hero .umbrella-shade::before{
+  content:"";position:absolute;inset:0;border-radius:50%;opacity:0;
+  background:
+    radial-gradient(circle at 50% 52%, rgba(247,201,72,.46) 0 1.6%, transparent 3.4%),
+    repeating-conic-gradient(from -90deg,
+      rgba(247,201,72,.5) 0deg 1.2deg,
+      transparent 1.2deg 44deg,
+      rgba(245,241,230,.18) 44deg 45.2deg,
+      transparent 45.2deg 89deg);
+  -webkit-mask:radial-gradient(circle, transparent 0 6%, rgba(0,0,0,.9) 8%, #000 72%, transparent 88%);
+  mask:radial-gradient(circle, transparent 0 6%, rgba(0,0,0,.9) 8%, #000 72%, transparent 88%);
+  transition:opacity .45s var(--ease);
 }
 .logo-badge--hero .umbrella-center{
   position:absolute;left:50%;top:52.5%;transform:translate(-50%,-50%);
@@ -295,25 +308,22 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
 }
 @keyframes badgeEnter{from{opacity:0;}to{opacity:1;}}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(247,201,72,.12);}50%{box-shadow:0 0 0 18px rgba(247,201,72,0);}}
-@keyframes umbrellaTopView{
-  0%{transform:rotate(0deg) scale(1);}
-  45%{transform:rotate(10deg) scale(1.06);}
-  100%{transform:rotate(0deg) scale(1);}
-}
 @media (hover:hover){
   .logo-badge--hero:hover{
-    transform:translateY(-50%) scale(1.04);
-    box-shadow:0 20px 54px rgba(247,201,72,.18), inset 0 -18px 30px rgba(0,0,0,.22);
+    transform:translateY(-50%) scale(1.025);
+    box-shadow:0 18px 48px rgba(247,201,72,.16), inset 0 -18px 30px rgba(0,0,0,.22);
   }
   .logo-badge--hero:hover::before{
     animation:badgeRingSpin 2.8s linear infinite;
     opacity:1;
   }
   .logo-badge--hero:hover .umbrella-shade{
-    opacity:.92;filter:blur(2px);
+    opacity:.76;filter:blur(1.2px);
     -webkit-mask:radial-gradient(circle, transparent 0 4%, rgba(0,0,0,.86) 8%, #000 70%, transparent 88%);
     mask:radial-gradient(circle, transparent 0 4%, rgba(0,0,0,.86) 8%, #000 70%, transparent 88%);
-    animation:umbrellaTopView 1.7s var(--ease) infinite;
+  }
+  .logo-badge--hero:hover .umbrella-shade::before{
+    opacity:1;
   }
   .logo-badge--hero:hover .lb-word,
   .logo-badge--hero:hover .lb-tag{
