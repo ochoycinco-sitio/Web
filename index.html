@@ -731,17 +731,28 @@ body.theme-light .logo-badge--hero .umbrella-center{background:rgba(20,18,13,.38
     box-shadow:0 24px 46px rgba(108,72,8,.26);
   }
   body.theme-light .logo-badge--hero:hover .umbrella-shade{
-    opacity:.5;filter:blur(1.4px);
+    opacity:.58;filter:blur(2px);
   }
   body.theme-light .logo-badge--hero:hover .umbrella-shade::before{
-    opacity:.55;
+    opacity:.72;
     background:
-      radial-gradient(circle at 50% 52%, rgba(20,18,13,.38) 0 1.6%, transparent 3.4%),
+      radial-gradient(circle at 50% 52%, rgba(20,18,13,.45) 0 1.8%, transparent 3.6%),
+      conic-gradient(from -90deg,
+        rgba(255,245,174,.22) 0deg 32deg,
+        rgba(20,18,13,.16) 32deg 58deg,
+        rgba(255,245,174,.18) 58deg 90deg,
+        rgba(20,18,13,.18) 90deg 122deg,
+        rgba(255,245,174,.18) 122deg 154deg,
+        rgba(20,18,13,.15) 154deg 180deg,
+        rgba(255,245,174,.2) 180deg 212deg,
+        rgba(20,18,13,.17) 212deg 238deg,
+        rgba(255,245,174,.17) 238deg 270deg,
+        rgba(20,18,13,.18) 270deg 302deg,
+        rgba(255,245,174,.18) 302deg 334deg,
+        rgba(20,18,13,.15) 334deg 360deg),
       repeating-conic-gradient(from -90deg,
-        rgba(20,18,13,.34) 0deg 1deg,
-        transparent 1deg 44deg,
-        rgba(255,250,225,.28) 44deg 45deg,
-        transparent 45deg 89deg);
+        rgba(20,18,13,.28) 0deg 1.4deg,
+        transparent 1.4deg 59deg);
   }
 }
 body.theme-light .hero-eyebrow,
