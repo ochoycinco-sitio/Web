@@ -2334,6 +2334,8 @@ const teamBios = {
   silvina: {
     name: 'Silvina Cardoso',
     role: 'Directora de Ocho y Cinco',
+    teamRole: 'Directora',
+    teamText: 'La primera que hago es "Para Qué?". El comienzo de todo es el objetivo.',
     photo: 'assets/silvina-cardoso-8y5-alta-00135-web.jpg',
     body: silvinaBioHtml
   },
@@ -2371,7 +2373,7 @@ const teamBios = {
 function setTeamInfo(memberId){
   const bio = teamBios[memberId] || teamBios.silvina;
   if (teamInfoName) teamInfoName.textContent = bio.name;
-  if (teamInfoRole) teamInfoRole.textContent = bio.role;
+  if (teamInfoRole) teamInfoRole.textContent = bio.teamText ? `${bio.teamRole || bio.role}. ${bio.teamText}` : bio.role;
   if (teamInfoPhoto && bio.photo){
     teamInfoPhoto.src = bio.photo;
     teamInfoPhoto.alt = `${bio.name}, ${bio.role}`;
