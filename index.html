@@ -2359,7 +2359,7 @@ try{
     </div>
     <p class="script reveal">Trabajemos juntos para que la comunicación transforme</p>
     <div class="cta-row reveal">
-      <a id="emailButton" href="mailto:ochoycinco.marketing@gmail.com?subject=Quiero%20contactarme%20con%20Ocho%20y%20Cinco" class="btn btn-fill">Escribinos un mail</a>
+      <a id="emailButton" href="https://mail.google.com/mail/?view=cm&fs=1&to=ochoycinco.marketing@gmail.com&su=Quiero%20contactarme%20con%20Ocho%20y%20Cinco" target="_blank" rel="noopener" class="btn btn-fill">Escribinos un mail</a>
       <a href="https://wa.me/5490000000000" target="_blank" class="btn btn-line">Hablar por WhatsApp</a>
     </div>
     <p class="contact-mail reveal">También podés escribirnos a <a href="mailto:ochoycinco.marketing@gmail.com">ochoycinco.marketing@gmail.com</a></p>
@@ -2491,12 +2491,14 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
 
 // ===== Email button =====
 const emailButton = document.getElementById('emailButton');
-const emailLink = 'mailto:ochoycinco.marketing@gmail.com?subject=Quiero%20contactarme%20con%20Ocho%20y%20Cinco';
+const emailLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=ochoycinco.marketing@gmail.com&su=Quiero%20contactarme%20con%20Ocho%20y%20Cinco';
 if (emailButton){
   emailButton.setAttribute('href', emailLink);
+  emailButton.setAttribute('target', '_blank');
+  emailButton.setAttribute('rel', 'noopener');
   emailButton.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = emailLink;
+    window.open(emailLink, '_blank', 'noopener');
   });
 }
 
