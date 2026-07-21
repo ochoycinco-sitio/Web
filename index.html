@@ -535,6 +535,13 @@ body.theme-light .hero-sub-light{
   border-radius:10px;
   line-height:1.5;
   box-shadow:0 8px 22px rgba(20,17,10,.22);
+  opacity:0;
+  transform:translateY(16px);
+  animation:heroSubLightIn .9s var(--ease,ease-out) 1.05s forwards;
+}
+@keyframes heroSubLightIn{
+  from{opacity:0;transform:translateY(16px);}
+  to{opacity:1;transform:translateY(0);}
 }
 .hero-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
 .hero-scrolldown{
@@ -1763,7 +1770,7 @@ try{
       </div>
       <h1 class="reveal" id="heroH1"><span class="sr-only">Ocho y Cinco, agencia de marketing y comunicación: Destacarse no es suerte. Es estrategia.</span><span class="hero-title-line" style="--line:0">DESTACARSE</span><span class="hero-title-line" style="--line:1">NO ES</span><span class="hero-title-line" style="--line:2">SUERTE.</span><span class="hero-title-line" style="--line:3">ES <span class="hl">ESTRATEGIA</span><span class="hero-title-dot">.</span></span></h1>
       <p class="hero-sub reveal hero-sub-dark" id="heroSub">Como el paraguas amarillo de la foto:<br>Ninguna marca se destaca por casualidad. Detrás de cada marca memorable hay estrategia, creatividad y empatía.</p>
-      <p class="hero-sub reveal hero-sub-light" id="heroSubLight">El amarillo nunca pasa desapercibido, y las marcas con estrategia tampoco.<br>Detrás de cada marca memorable hay creatividad, empatía y un plan claro.</p>
+      <p class="hero-sub reveal hero-sub-light" id="heroSubLight">Diseñamos estrategias de comunicación, branding y experiencias que acompañan a los equipos comerciales, fortalecen las marcas y generan relaciones duraderas con clientes, colaboradores y comunidades.</p>
       <div class="hero-ctas reveal" id="heroCtas">
         <a href="#casos" class="btn btn-fill">Ver casos de éxito</a>
         <a href="#contacto" class="btn btn-line">Trabajemos juntos</a>
