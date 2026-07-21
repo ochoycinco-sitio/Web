@@ -2197,7 +2197,7 @@ try{
             <img id="teamInfoPhoto" src="" alt="">
           </div>
           <div class="team-info-name" id="teamInfoName">Elegí una persona</div>
-          <div class="team-info-role" id="teamInfoRole">Hacé click sobre una persona para ver su nombre, cargo y foto individual.</div>
+          <div class="team-info-role" id="teamInfoRole">Pasá el mouse sobre una persona para ver su nombre, cargo, foto y frase.</div>
           <div class="team-info-quote" id="teamInfoQuote"></div>
         </aside>
       </div>
@@ -2541,13 +2541,22 @@ const teamBios = {
     body: '<p>&ldquo;Pongo en palabras la voz de cada marca.&rdquo;</p><p>Malena encuentra las palabras que hacen que una marca suene como ella misma.</p>'
   }
 };
+function getTeamPanelText(bio){
+  if (bio.teamText) return bio.teamText;
+  if (!bio.body) return '';
+  const template = document.createElement('template');
+  template.innerHTML = bio.body;
+  const firstParagraph = template.content.querySelector('p');
+  return firstParagraph ? firstParagraph.textContent.trim() : '';
+}
 function setTeamInfo(memberId, showQuote = false){
   const bio = teamBios[memberId] || teamBios.silvina;
+  const panelText = getTeamPanelText(bio);
   if (teamInfoName) teamInfoName.textContent = bio.name;
   if (teamInfoRole) teamInfoRole.textContent = bio.teamRole || bio.role;
   if (teamInfoQuote){
-    teamInfoQuote.textContent = showQuote ? (bio.teamText || '') : '';
-    teamInfoQuote.classList.toggle('is-visible', Boolean(showQuote && bio.teamText));
+    teamInfoQuote.textContent = showQuote ? panelText : '';
+    teamInfoQuote.classList.toggle('is-visible', Boolean(showQuote && panelText));
   }
   if (teamInfoPhoto && bio.photo){
     teamInfoPhoto.src = bio.photo;
@@ -2561,7 +2570,7 @@ function resetTeamInfo(){
     return;
   }
   if (teamInfoName) teamInfoName.textContent = 'Elegí una persona';
-  if (teamInfoRole) teamInfoRole.textContent = 'Hacé click sobre una persona para ver su nombre, cargo y foto individual.';
+  if (teamInfoRole) teamInfoRole.textContent = 'Pasá el mouse sobre una persona para ver su nombre, cargo, foto y frase.';
   if (teamInfoQuote){
     teamInfoQuote.textContent = '';
     teamInfoQuote.classList.remove('is-visible');
@@ -2605,11 +2614,11 @@ if (silvinaPhoto){
 document.querySelectorAll('.team-member').forEach(member => {
   member.addEventListener('mouseenter', () => {
     if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
-    setTeamInfo(member.dataset.member, false);
+    setTeamInfo(member.dataset.member, true);
   });
   member.addEventListener('focus', () => {
     if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
-    setTeamInfo(member.dataset.member, false);
+    setTeamInfo(member.dataset.member, true);
   });
   member.addEventListener('mouseleave', () => {
     resetTeamInfo();
@@ -2618,7 +2627,7 @@ document.querySelectorAll('.team-member').forEach(member => {
     resetTeamInfo();
   });
   member.addEventListener('click', () => {
-    setTeamInfo(member.dataset.member, false);
+    setTeamInfo(member.dataset.member, true);
     openBioModal(member.dataset.member);
   });
 });
