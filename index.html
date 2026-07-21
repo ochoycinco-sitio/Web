@@ -212,7 +212,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
   position:absolute;right:7%;top:50vh;transform:translateY(-50%);
   width:110px;height:110px;
   border-width:2px;z-index:4;pointer-events:auto;cursor:pointer;
-  overflow:hidden;
+  overflow:visible;
   opacity:0;animation:badgeEnter .9s .2s var(--ease) forwards, badgePulse 5s 1.1s ease-in-out infinite;
   transition:transform .55s var(--ease), box-shadow .55s var(--ease);
 }
@@ -732,8 +732,9 @@ body.theme-light .logo-badge--hero{
   box-shadow:0 20px 38px rgba(108,72,8,.22);
 }
 body.theme-light .logo-badge--hero::before{
-  background:conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--charcoal) 300deg, rgba(20,18,13,.55) 330deg, transparent 360deg);
-  opacity:.72;
+  background:conic-gradient(from 0deg, transparent 0deg, transparent 250deg, var(--charcoal) 300deg, rgba(20,18,13,.72) 330deg, transparent 360deg);
+  opacity:.95;
+  animation:badgeRingSpin 7s linear infinite;
 }
 body.theme-light .logo-badge--hero::after{box-shadow:none;opacity:0;}
 body.theme-light .logo-badge--hero .umbrella-shade{opacity:0;filter:blur(8px);}
