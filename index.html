@@ -405,21 +405,34 @@ nav.links a.active{color:var(--yellow);}
 
 .nav-cta{display:flex;align-items:center;gap:22px;margin-left:28px;flex-shrink:0;}
 .theme-toggle{
-  min-width:128px;height:46px;padding:0 16px;border-radius:100px;border:1px solid rgba(247,241,227,.8);
+  width:46px;min-width:46px;height:46px;padding:0 14px;border-radius:100px;border:1px solid rgba(247,241,227,.8);
   background:rgba(247,201,72,.11);color:var(--yellow);
   display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;
   font-family:var(--body);font-size:13px;font-weight:800;letter-spacing:.02em;
   box-shadow:0 0 0 1px rgba(247,241,227,.1), 0 12px 28px rgba(0,0,0,.18);
   animation:themePulse 4s ease-in-out infinite;
-  transition:transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+  overflow:hidden;
+  transition:width .35s var(--ease), min-width .35s var(--ease), transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
 }
-.theme-toggle:hover{transform:translateY(-2px);background:var(--yellow);color:var(--charcoal);border-color:var(--yellow);box-shadow:0 14px 30px rgba(0,0,0,.24), 0 0 0 6px rgba(247,201,72,.1);}
+.theme-toggle:hover,
+.theme-toggle:focus-visible{
+  width:138px;min-width:138px;transform:translateY(-2px);
+  background:var(--yellow);color:var(--charcoal);border-color:var(--yellow);
+  box-shadow:0 14px 30px rgba(0,0,0,.24), 0 0 0 6px rgba(247,201,72,.1);
+}
 .theme-toggle svg{width:18px;height:18px;display:block;}
 .theme-toggle .theme-icon-sun{display:inline;}
 .theme-toggle .theme-icon-moon{display:none;}
 body.theme-light .theme-toggle .theme-icon-sun{display:none;}
 body.theme-light .theme-toggle .theme-icon-moon{display:inline;}
-.theme-toggle .theme-label{white-space:nowrap;}
+.theme-toggle .theme-label{
+  max-width:0;opacity:0;overflow:hidden;white-space:nowrap;
+  transition:max-width .35s var(--ease), opacity .22s var(--ease);
+}
+.theme-toggle:hover .theme-label,
+.theme-toggle:focus-visible .theme-label{
+  max-width:94px;opacity:1;
+}
 .theme-toggle:disabled{opacity:.72;cursor:wait;animation:none;}
 @keyframes themePulse{0%,100%{box-shadow:0 0 0 1px rgba(247,201,72,.08), 0 12px 28px rgba(0,0,0,.18);}50%{box-shadow:0 0 0 7px rgba(247,201,72,0), 0 12px 28px rgba(0,0,0,.18);}}
 .nav-cta .btn-fill{
