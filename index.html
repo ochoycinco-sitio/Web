@@ -2393,10 +2393,6 @@ function setTeamInfo(memberId, showQuote = false){
     teamInfoPhoto.alt = `${bio.name}, ${bio.role}`;
   }
   if (teamInfoCard) teamInfoCard.classList.add('is-visible');
-  if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
-  document.querySelectorAll('.team-member').forEach(member => {
-    member.classList.toggle('is-active', member.dataset.member === memberId);
-  });
 }
 function resetTeamInfo(){
   if (pinnedTeamMember){
@@ -2453,10 +2449,10 @@ document.querySelectorAll('.team-member').forEach(member => {
     if (teamWideFrame) teamWideFrame.classList.add('is-spotlighting');
   });
   member.addEventListener('mouseleave', () => {
-    if (!pinnedTeamMember && teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
+    if (teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
   });
   member.addEventListener('blur', () => {
-    if (!pinnedTeamMember && teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
+    if (teamWideFrame) teamWideFrame.classList.remove('is-spotlighting');
   });
   member.addEventListener('click', () => {
     pinnedTeamMember = member.dataset.member;
