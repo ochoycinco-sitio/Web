@@ -1266,7 +1266,7 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   position:relative;border-radius:14px;overflow:hidden;
   box-shadow:0 30px 60px -20px rgba(0,0,0,.35);
 }
-.quote-photo img{display:block;width:100%;aspect-ratio:4/4.26;object-fit:contain;object-position:center center;background:#f7f4ef;transition:transform .5s var(--ease);}
+.quote-photo img{display:block;width:100%;aspect-ratio:4/4.26;object-fit:cover;object-position:center top;background:#f7f4ef;transition:transform .5s var(--ease);}
 .quote-photo:hover img{transform:scale(1.04);}
 .quote-photo .ph-accent{
   position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;
@@ -2162,7 +2162,7 @@ try{
       <div class="quote-photo reveal" id="silvinaPhoto" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver biografía de Silvina Cardoso">
         <div class="ph-accent" aria-hidden="true"></div>
         <div class="ph-frame">
-          <img src="assets/silvina-cardoso-8y5-alta-00135-web.jpg" alt="Silvina Cardoso, directora de Ocho y Cinco">
+          <img src="assets/silvina-cardoso-8y5-alta-00135.jpg" alt="Silvina Cardoso, directora de Ocho y Cinco">
         </div>
         <span class="ph-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
@@ -2217,7 +2217,7 @@ try{
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
     </button>
     <div class="bio-modal-head">
-      <img id="bioModalPhoto" src="assets/silvina-cardoso-8y5-alta-00135-web.jpg" alt="Silvina Cardoso">
+      <img id="bioModalPhoto" src="assets/silvina-cardoso-8y5-alta-00135.jpg" alt="Silvina Cardoso">
       <div>
         <div class="bm-name" id="bioModalName">Silvina Cardoso</div>
         <div class="bm-role" id="bioModalRole">Directora de Ocho y Cinco</div>
@@ -2507,7 +2507,7 @@ const teamBios = {
     role: 'Directora de Ocho y Cinco',
     teamRole: 'Directora',
     teamText: 'La primera que hago es "Para Qué?". El comienzo de todo es el objetivo.',
-    photo: 'assets/silvina-cardoso-8y5-alta-00135-web.jpg',
+    photo: 'assets/silvina-cardoso-8y5-alta-00135.jpg',
     body: silvinaBioHtml
   },
   diego: {
