@@ -238,23 +238,29 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
 .logo-badge--hero .umbrella-shade{
   position:absolute;inset:6%;border-radius:50%;z-index:0;pointer-events:none;
   background:
-    radial-gradient(circle at 50% 50%, rgba(247,201,72,.035) 0 2%, transparent 5%),
-    conic-gradient(from -104deg,
-      rgba(247,201,72,.045) 0deg 18deg,
-      rgba(0,0,0,.16) 36deg 58deg,
-      rgba(245,241,230,.035) 74deg 88deg,
-      rgba(0,0,0,.13) 106deg 130deg,
-      rgba(247,201,72,.035) 148deg 164deg,
-      rgba(0,0,0,.17) 188deg 215deg,
-      rgba(245,241,230,.028) 232deg 248deg,
-      rgba(0,0,0,.14) 272deg 300deg,
-      rgba(247,201,72,.032) 318deg 336deg,
-      rgba(0,0,0,.10) 350deg 360deg);
+    radial-gradient(circle at 50% 52%, rgba(247,201,72,.12) 0 2.5%, transparent 4.8%),
+    conic-gradient(from -90deg,
+      rgba(247,201,72,.035) 0deg 18deg,
+      rgba(0,0,0,.16) 18deg 45deg,
+      rgba(245,241,230,.04) 45deg 63deg,
+      rgba(0,0,0,.14) 63deg 90deg,
+      rgba(247,201,72,.035) 90deg 108deg,
+      rgba(0,0,0,.17) 108deg 135deg,
+      rgba(245,241,230,.035) 135deg 153deg,
+      rgba(0,0,0,.14) 153deg 180deg,
+      rgba(247,201,72,.032) 180deg 198deg,
+      rgba(0,0,0,.15) 198deg 225deg,
+      rgba(245,241,230,.035) 225deg 243deg,
+      rgba(0,0,0,.13) 243deg 270deg,
+      rgba(247,201,72,.035) 270deg 288deg,
+      rgba(0,0,0,.15) 288deg 315deg,
+      rgba(245,241,230,.032) 315deg 333deg,
+      rgba(0,0,0,.12) 333deg 360deg);
   opacity:.46;
   filter:blur(7px);
   -webkit-mask:radial-gradient(circle, transparent 0 5%, rgba(0,0,0,.72) 11%, #000 62%, transparent 86%);
   mask:radial-gradient(circle, transparent 0 5%, rgba(0,0,0,.72) 11%, #000 62%, transparent 86%);
-  transform-origin:50% 72%;
+  transform-origin:50% 52%;
   transition:transform .65s var(--ease), opacity .45s var(--ease), filter .45s var(--ease);
 }
 .logo-badge--hero .umbrella-center{
@@ -263,18 +269,6 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
   background:rgba(118,113,104,.52);
   box-shadow:inset 0 1px 1px rgba(245,241,230,.12), 0 0 0 1px rgba(168,162,150,.11), 0 1px 5px rgba(0,0,0,.38);
 }
-.hero-umbrella-mark{
-  position:absolute;left:50%;top:50%;width:72%;height:72%;z-index:0;pointer-events:none;
-  color:var(--yellow);opacity:0;transform:translate(-50%,-42%) scale(.72);
-  filter:drop-shadow(0 8px 16px rgba(0,0,0,.22));
-  transition:opacity .38s var(--ease), transform .55s var(--ease);
-}
-.hero-umbrella-mark path{
-  stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;fill:none;
-}
-.hero-umbrella-mark .canopy{fill:rgba(247,201,72,.08);stroke-width:2;}
-.hero-umbrella-mark .rib{opacity:.45;}
-.hero-umbrella-mark .handle{opacity:.52;}
 .logo-badge--hero .lb-word,
 .logo-badge--hero .lb-tag{
   position:relative;z-index:1;text-shadow:0 1px 8px rgba(22,21,19,.92);
@@ -301,6 +295,11 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
 }
 @keyframes badgeEnter{from{opacity:0;}to{opacity:1;}}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(247,201,72,.12);}50%{box-shadow:0 0 0 18px rgba(247,201,72,0);}}
+@keyframes umbrellaTopView{
+  0%{transform:rotate(0deg) scale(1);}
+  45%{transform:rotate(10deg) scale(1.06);}
+  100%{transform:rotate(0deg) scale(1);}
+}
 @media (hover:hover){
   .logo-badge--hero:hover{
     transform:translateY(-50%) scale(1.04);
@@ -311,14 +310,14 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
     opacity:1;
   }
   .logo-badge--hero:hover .umbrella-shade{
-    opacity:.86;filter:blur(4px);
-  }
-  .logo-badge--hero:hover .hero-umbrella-mark{
-    opacity:.45;transform:translate(-50%,-56%) scale(1);
+    opacity:.92;filter:blur(2px);
+    -webkit-mask:radial-gradient(circle, transparent 0 4%, rgba(0,0,0,.86) 8%, #000 70%, transparent 88%);
+    mask:radial-gradient(circle, transparent 0 4%, rgba(0,0,0,.86) 8%, #000 70%, transparent 88%);
+    animation:umbrellaTopView 1.7s var(--ease) infinite;
   }
   .logo-badge--hero:hover .lb-word,
   .logo-badge--hero:hover .lb-tag{
-    opacity:.82;
+    opacity:.94;
   }
 }
 
@@ -1832,14 +1831,6 @@ try{
   <div class="logo-badge logo-badge--hero" id="heroBadge">
     <span class="umbrella-shade" aria-hidden="true"></span>
     <span class="umbrella-center" aria-hidden="true"></span>
-    <svg class="hero-umbrella-mark" viewBox="0 0 120 120" aria-hidden="true">
-      <path class="canopy" d="M16 58C22 30 41 17 60 17s38 13 44 41H16Z"/>
-      <path class="rib" d="M60 18v40"/>
-      <path class="rib" d="M36 58c4-16 12-29 24-40"/>
-      <path class="rib" d="M84 58c-4-16-12-29-24-40"/>
-      <path class="rib" d="M16 58c6-4 12-4 18 0 6-4 12-4 18 0 6-4 12-4 18 0 6-4 12-4 18 0 6-4 12-4 16 0"/>
-      <path class="handle" d="M60 58v28c0 9 6 15 15 15 7 0 13-5 14-12"/>
-    </svg>
 
 
     <span class="lb-word">OCHO Y CINCO</span>
