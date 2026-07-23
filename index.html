@@ -387,7 +387,7 @@ header.scrolled{
   opacity:.8;
 }
 
-nav.links{display:flex;gap:2px;font-family:var(--display);font-size:clamp(13px,1.1vw,18px);font-weight:400;letter-spacing:.02em;text-transform:uppercase;margin-left:auto;min-width:0;}
+nav.links{display:flex;gap:2px;font-family:var(--display);font-size:clamp(13px,1.1vw,18px);font-weight:400;letter-spacing:.02em;text-transform:uppercase;margin-left:auto;flex-shrink:0;}
 nav.links a{
   position:relative;color:var(--cream);transition:color .3s var(--ease);
   padding:11px 9px;border-radius:100px;z-index:1;white-space:nowrap;
@@ -404,7 +404,7 @@ nav.links a:hover{color:var(--yellow);}
 nav.links a:hover::before{transform:scale(1);opacity:1;border-color:rgba(247,201,72,.4);}
 nav.links a.active{color:var(--yellow);}
 
-.nav-cta{display:flex;align-items:center;flex-wrap:nowrap;gap:20px;margin-left:20px;flex-shrink:0;}
+.nav-cta{display:flex;align-items:center;flex-wrap:nowrap;gap:20px;margin-left:32px;flex-shrink:0;position:relative;z-index:2;}
 .nav-cta > *{flex-shrink:0;}
 .theme-toggle{
   width:48px;min-width:48px;height:46px;padding:0 14px;border-radius:100px;border:1px solid rgba(247,241,227,.8);
