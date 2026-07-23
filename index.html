@@ -369,7 +369,7 @@ header.scrolled{
   border-color:rgba(247,201,72,.18);
   box-shadow:0 8px 30px rgba(0,0,0,.35), 0 1px 0 rgba(247,201,72,.08);
 }
-.nav-row{display:flex;align-items:center;justify-content:flex-start;gap:34px;}
+.nav-row{display:flex;align-items:center;justify-content:flex-start;gap:22px;flex-wrap:nowrap;}
 .brand{display:flex;align-items:center;gap:16px;font-family:var(--logo-font);font-size:25px;letter-spacing:.08em;transition:transform .35s var(--ease);flex-shrink:0;margin-right:30px;}
 .brand:hover{transform:translateY(-1px);}
 .brand-name{font-family:var(--logo-font);font-size:23px;font-weight:400;letter-spacing:.08em;color:var(--cream);white-space:nowrap;line-height:.9;text-transform:uppercase;display:inline-block;transform:scaleY(1.22);transform-origin:bottom center;}
@@ -388,7 +388,7 @@ header.scrolled{
   opacity:.8;
 }
 
-nav.links{display:flex;gap:12px;font-family:var(--display);font-size:18px;font-weight:400;letter-spacing:.055em;text-transform:uppercase;margin-left:auto;}
+nav.links{display:flex;gap:2px;font-family:var(--display);font-size:clamp(13px,1.1vw,18px);font-weight:400;letter-spacing:.02em;text-transform:uppercase;margin-left:auto;min-width:0;}
 nav.links a{display:inline-block;transform:scaleY(1.18);transform-origin:bottom center;}
 nav.links a{
   position:relative;color:var(--cream);transition:color .3s var(--ease);
