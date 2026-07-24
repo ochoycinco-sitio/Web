@@ -198,9 +198,16 @@ h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:
 }
 .logo-badge .lb-word{
   font-family:var(--logo-font);font-weight:700;color:var(--cream);white-space:nowrap;
-  letter-spacing:.02em;text-transform:uppercase;line-height:.9;
+  letter-spacing:0em;text-transform:uppercase;line-height:.9;
   display:inline-block;transform:scaleY(1.2);transform-origin:center;
 }
+.logo-badge .lb-mark{
+  display:block;width:40px;aspect-ratio:191.984375/89.171875;
+  background-color:var(--cream);
+  -webkit-mask:url('assets/logo-wordmark.svg') no-repeat center / contain;
+  mask:url('assets/logo-wordmark.svg') no-repeat center / contain;
+}
+body.theme-light .logo-badge .lb-mark{background-color:var(--charcoal);}
 .logo-badge .lb-tag{
   font-family:var(--tagline-font);font-weight:400;color:var(--cream-dim);white-space:nowrap;
   letter-spacing:.01em;text-transform:lowercase;line-height:1.05;
@@ -208,6 +215,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:
 
 .logo-badge--nav{width:60px;height:60px;border-width:1.3px;}
 .logo-badge--nav .lb-word{font-size:10px;}
+.logo-badge--nav .lb-mark{width:40px;}
 
 /* Hero badge &mdash; 50vh = true screen center regardless of hero section height */
 .logo-badge--hero{
@@ -291,17 +299,20 @@ h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:
 }
 .logo-badge--hero .lb-word{font-size:15.5px;}
 .logo-badge--hero .lb-tag{font-size:5.6px;margin-top:6px;}
+.logo-badge--hero .lb-mark{width:78px;}
 @media (min-width:881px){
   .logo-badge--hero{width:280px;height:280px;right:6%;}
   .logo-badge--hero::before, .logo-badge--hero::after{inset:-22px;}
   .logo-badge--hero .lb-word{font-size:31px;}
   .logo-badge--hero .lb-tag{font-size:10.8px;margin-top:10px;}
+  .logo-badge--hero .lb-mark{width:195px;}
 }
 @media (min-width:1280px){
   .logo-badge--hero{width:320px;height:320px;right:7%;}
   .logo-badge--hero::before, .logo-badge--hero::after{inset:-26px;}
   .logo-badge--hero .lb-word{font-size:35px;}
   .logo-badge--hero .lb-tag{font-size:12px;margin-top:11px;}
+  .logo-badge--hero .lb-mark{width:225px;}
 }
 @media (max-width:880px){
   .logo-badge--hero{position:relative;right:auto;top:auto;transform:none;margin-bottom:22px;animation:none;}
@@ -334,6 +345,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:
 }
 
 .logo-badge--footer{width:58px;height:58px;position:relative;}
+.logo-badge--footer .lb-mark{width:38px;}
 .logo-badge--footer::before{
   content:"";position:absolute;inset:-7px;border-radius:50%;
   background:conic-gradient(from 0deg, transparent 0deg, transparent 242deg, var(--yellow) 298deg, var(--yellow-pale) 332deg, transparent 360deg);
@@ -1811,7 +1823,7 @@ try{
   <div class="wrap nav-row">
     <a href="#inicio" class="brand">
       <div class="logo-badge logo-badge--nav" aria-hidden="true">
-        <span class="lb-word">OCHO Y CINCO</span>
+        <span class="lb-mark"></span>
       </div>
       <span class="brand-name">OCHO Y CINCO</span>
     </a>
@@ -1910,8 +1922,8 @@ try{
     <span class="umbrella-center" aria-hidden="true"></span>
 
 
-    <span class="lb-word">OCHO Y CINCO</span>
-    <span class="lb-tag">agencia de contenidos</span>
+    <span class="sr-only">Ocho y Cinco, agencia de contenidos</span>
+    <span class="lb-mark" aria-hidden="true"></span>
   </div>
 
   <div class="wrap hero-content">
@@ -2373,7 +2385,7 @@ try{
   <div class="wrap foot-row">
     <div class="foot-brand">
       <div class="logo-badge logo-badge--nav logo-badge--footer" aria-hidden="true">
-        <span class="lb-word">OCHO Y CINCO</span>
+        <span class="lb-mark"></span>
       </div>
       <span class="brand-name">OCHO Y CINCO</span>
     </div>
