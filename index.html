@@ -1947,10 +1947,10 @@ try{
   </div>
 
   <div class="hero-stats reveal">
-    <div class="hero-stat"><span class="hero-stat-num">+85</span><span class="hero-stat-label">Experiencias</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">+45</span><span class="hero-stat-label">Campañas</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">+32</span><span class="hero-stat-label">Marcas nos eligieron</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">+260.000</span><span class="hero-stat-label">Personas alcanzadas</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="85">+0</span><span class="hero-stat-label">Experiencias</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="45">+0</span><span class="hero-stat-label">Campañas</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="32">+0</span><span class="hero-stat-label">Marcas nos eligieron</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="260000">+0</span><span class="hero-stat-label">Personas alcanzadas</span></div>
   </div>
 
   <div class="wrap hero-content">
@@ -2733,6 +2733,32 @@ const io = new IntersectionObserver((entries) => {
   });
 }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
 revealEls.forEach(el => io.observe(el));
+
+// ===== Hero stat counters =====
+function animateCount(el){
+  const target = parseInt(el.dataset.countTo, 10) || 0;
+  const duration = 1600;
+  const start = performance.now();
+  function tick(now){
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const value = Math.round(target * eased);
+    el.textContent = '+' + value.toLocaleString('es-AR');
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = '+' + target.toLocaleString('es-AR');
+  }
+  requestAnimationFrame(tick);
+}
+const statEls = document.querySelectorAll('.hero-stat-num[data-count-to]');
+const statIo = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting){
+      animateCount(e.target);
+      statIo.unobserve(e.target);
+    }
+  });
+}, {threshold:0.4});
+statEls.forEach(el => statIo.observe(el));
 
 // timeline dot activation
 document.querySelectorAll('.t-node').forEach(el => io.observe(el));
