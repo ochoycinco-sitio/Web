@@ -315,6 +315,24 @@ body.theme-light .logo-badge .lb-mark{color:var(--charcoal);}
   .logo-badge--hero::before{animation:badgeRingSpin 7s linear infinite;}
   .logo-badge--hero::after{animation:none;opacity:.5;}
 }
+.hero-stats{
+  position:relative;z-index:4;margin:26px 0 0;width:100%;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px 20px;
+}
+.hero-stat{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-stat-num{font-family:var(--display);font-size:28px;color:var(--yellow);line-height:1;}
+.hero-stat-label{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--cream-dim);margin-top:5px;}
+@media (min-width:881px){
+  .hero-stats{
+    position:absolute;right:6%;top:calc(50vh + 164px);
+    width:280px;margin:0;
+  }
+}
+@media (min-width:1280px){
+  .hero-stats{right:7%;top:calc(50vh + 184px);width:320px;}
+}
+body.theme-light .hero-stat-num{color:var(--charcoal);}
+body.theme-light .hero-stat-label{color:#494238;}
 @keyframes badgeEnter{from{opacity:0;}to{opacity:1;}}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(247,201,72,.12);}50%{box-shadow:0 0 0 18px rgba(247,201,72,0);}}
 @media (hover:hover){
@@ -1926,6 +1944,13 @@ try{
 
     <span class="sr-only">Ocho y Cinco, agencia de contenidos</span>
     <span class="lb-mark" aria-hidden="true"><svg viewBox="0 0 191.984375 89.171875"><use href="#logo-wordmark-svg"></use></svg></span>
+  </div>
+
+  <div class="hero-stats reveal">
+    <div class="hero-stat"><span class="hero-stat-num">+85</span><span class="hero-stat-label">Experiencias</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">+45</span><span class="hero-stat-label">Campañas</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">+32</span><span class="hero-stat-label">Marcas nos eligieron</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">+260.000</span><span class="hero-stat-label">Personas alcanzadas</span></div>
   </div>
 
   <div class="wrap hero-content">
