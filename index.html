@@ -154,17 +154,25 @@ a{color:inherit;text-decoration:none;}
 /* ============ UTILITY ============ */
 .eyebrow{
   font-family:var(--mono);
-  font-weight:700;
-  font-size:14px;
-  letter-spacing:.16em;
+  font-weight:900;
+  font-size:clamp(15px,1.15vw,17px);
+  letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--yellow);
   display:flex;
   align-items:center;
-  gap:11px;
-  margin-bottom:18px;
+  gap:12px;
+  margin-bottom:22px;
 }
-.eyebrow .um-icon{width:14px;height:14px;flex:none;}
+.eyebrow::after{
+  content:"";width:46px;height:2px;background:currentColor;opacity:.75;flex:none;
+}
+.eyebrow .um-icon{width:17px;height:17px;flex:none;}
+@media (max-width:600px){
+  .eyebrow{font-size:14px;letter-spacing:.13em;gap:10px;}
+  .eyebrow::after{width:28px;}
+  .eyebrow .um-icon{width:15px;height:15px;}
+}
 h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;margin:0;}
 .section{padding:120px 0;position:relative;}
 @media (max-width:720px){.section{padding:76px 0;}}
