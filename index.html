@@ -405,7 +405,7 @@ header.scrolled{
   box-shadow:0 8px 30px rgba(0,0,0,.35), 0 1px 0 rgba(247,201,72,.08);
 }
 .nav-row{display:flex;align-items:center;justify-content:flex-start;gap:22px;flex-wrap:nowrap;}
-.brand{display:flex;align-items:center;gap:16px;font-family:var(--logo-font);font-size:25px;letter-spacing:.08em;transition:transform .35s var(--ease);flex-shrink:0;margin-right:30px;}
+.brand{display:flex;align-items:center;gap:16px;font-family:var(--logo-font);font-size:25px;letter-spacing:.08em;transition:transform .35s var(--ease);flex-shrink:0;margin-right:18px;}
 .brand:hover{transform:translateY(-1px);}
 .brand-name{display:block;width:150px;color:var(--cream);}
 .brand-name svg{display:block;width:100%;height:auto;}
@@ -424,10 +424,10 @@ header.scrolled{
   opacity:.8;
 }
 
-nav.links{display:flex;gap:2px;font-family:var(--display);font-size:clamp(13px,1.1vw,18px);font-weight:400;letter-spacing:.02em;text-transform:uppercase;margin-left:auto;flex-shrink:0;}
+nav.links{display:flex;gap:0;font-family:var(--display);font-size:clamp(12px,1vw,15px);font-weight:400;letter-spacing:.02em;text-transform:uppercase;margin-left:auto;flex-shrink:0;}
 nav.links a{
   position:relative;color:var(--cream);transition:color .3s var(--ease);
-  padding:11px 9px;border-radius:100px;z-index:1;white-space:nowrap;
+  padding:11px 7px;border-radius:100px;z-index:1;white-space:nowrap;
 }
 nav.links a::before{
   content:"";position:absolute;inset:0;border-radius:100px;
@@ -441,7 +441,7 @@ nav.links a:hover{color:var(--yellow);}
 nav.links a:hover::before{transform:scale(1);opacity:1;border-color:rgba(247,201,72,.4);}
 nav.links a.active{color:var(--yellow);}
 
-.nav-cta{display:flex;align-items:center;flex-wrap:nowrap;gap:20px;margin-left:32px;flex-shrink:0;position:relative;z-index:2;}
+.nav-cta{display:flex;align-items:center;flex-wrap:nowrap;gap:16px;margin-left:18px;flex-shrink:0;position:relative;z-index:2;}
 .nav-cta > *{flex-shrink:0;}
 .theme-toggle{
   width:48px;min-width:48px;height:46px;padding:0 14px;border-radius:100px;border:1px solid rgba(247,241,227,.8);
@@ -1083,15 +1083,15 @@ body.theme-light .marquee-track span .um-icon path{fill:var(--yellow);}
 }
 
 /* ============ PROP&Oacute;SITO / VISI&Oacute;N ============ */
-.pv-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;}
-@media (max-width:880px){.pv-grid{grid-template-columns:1fr;gap:50px;}}
+.pv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:42px;}
+@media (max-width:980px){.pv-grid{grid-template-columns:1fr;gap:42px;}}
 .pv-image{width:100%;border-radius:14px;overflow:hidden;margin-bottom:48px;border:1px solid var(--line);background:#24231f;}
 .pv-image img{width:100%;height:auto;object-fit:initial;display:block;filter:grayscale(.08) contrast(1.04) brightness(.92);}
 body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 @media (max-width:720px){.pv-image{margin-bottom:34px;}}
 .pv-card .tag{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--cream-dim);text-transform:uppercase;display:block;margin-bottom:16px;}
 .pv-card p{font-size:22px;line-height:1.4;font-weight:500;color:var(--cream);}
-.pv-card.vision p{font-size:26px;line-height:1.38;}
+.pv-card.vision p,.pv-card.mission p{font-size:24px;line-height:1.38;}
 .pv-card .hl{color:var(--yellow);font-weight:800;}
 .pv-divider{width:1px;background:var(--line);}
 
@@ -1250,6 +1250,7 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 }
 .proc-foot.in .pf-word{opacity:1;transform:translateY(0) scale(1);}
 .proc-foot .hl{color:var(--yellow);}
+.proc-foot .pf-white{color:var(--cream);}
 
 /* ============ OMNICANAL (mastermind grid) ============ */
 .mm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
@@ -1868,12 +1869,12 @@ try{
     </a>
     <nav class="links">
       <a href="./" onclick="location.reload();return false;">Inicio</a>
-      <a href="#proposito">Propósito</a>
-      <a href="#historia">Historia</a>
-      <a href="#equipo">Nuestro Equipo</a>
-      <a href="#proceso">Cómo trabajamos</a>
-      <a href="#casos">Casos</a>
+      <a href="#casos">Casos de éxito</a>
       <a href="#clientes">Clientes</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#equipo">Nuestro Equipo</a>
+      <a href="#proposito">Propósito, Visión, Misión</a>
+      <a href="#historia">Historia</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
@@ -1895,12 +1896,12 @@ try{
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="./" onclick="location.reload();return false;">Inicio</a>
-  <a href="#proposito">Propósito</a>
-  <a href="#historia">Historia</a>
-  <a href="#equipo">Nuestro Equipo</a>
-  <a href="#proceso">Cómo trabajamos</a>
-  <a href="#casos">Casos</a>
+  <a href="#casos">Casos de éxito</a>
   <a href="#clientes">Clientes</a>
+  <a href="#proceso">Cómo trabajamos</a>
+  <a href="#equipo">Nuestro Equipo</a>
+  <a href="#proposito">Propósito, Visión, Misión</a>
+  <a href="#historia">Historia</a>
   <a href="#faq">FAQ</a>
   <a href="#contact-buttons" class="btn btn-fill">Hablemos</a>
 </div>
@@ -1968,17 +1969,13 @@ try{
   <div class="hero-stats reveal">
     <div class="hero-stat"><span class="hero-stat-num" data-count-to="85">+0</span><span class="hero-stat-label">Experiencias</span></div>
     <div class="hero-stat"><span class="hero-stat-num" data-count-to="45">+0</span><span class="hero-stat-label">Campañas</span></div>
-    <div class="hero-stat"><span class="hero-stat-num" data-count-to="32">+0</span><span class="hero-stat-label">Marcas nos eligieron</span></div>
-    <div class="hero-stat"><span class="hero-stat-num" data-count-to="260000">+0</span><span class="hero-stat-label">Personas alcanzadas</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="32" data-prefix="">0</span><span class="hero-stat-label">Marcas nos eligieron</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="4" data-prefix="">0</span><span class="hero-stat-label">Premios</span></div>
   </div>
 
   <div class="wrap hero-content">
     <div class="hero-text">
-      <div class="hero-eyebrow">
-        <svg class="um-icon" width="14" height="14" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>
-        Agencia de Marketing y Comunicación
-      </div>
-      <h1 class="reveal" id="heroH1"><span class="sr-only">Ocho y Cinco, agencia de marketing y comunicación: Destacarse no es suerte. Es estrategia.</span><span class="hero-title-line" style="--line:0">DESTACARSE</span><span class="hero-title-line" style="--line:1">NO ES</span><span class="hero-title-line" style="--line:2">SUERTE.</span><span class="hero-title-line" style="--line:3">ES <span class="hl" style="white-space:nowrap">ESTRATEGIA<span class="hero-title-dot">.</span></span></span></h1>
+      <h1 class="reveal" id="heroH1"><span class="sr-only">Ocho y Cinco: Destacarse no es suerte. Es estrategia.</span><span class="hero-title-line" style="--line:0">DESTACARSE</span><span class="hero-title-line" style="--line:1">NO ES</span><span class="hero-title-line" style="--line:2">SUERTE.</span><span class="hero-title-line" style="--line:3;white-space:nowrap">ES <span class="hl">ESTRATEGIA<span class="hero-title-dot">.</span></span></span></h1>
       <p class="hero-sub reveal hero-sub-dark" id="heroSub">Como el paraguas amarillo de la foto:<br>Ninguna marca se destaca por casualidad. Detrás de cada marca memorable hay estrategia, creatividad y empatía.</p>
       <p class="hero-sub reveal hero-sub-light" id="heroSubLight">Estrategia, branding y experiencias que fortalecen marcas y construyen relaciones duraderas.</p>
       <div class="hero-ctas reveal" id="heroCtas">
@@ -2037,132 +2034,6 @@ try{
   </div>
 </div>
 
-<!-- ============ PROP&Oacute;SITO / VISI&Oacute;N ============ -->
-<section class="section" id="proposito">
-  <div class="wrap">
-    <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>Por qué existimos</div>
-    <div class="pv-image reveal">
-      <img src="assets/ocho-y-cinco-equipo.png" alt="Equipo de Ocho y Cinco en una oficina">
-    </div>
-    <div class="pv-grid">
-      <div class="pv-card reveal">
-        <span class="tag">Propósito</span>
-        <p>Acompañar a nuestros clientes para <span class="hl">TRANSFORMAR</span> la forma en que conectan con sus audiencias y comunidades.</p>
-      </div>
-      <div class="pv-card vision reveal">
-        <span class="tag">Visión</span>
-        <p>Ser la agencia que cuenta <span class="hl">HISTORIAS</span> auténticas y poderosas, fusionando creatividad, tecnología y <span class="hl">EMPATÍA</span> para <span class="hl">CONECTAR</span> marcas y personas de manera inolvidable. Nos comprometemos a ser el <span class="hl">PUENTE</span> que transforma cada desafío de comunicación en una <span class="hl">OPORTUNIDAD</span> de impacto real y emocional.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HISTORIA ============ -->
-<section class="section" id="historia" style="background:var(--ink-soft);">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>Cómo nace Ocho y Cinco</div>
-      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Una historia antes<br>de ser agencia.</h2>
-    </div>
-    <div class="timeline-scroll">
-      <div class="timeline" id="timeline">
-        <div class="t-node"><div class="t-dot"></div><div class="t-year">1982 &Oacute; 1990</div><div class="t-title">El origen</div><div class="t-desc">Ver cada lugar de trabajo como una gran escuela. Confiar siempre en el camino.</div></div>
-        <div class="t-node"><div class="t-dot"></div><div class="t-year">1991 &Oacute; 2011</div><div class="t-title">El aprendizaje</div><div class="t-desc">Entrega total, la camiseta puesta. Ser parte de cada nuevo desafío. Fracasar aprendiendo.</div></div>
-        <div class="t-node"><div class="t-dot"></div><div class="t-year">2012</div><div class="t-title">La valentía</div><div class="t-desc">Dejar el mundo corporativo. Creer para crear. El primer paso siempre es el más difícil.</div></div>
-        <div class="t-node"><div class="t-dot"></div><div class="t-year">2014</div><div class="t-title">La conquista</div><div class="t-desc">Nace Ocho y Cinco. Hacer tribu, construir el negocio: el equipo es todo.</div></div>
-        <div class="t-node"><div class="t-dot"></div><div class="t-year">HOY</div><div class="t-title">El futuro</div><div class="t-desc">Un equipo preparado para estar siempre un paso adelante: RCP, El Círculo, Bir Kings, Proyecto J.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EN QU&Eacute; CREEMOS ============ -->
-<section class="section" id="creemos">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>En qué creemos como equipo</div>
-      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Nuestras convicciones.</h2>
-      <p class="reveal">No son frases de pared. Son la forma en la que decidimos trabajar, todos los días.</p>
-    </div>
-    <div class="belief-grid" id="beliefGrid">
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>La comunicación lo atraviesa todo.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Los primeros que trabajamos para conectar con el cliente somos nosotros.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Más que una agencia de contenidos: un equipo que acompaña a cada marca de manera integral.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Vivir y contagiar lo que predicamos.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Practicar el anti marketing: vender sin vender.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Ser facilitadores de negocios y de ideas.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Observar todo lo que sucede alrededor nuestro y en el mundo.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Los nichos apagan las ideas.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Conectar marcas y personas. Conectar marcas con otras marcas.</p></button>
-      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Hacer que otros hablen de las marcas.</p></button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESO ============ -->
-<section class="section" id="proceso" style="background:var(--ink-soft);">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>Cómo hacemos lo que hacemos</div>
-      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Tres etapas, un mismo rumbo.</h2>
-    </div>
-    <div class="proc-grid reveal-stagger">
-      <div class="proc-card reveal" data-step="01" style="--i:0">
-        <div class="proc-num">01 &mdash; LA MARCA</div>
-        <h3>Escuchar primero</h3>
-        <ul>
-          <li>Preguntamos todo</li>
-          <li>Escuchamos mucho</li>
-          <li>Trabajamos con objetivos</li>
-          <li>Hacemos equipo con el cliente</li>
-        </ul>
-      </div>
-      <div class="proc-card reveal" data-step="02" style="--i:1">
-        <div class="proc-num">02 &mdash; ANÁLISIS</div>
-        <h3>Diseñar el rumbo</h3>
-        <ul>
-          <li>Diseñamos el "faro" como guía</li>
-          <li>Evaluamos perfiles</li>
-          <li>Identificamos referentes</li>
-          <li>Configuramos el dashboard</li>
-        </ul>
-      </div>
-      <div class="proc-card reveal" data-step="03" style="--i:2">
-        <div class="proc-num">03 &mdash; ESTRATEGIA</div>
-        <h3>Acompañar y medir</h3>
-        <ul>
-          <li>Acompañamos la transformación</li>
-          <li>Planificamos</li>
-          <li>Monitoreamos</li>
-          <li>Mostramos resultados</li>
-        </ul>
-      </div>
-    </div>
-    <p class="proc-foot reveal"><span class="pf-word" style="--i:0">Desafiar,</span> <span class="pf-word hl" style="--i:1">conectar</span> <span class="pf-word" style="--i:2">y sorprender.</span></p>
-  </div>
-</section>
-
-<!-- ============ OMNICANAL ============ -->
-<section class="section" id="omnicanal">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>La mirada omnicanal hoy es clave</div>
-      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Tablero Mastermind, by Ocho y Cinco.</h2>
-      <p class="reveal">Ocho preguntas que ordenan cualquier estrategia de comunicación, sin que se nos escape nada en el camino.</p>
-    </div>
-    <div class="mm-grid reveal-stagger" id="mmGrid">
-      <div class="mm-card reveal" style="--i:0"><div class="mm-idx">01</div><div class="mm-title">Entrenamiento</div><div class="mm-q">¿Los líderes y colaboradores están motivados para ser protagonistas?</div></div>
-      <div class="mm-card reveal" style="--i:1"><div class="mm-idx">02</div><div class="mm-title">Marca empresa</div><div class="mm-q">¿Los colaboradores están conectados emocionalmente con la marca empresa?</div></div>
-      <div class="mm-card reveal" style="--i:2"><div class="mm-idx">03</div><div class="mm-title">Grupo de ideas</div><div class="mm-q">¿Los referentes positivos internos participan de los nuevos proyectos?</div></div>
-      <div class="mm-card reveal" style="--i:3"><div class="mm-idx">04</div><div class="mm-title">Mkt. de contenidos</div><div class="mm-q">¿Los contenidos atraen clientes potenciales de manera natural y orgánica?</div></div>
-      <div class="mm-card reveal" style="--i:4"><div class="mm-idx">05</div><div class="mm-title">Branding</div><div class="mm-q">¿Los canales de difusión generan los resultados esperados? ¿Se habla de la marca?</div></div>
-      <div class="mm-card reveal" style="--i:5"><div class="mm-idx">06</div><div class="mm-title">Marketing digital</div><div class="mm-q">¿Aprovechan todos los medios y plataformas para potenciar la visibilidad de marca?</div></div>
-      <div class="mm-card reveal" style="--i:6"><div class="mm-idx">07</div><div class="mm-title">Eventos</div><div class="mm-q">¿Los eventos generan un "click" en la memoria emotiva de clientes y equipo?</div></div>
-      <div class="mm-card reveal" style="--i:7"><div class="mm-idx">08</div><div class="mm-title">Campañas</div><div class="mm-q">¿Fortalecen el propósito y los valores, y fidelizan a clientes y colaboradores?</div></div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ CASOS ============ -->
 <section class="section" id="casos" style="background:var(--ink-soft);">
   <div class="wrap">
@@ -2213,6 +2084,136 @@ try{
           <div class="desc">Que todas las áreas trabajen en equipo. Uno de los equipos clave durante la pandemia, con campañas de prevención y gestión de las emociones.</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTES ============ -->
+<section class="clientes-band" id="clientes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0H4Z" fill="currentColor"/><path d="M12 13v4a3 3 0 0 0 3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Clientes</div>
+      <h2 class="reveal">Marcas que confiaron en Ocho y Cinco.</h2>
+      <p class="reveal">Acompa&ntilde;amos equipos, campa&ntilde;as y contenidos para marcas de distintas industrias.</p>
+    </div>
+  </div>
+
+  <div class="clients-marquee-wrap reveal" aria-label="Marcas clientes de Ocho y Cinco">
+    <div class="clients-track">
+      <div class="clients-logo-set">
+          <div class="client-logo-card" aria-label="Sagrado Corazón"><img class="client-logo-img" src="assets/SAGRADO%20CORAZON.jfif" alt="Sagrado Corazón" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sagrado">Sagrado Corazón</span></div>
+          <div class="client-logo-card" aria-label="Chubb"><img class="client-logo-img" src="assets/CHUBB.png" alt="Chubb" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-chubb">Chubb</span></div>
+          <div class="client-logo-card" aria-label="Nitragin"><img class="client-logo-img" src="assets/NITRAGIN.png" alt="Nitragin" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-nitragin">Nitragin</span></div>
+          <div class="client-logo-card logo-timbo-card" aria-label="Timbo"><img class="client-logo-img" src="assets/TIMBO.jfif" alt="Timbo" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-timbo">Timbo</span></div>
+          <div class="client-logo-card" aria-label="Maxirest"><img class="client-logo-img" src="assets/MAXIREST.jfif" alt="Maxirest" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-maxirest">Maxirest</span></div>
+          <div class="client-logo-card" aria-label="QBE"><img class="client-logo-img" src="assets/QBE.png" alt="QBE" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-qbe">QBE</span></div>
+          <div class="client-logo-card" aria-label="Kentucky"><img class="client-logo-img" src="assets/KENTUCKY.png" alt="Kentucky" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-kentucky">Kentucky</span></div>
+          <div class="client-logo-card" aria-label="La Toscana"><img class="client-logo-img" src="assets/LA%20TOSCANA%20COLOR.jfif" alt="La Toscana" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-latoscana">La Toscana</span></div>
+          <div class="client-logo-card" aria-label="SURA"><img class="client-logo-img" src="assets/SURA.png" alt="SURA" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sura">SURA</span></div>
+          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><svg class="hsbc-symbol" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><polygon fill="#db0011" points="0,0 20,20 0,40"/><polygon fill="#db0011" points="72,0 52,20 72,40"/><polygon fill="#db0011" points="0,0 36,0 20,20"/><polygon fill="#db0011" points="72,0 36,0 52,20"/><polygon fill="#db0011" points="0,40 36,40 20,20"/><polygon fill="#db0011" points="72,40 36,40 52,20"/></svg><span>HSBC</span></span></div>
+          <div class="client-logo-card" aria-label="Lucchetti"><img class="client-logo-img" src="assets/LUCCHETTI.png" alt="Lucchetti" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-lucchetti">Lucchetti</span></div>
+          <div class="client-logo-card" aria-label="Carnave"><img class="client-logo-img" src="assets/CARNAVE.png" alt="Carnave" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-carnave">Carnave</span></div>
+          <div class="client-logo-card" aria-label="Cementos Avellaneda"><img class="client-logo-img" src="assets/CEMENTOS%20AVELLANEDA.png" alt="Cementos Avellaneda" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
+          <div class="client-logo-card logo-vonfranken-card" aria-label="von franken"><img class="client-logo-img" src="assets/VONFRANKEN.jfif" alt="von franken" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-vonfranken">von franken</span></div>
+          <div class="client-logo-card" aria-label="Quilmes"><img class="client-logo-img" src="assets/QUILMES.jfif" alt="Quilmes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-quilmes">Quilmes</span></div>
+          <div class="client-logo-card logo-genser-card" aria-label="GENSER"><img class="client-logo-img" src="assets/GENSER.png" alt="Genser" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-genser">GENSER</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Facebook"><img class="client-logo-img" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-facebook">Facebook</span></div>
+          <div class="client-logo-card logo-celusal-card" aria-label="Celusal"><img class="client-logo-img" src="assets/CELUSAL.jfif" alt="Celusal" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-celusal">Celusal</span></div>
+          <div class="client-logo-card" aria-label="BOKANZ"><img class="client-logo-img" src="assets/BOKANZ.webp" alt="Bokanz" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-bokanz">BOKANZ</span></div>
+          <div class="client-logo-card" aria-label="SAS Asesores"><img class="client-logo-img" src="assets/SAS.png" alt="SAS Asesores" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sas">SAS Asesores</span></div>
+          <div class="client-logo-card" aria-label="Baalbek"><img class="client-logo-img" src="assets/BAALBEK.png" alt="Baalbek" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-baalbek">Baalbek</span></div>
+          <div class="client-logo-card" aria-label="Novozymes"><img class="client-logo-img" src="assets/NOVOZYMES.png" alt="Novozymes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-novozymes">Novozymes</span></div>
+          <div class="client-logo-card" aria-label="HOMS"><img class="client-logo-img" src="assets/HOMS.png" alt="HOMS" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-homs">HOMS</span></div>
+      </div>
+      <div class="clients-logo-set" aria-hidden="true">
+          <div class="client-logo-card" aria-label="Sagrado Corazón"><img class="client-logo-img" src="assets/SAGRADO%20CORAZON.jfif" alt="Sagrado Corazón" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sagrado">Sagrado Corazón</span></div>
+          <div class="client-logo-card" aria-label="Chubb"><img class="client-logo-img" src="assets/CHUBB.png" alt="Chubb" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-chubb">Chubb</span></div>
+          <div class="client-logo-card" aria-label="Nitragin"><img class="client-logo-img" src="assets/NITRAGIN.png" alt="Nitragin" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-nitragin">Nitragin</span></div>
+          <div class="client-logo-card logo-timbo-card" aria-label="Timbo"><img class="client-logo-img" src="assets/TIMBO.jfif" alt="Timbo" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-timbo">Timbo</span></div>
+          <div class="client-logo-card" aria-label="Maxirest"><img class="client-logo-img" src="assets/MAXIREST.jfif" alt="Maxirest" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-maxirest">Maxirest</span></div>
+          <div class="client-logo-card" aria-label="QBE"><img class="client-logo-img" src="assets/QBE.png" alt="QBE" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-qbe">QBE</span></div>
+          <div class="client-logo-card" aria-label="Kentucky"><img class="client-logo-img" src="assets/KENTUCKY.png" alt="Kentucky" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-kentucky">Kentucky</span></div>
+          <div class="client-logo-card" aria-label="La Toscana"><img class="client-logo-img" src="assets/LA%20TOSCANA%20COLOR.jfif" alt="La Toscana" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-latoscana">La Toscana</span></div>
+          <div class="client-logo-card" aria-label="SURA"><img class="client-logo-img" src="assets/SURA.png" alt="SURA" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sura">SURA</span></div>
+          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><svg class="hsbc-symbol" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><polygon fill="#db0011" points="0,0 20,20 0,40"/><polygon fill="#db0011" points="72,0 52,20 72,40"/><polygon fill="#db0011" points="0,0 36,0 20,20"/><polygon fill="#db0011" points="72,0 36,0 52,20"/><polygon fill="#db0011" points="0,40 36,40 20,20"/><polygon fill="#db0011" points="72,40 36,40 52,20"/></svg><span>HSBC</span></span></div>
+          <div class="client-logo-card" aria-label="Lucchetti"><img class="client-logo-img" src="assets/LUCCHETTI.png" alt="Lucchetti" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-lucchetti">Lucchetti</span></div>
+          <div class="client-logo-card" aria-label="Carnave"><img class="client-logo-img" src="assets/CARNAVE.png" alt="Carnave" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-carnave">Carnave</span></div>
+          <div class="client-logo-card" aria-label="Cementos Avellaneda"><img class="client-logo-img" src="assets/CEMENTOS%20AVELLANEDA.png" alt="Cementos Avellaneda" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
+          <div class="client-logo-card logo-vonfranken-card" aria-label="von franken"><img class="client-logo-img" src="assets/VONFRANKEN.jfif" alt="von franken" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-vonfranken">von franken</span></div>
+          <div class="client-logo-card" aria-label="Quilmes"><img class="client-logo-img" src="assets/QUILMES.jfif" alt="Quilmes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-quilmes">Quilmes</span></div>
+          <div class="client-logo-card logo-genser-card" aria-label="GENSER"><img class="client-logo-img" src="assets/GENSER.png" alt="Genser" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-genser">GENSER</span></div>
+          <div class="client-logo-card logo-icon" aria-label="Facebook"><img class="client-logo-img" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-facebook">Facebook</span></div>
+          <div class="client-logo-card logo-celusal-card" aria-label="Celusal"><img class="client-logo-img" src="assets/CELUSAL.jfif" alt="Celusal" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-celusal">Celusal</span></div>
+          <div class="client-logo-card" aria-label="BOKANZ"><img class="client-logo-img" src="assets/BOKANZ.webp" alt="Bokanz" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-bokanz">BOKANZ</span></div>
+          <div class="client-logo-card" aria-label="SAS Asesores"><img class="client-logo-img" src="assets/SAS.png" alt="SAS Asesores" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sas">SAS Asesores</span></div>
+          <div class="client-logo-card" aria-label="Baalbek"><img class="client-logo-img" src="assets/BAALBEK.png" alt="Baalbek" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-baalbek">Baalbek</span></div>
+          <div class="client-logo-card" aria-label="Novozymes"><img class="client-logo-img" src="assets/NOVOZYMES.png" alt="Novozymes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-novozymes">Novozymes</span></div>
+          <div class="client-logo-card" aria-label="HOMS"><img class="client-logo-img" src="assets/HOMS.png" alt="HOMS" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-homs">HOMS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section" id="proceso" style="background:var(--ink-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>Cómo hacemos lo que hacemos</div>
+      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Tres etapas, un mismo rumbo.</h2>
+    </div>
+    <div class="proc-grid reveal-stagger">
+      <div class="proc-card reveal" data-step="01" style="--i:0">
+        <div class="proc-num">01 &mdash; LA MARCA</div>
+        <h3>Escuchar primero</h3>
+        <ul>
+          <li>Preguntamos todo</li>
+          <li>Escuchamos mucho</li>
+          <li>Trabajamos con objetivos</li>
+          <li>Hacemos equipo con el cliente</li>
+        </ul>
+      </div>
+      <div class="proc-card reveal" data-step="02" style="--i:1">
+        <div class="proc-num">02 &mdash; ANÁLISIS</div>
+        <h3>Diseñar el rumbo</h3>
+        <ul>
+          <li>Diseñamos el "faro" como guía</li>
+          <li>Evaluamos perfiles</li>
+          <li>Identificamos referentes</li>
+          <li>Configuramos el dashboard</li>
+        </ul>
+      </div>
+      <div class="proc-card reveal" data-step="03" style="--i:2">
+        <div class="proc-num">03 &mdash; ESTRATEGIA</div>
+        <h3>Acompañar y medir</h3>
+        <ul>
+          <li>Acompañamos la transformación</li>
+          <li>Planificamos</li>
+          <li>Monitoreamos</li>
+          <li>Mostramos resultados</li>
+        </ul>
+      </div>
+    </div>
+    <p class="proc-foot reveal"><span class="pf-word pf-white" style="--i:0">Desafiar,</span> <span class="pf-word hl" style="--i:1">conectar</span> <span class="pf-word pf-white" style="--i:2">y sorprender.</span></p>
+  </div>
+</section>
+
+<!-- ============ OMNICANAL ============ -->
+<section class="section" id="omnicanal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>La mirada omnicanal hoy es clave</div>
+      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Tablero Mastermind, by Ocho y Cinco.</h2>
+      <p class="reveal">Ocho preguntas que ordenan cualquier estrategia de comunicación, sin que se nos escape nada en el camino.</p>
+    </div>
+    <div class="mm-grid reveal-stagger" id="mmGrid">
+      <div class="mm-card reveal" style="--i:0"><div class="mm-idx">01</div><div class="mm-title">Entrenamiento</div><div class="mm-q">¿Los líderes y colaboradores están motivados para ser protagonistas?</div></div>
+      <div class="mm-card reveal" style="--i:1"><div class="mm-idx">02</div><div class="mm-title">Marca empresa</div><div class="mm-q">¿Los colaboradores están conectados emocionalmente con la marca empresa?</div></div>
+      <div class="mm-card reveal" style="--i:2"><div class="mm-idx">03</div><div class="mm-title">Grupo de ideas</div><div class="mm-q">¿Los referentes positivos internos participan de los nuevos proyectos?</div></div>
+      <div class="mm-card reveal" style="--i:3"><div class="mm-idx">04</div><div class="mm-title">Mkt. de contenidos</div><div class="mm-q">¿Los contenidos atraen clientes potenciales de manera natural y orgánica?</div></div>
+      <div class="mm-card reveal" style="--i:4"><div class="mm-idx">05</div><div class="mm-title">Branding</div><div class="mm-q">¿Los canales de difusión generan los resultados esperados? ¿Se habla de la marca?</div></div>
+      <div class="mm-card reveal" style="--i:5"><div class="mm-idx">06</div><div class="mm-title">Marketing digital</div><div class="mm-q">¿Aprovechan todos los medios y plataformas para potenciar la visibilidad de marca?</div></div>
+      <div class="mm-card reveal" style="--i:6"><div class="mm-idx">07</div><div class="mm-title">Experiencias</div><div class="mm-q">¿Las activaciones y eventos generan un "click" en la memoria emotiva de clientes y equipo?</div></div>
+      <div class="mm-card reveal" style="--i:7"><div class="mm-idx">08</div><div class="mm-title">Campañas</div><div class="mm-q">¿Fortalecen el propósito y los valores, y fidelizan a clientes y colaboradores?</div></div>
     </div>
   </div>
 </section>
@@ -2304,67 +2305,60 @@ try{
   </div>
 </div>
 
-<!-- ============ CLIENTES ============ -->
-<section class="clientes-band" id="clientes">
+<!-- ============ PROP&Oacute;SITO / VISI&Oacute;N ============ -->
+<section class="section" id="proposito">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0H4Z" fill="currentColor"/><path d="M12 13v4a3 3 0 0 0 3 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Clientes</div>
-      <h2 class="reveal">Marcas que confiaron en Ocho y Cinco.</h2>
-      <p class="reveal">Acompa&ntilde;amos equipos, campa&ntilde;as y contenidos para marcas de distintas industrias.</p>
+    <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>Propósito, Visión, Misión</div>
+    <div class="pv-grid">
+      <div class="pv-card reveal">
+        <span class="tag">Propósito</span>
+        <p>Acompañar a nuestros clientes para <span class="hl">TRANSFORMAR</span> la forma en que conectan con sus audiencias y comunidades.</p>
+      </div>
+      <div class="pv-card vision reveal">
+        <span class="tag">Visión</span>
+        <p>Ser la agencia que cuenta <span class="hl">HISTORIAS</span> auténticas y poderosas, fusionando creatividad, tecnología y <span class="hl">EMPATÍA</span> para <span class="hl">CONECTAR</span> marcas y personas.</p>
+      </div>
+      <div class="pv-card mission reveal">
+        <span class="tag">Misión</span>
+        <p>Ser el <span class="hl">PUENTE</span> que transforma cada desafío de comunicación en una <span class="hl">OPORTUNIDAD</span> de impacto real y emocional.</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="clients-marquee-wrap reveal" aria-label="Marcas clientes de Ocho y Cinco">
-    <div class="clients-track">
-      <div class="clients-logo-set">
-          <div class="client-logo-card" aria-label="Sagrado Corazón"><img class="client-logo-img" src="assets/SAGRADO%20CORAZON.jfif" alt="Sagrado Corazón" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sagrado">Sagrado Corazón</span></div>
-          <div class="client-logo-card" aria-label="Chubb"><img class="client-logo-img" src="assets/CHUBB.png" alt="Chubb" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-chubb">Chubb</span></div>
-          <div class="client-logo-card" aria-label="Nitragin"><img class="client-logo-img" src="assets/NITRAGIN.png" alt="Nitragin" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-nitragin">Nitragin</span></div>
-          <div class="client-logo-card logo-timbo-card" aria-label="Timbo"><img class="client-logo-img" src="assets/TIMBO.jfif" alt="Timbo" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-timbo">Timbo</span></div>
-          <div class="client-logo-card" aria-label="Maxirest"><img class="client-logo-img" src="assets/MAXIREST.jfif" alt="Maxirest" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-maxirest">Maxirest</span></div>
-          <div class="client-logo-card" aria-label="QBE"><img class="client-logo-img" src="assets/QBE.png" alt="QBE" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-qbe">QBE</span></div>
-          <div class="client-logo-card" aria-label="Kentucky"><img class="client-logo-img" src="assets/KENTUCKY.png" alt="Kentucky" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-kentucky">Kentucky</span></div>
-          <div class="client-logo-card" aria-label="La Toscana"><img class="client-logo-img" src="assets/LA%20TOSCANA%20COLOR.jfif" alt="La Toscana" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-latoscana">La Toscana</span></div>
-          <div class="client-logo-card" aria-label="SURA"><img class="client-logo-img" src="assets/SURA.png" alt="SURA" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sura">SURA</span></div>
-          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><svg class="hsbc-symbol" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><polygon fill="#db0011" points="0,0 20,20 0,40"/><polygon fill="#db0011" points="72,0 52,20 72,40"/><polygon fill="#db0011" points="0,0 36,0 20,20"/><polygon fill="#db0011" points="72,0 36,0 52,20"/><polygon fill="#db0011" points="0,40 36,40 20,20"/><polygon fill="#db0011" points="72,40 36,40 52,20"/></svg><span>HSBC</span></span></div>
-          <div class="client-logo-card" aria-label="Lucchetti"><img class="client-logo-img" src="assets/LUCCHETTI.png" alt="Lucchetti" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-lucchetti">Lucchetti</span></div>
-          <div class="client-logo-card" aria-label="Carnave"><img class="client-logo-img" src="assets/CARNAVE.png" alt="Carnave" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-carnave">Carnave</span></div>
-          <div class="client-logo-card" aria-label="Cementos Avellaneda"><img class="client-logo-img" src="assets/CEMENTOS%20AVELLANEDA.png" alt="Cementos Avellaneda" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
-          <div class="client-logo-card logo-vonfranken-card" aria-label="von franken"><img class="client-logo-img" src="assets/VONFRANKEN.jfif" alt="von franken" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-vonfranken">von franken</span></div>
-          <div class="client-logo-card" aria-label="Quilmes"><img class="client-logo-img" src="assets/QUILMES.jfif" alt="Quilmes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-quilmes">Quilmes</span></div>
-          <div class="client-logo-card logo-genser-card" aria-label="GENSER"><img class="client-logo-img" src="assets/GENSER.png" alt="Genser" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-genser">GENSER</span></div>
-          <div class="client-logo-card logo-icon" aria-label="Facebook"><img class="client-logo-img" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-facebook">Facebook</span></div>
-          <div class="client-logo-card logo-celusal-card" aria-label="Celusal"><img class="client-logo-img" src="assets/CELUSAL.jfif" alt="Celusal" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-celusal">Celusal</span></div>
-          <div class="client-logo-card" aria-label="BOKANZ"><img class="client-logo-img" src="assets/BOKANZ.webp" alt="Bokanz" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-bokanz">BOKANZ</span></div>
-          <div class="client-logo-card" aria-label="SAS Asesores"><img class="client-logo-img" src="assets/SAS.png" alt="SAS Asesores" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sas">SAS Asesores</span></div>
-          <div class="client-logo-card" aria-label="Baalbek"><img class="client-logo-img" src="assets/BAALBEK.png" alt="Baalbek" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-baalbek">Baalbek</span></div>
-          <div class="client-logo-card" aria-label="Novozymes"><img class="client-logo-img" src="assets/NOVOZYMES.png" alt="Novozymes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-novozymes">Novozymes</span></div>
-          <div class="client-logo-card" aria-label="HOMS"><img class="client-logo-img" src="assets/HOMS.png" alt="HOMS" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-homs">HOMS</span></div>
-      </div>
-      <div class="clients-logo-set" aria-hidden="true">
-          <div class="client-logo-card" aria-label="Sagrado Corazón"><img class="client-logo-img" src="assets/SAGRADO%20CORAZON.jfif" alt="Sagrado Corazón" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sagrado">Sagrado Corazón</span></div>
-          <div class="client-logo-card" aria-label="Chubb"><img class="client-logo-img" src="assets/CHUBB.png" alt="Chubb" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-chubb">Chubb</span></div>
-          <div class="client-logo-card" aria-label="Nitragin"><img class="client-logo-img" src="assets/NITRAGIN.png" alt="Nitragin" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-nitragin">Nitragin</span></div>
-          <div class="client-logo-card logo-timbo-card" aria-label="Timbo"><img class="client-logo-img" src="assets/TIMBO.jfif" alt="Timbo" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-timbo">Timbo</span></div>
-          <div class="client-logo-card" aria-label="Maxirest"><img class="client-logo-img" src="assets/MAXIREST.jfif" alt="Maxirest" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-maxirest">Maxirest</span></div>
-          <div class="client-logo-card" aria-label="QBE"><img class="client-logo-img" src="assets/QBE.png" alt="QBE" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-qbe">QBE</span></div>
-          <div class="client-logo-card" aria-label="Kentucky"><img class="client-logo-img" src="assets/KENTUCKY.png" alt="Kentucky" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-kentucky">Kentucky</span></div>
-          <div class="client-logo-card" aria-label="La Toscana"><img class="client-logo-img" src="assets/LA%20TOSCANA%20COLOR.jfif" alt="La Toscana" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-latoscana">La Toscana</span></div>
-          <div class="client-logo-card" aria-label="SURA"><img class="client-logo-img" src="assets/SURA.png" alt="SURA" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sura">SURA</span></div>
-          <div class="client-logo-card" aria-label="HSBC"><span class="client-logo-mark logo-hsbc"><svg class="hsbc-symbol" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><polygon fill="#db0011" points="0,0 20,20 0,40"/><polygon fill="#db0011" points="72,0 52,20 72,40"/><polygon fill="#db0011" points="0,0 36,0 20,20"/><polygon fill="#db0011" points="72,0 36,0 52,20"/><polygon fill="#db0011" points="0,40 36,40 20,20"/><polygon fill="#db0011" points="72,40 36,40 52,20"/></svg><span>HSBC</span></span></div>
-          <div class="client-logo-card" aria-label="Lucchetti"><img class="client-logo-img" src="assets/LUCCHETTI.png" alt="Lucchetti" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-lucchetti">Lucchetti</span></div>
-          <div class="client-logo-card" aria-label="Carnave"><img class="client-logo-img" src="assets/CARNAVE.png" alt="Carnave" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-carnave">Carnave</span></div>
-          <div class="client-logo-card" aria-label="Cementos Avellaneda"><img class="client-logo-img" src="assets/CEMENTOS%20AVELLANEDA.png" alt="Cementos Avellaneda" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-cemento tall">Cementos<br>Avellaneda</span></div>
-          <div class="client-logo-card logo-vonfranken-card" aria-label="von franken"><img class="client-logo-img" src="assets/VONFRANKEN.jfif" alt="von franken" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-vonfranken">von franken</span></div>
-          <div class="client-logo-card" aria-label="Quilmes"><img class="client-logo-img" src="assets/QUILMES.jfif" alt="Quilmes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-quilmes">Quilmes</span></div>
-          <div class="client-logo-card logo-genser-card" aria-label="GENSER"><img class="client-logo-img" src="assets/GENSER.png" alt="Genser" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-genser">GENSER</span></div>
-          <div class="client-logo-card logo-icon" aria-label="Facebook"><img class="client-logo-img" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" loading="lazy" referrerpolicy="no-referrer" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-facebook">Facebook</span></div>
-          <div class="client-logo-card logo-celusal-card" aria-label="Celusal"><img class="client-logo-img" src="assets/CELUSAL.jfif" alt="Celusal" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-celusal">Celusal</span></div>
-          <div class="client-logo-card" aria-label="BOKANZ"><img class="client-logo-img" src="assets/BOKANZ.webp" alt="Bokanz" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-bokanz">BOKANZ</span></div>
-          <div class="client-logo-card" aria-label="SAS Asesores"><img class="client-logo-img" src="assets/SAS.png" alt="SAS Asesores" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-sas">SAS Asesores</span></div>
-          <div class="client-logo-card" aria-label="Baalbek"><img class="client-logo-img" src="assets/BAALBEK.png" alt="Baalbek" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-baalbek">Baalbek</span></div>
-          <div class="client-logo-card" aria-label="Novozymes"><img class="client-logo-img" src="assets/NOVOZYMES.png" alt="Novozymes" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-novozymes">Novozymes</span></div>
-          <div class="client-logo-card" aria-label="HOMS"><img class="client-logo-img" src="assets/HOMS.png" alt="HOMS" loading="lazy" onload="this.closest('.client-logo-card').classList.add('has-logo')" onerror="this.remove()"><span class="client-logo-fallback client-logo-mark logo-homs">HOMS</span></div>
+<!-- ============ EN QU&Eacute; CREEMOS ============ -->
+<section class="section" id="creemos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>En qué creemos como equipo</div>
+      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Nuestras convicciones.</h2>
+      <p class="reveal">No son frases de pared. Son la forma en la que decidimos trabajar, todos los días.</p>
+    </div>
+    <div class="belief-grid" id="beliefGrid">
+      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Practicar el anti marketing: vender sin vender.</p></button>
+      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Ser facilitadores de negocios y de ideas.</p></button>
+      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Observar todo lo que sucede alrededor nuestro y en el mundo.</p></button>
+      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Dejar de hablar de nichos y hablar de comunidades.</p></button>
+      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Conectar marcas y personas. Conectar marcas con otras marcas.</p></button>
+      <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">Descubrí más</span><p>Hacer que otros hablen de las marcas.</p></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORIA ============ -->
+<section class="section" id="historia" style="background:var(--ink-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow reveal"><svg class="um-icon" viewBox="0 0 100 100"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg>Cómo nace Ocho y Cinco</div>
+      <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Una historia antes<br>de ser agencia.</h2>
+    </div>
+    <div class="timeline-scroll">
+      <div class="timeline" id="timeline">
+        <div class="t-node"><div class="t-dot"></div><div class="t-year">1982 &Oacute; 1990</div><div class="t-title">El origen</div><div class="t-desc">Ver cada lugar de trabajo como una gran escuela. Confiar siempre en el camino.</div></div>
+        <div class="t-node"><div class="t-dot"></div><div class="t-year">1991 &Oacute; 2011</div><div class="t-title">El aprendizaje</div><div class="t-desc">Entrega total, la camiseta puesta. Ser parte de cada nuevo desafío. Fracasar aprendiendo.</div></div>
+        <div class="t-node"><div class="t-dot"></div><div class="t-year">2012</div><div class="t-title">La valentía</div><div class="t-desc">Dejar el mundo corporativo. Creer para crear. El primer paso siempre es el más difícil.</div></div>
+        <div class="t-node"><div class="t-dot"></div><div class="t-year">2014</div><div class="t-title">La conquista</div><div class="t-desc">Nace Ocho y Cinco. Hacer tribu, construir el negocio: el equipo es todo.</div></div>
+        <div class="t-node"><div class="t-dot"></div><div class="t-year">HOY</div><div class="t-title">El futuro</div><div class="t-desc">Un equipo preparado para estar siempre un paso adelante: RCP, El Círculo, Bir Kings, Proyecto J.</div></div>
       </div>
     </div>
   </div>
@@ -2756,15 +2750,16 @@ revealEls.forEach(el => io.observe(el));
 // ===== Hero stat counters =====
 function animateCount(el){
   const target = parseInt(el.dataset.countTo, 10) || 0;
+  const prefix = el.dataset.prefix ?? '+';
   const duration = 1600;
   const start = performance.now();
   function tick(now){
     const p = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - p, 3);
     const value = Math.round(target * eased);
-    el.textContent = '+' + value.toLocaleString('es-AR');
+    el.textContent = prefix + value.toLocaleString('es-AR');
     if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = '+' + target.toLocaleString('es-AR');
+    else el.textContent = prefix + target.toLocaleString('es-AR');
   }
   requestAnimationFrame(tick);
 }
