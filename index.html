@@ -1248,7 +1248,7 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 }
 .proc-foot.in .pf-word{opacity:1;transform:translateY(0) scale(1);}
 .proc-foot .hl{color:var(--yellow);}
-.proc-foot .pf-white{color:var(--cream);}
+.proc-foot .pf-white{color:#f7f1e3;text-shadow:0 1px 18px rgba(247,241,227,.16);}
 
 /* ============ OMNICANAL (mastermind grid) ============ */
 .mm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
@@ -2287,7 +2287,7 @@ try{
             <img id="teamInfoPhoto" src="" alt="">
           </div>
           <div class="team-info-name" id="teamInfoName">Conocenos</div>
-          <div class="team-info-role" id="teamInfoRole">NavegÃ¡ con el mouse y te contamos quienes somos.</div>
+          <div class="team-info-role" id="teamInfoRole">Navegá con el mouse y te contamos quienes somos.</div>
           <div class="team-info-quote" id="teamInfoQuote"></div>
         </aside>
       </div>
@@ -2680,7 +2680,7 @@ function resetTeamInfo(){
     return;
   }
   if (teamInfoName) teamInfoName.textContent = 'Conocenos';
-  if (teamInfoRole) teamInfoRole.textContent = 'NavegÃ¡ con el mouse y te contamos quienes somos.';
+  if (teamInfoRole) teamInfoRole.textContent = 'Navegá con el mouse y te contamos quienes somos.';
   if (teamInfoQuote){
     teamInfoQuote.textContent = '';
     teamInfoQuote.classList.remove('is-visible');
