@@ -1558,6 +1558,7 @@ body.theme-light .partners-block{
 .client-logo-card{
   width:172px;height:78px;flex:0 0 172px;border-radius:10px;background:#fff;
   border:1px solid rgba(23,22,18,.12);display:flex;align-items:center;justify-content:center;
+  overflow:hidden;padding:13px 18px;
   box-shadow:0 12px 28px rgba(23,22,18,.07);transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 .client-logo-card:hover{transform:translateY(-3px);border-color:rgba(23,22,18,.22);box-shadow:0 18px 34px rgba(23,22,18,.11);}
@@ -1567,7 +1568,7 @@ body.theme-light .partners-block{
   max-width:138px;min-height:36px;color:#171612;
 }
 .client-logo-img{
-  display:block;max-width:150px;max-height:62px;width:auto;height:auto;object-fit:contain;
+  display:block;width:100%;height:100%;max-width:136px;max-height:52px;object-fit:contain;
   filter:none;opacity:0;position:absolute;pointer-events:none;transition:opacity .25s ease;
   mix-blend-mode:multiply;
 }
@@ -1579,11 +1580,11 @@ body.theme-light .partners-block{
 .client-logo-card.has-logo.logo-icon .client-logo-fallback{
   display:flex;font-size:14px;font-weight:800;letter-spacing:.01em;max-width:86px;
 }
-.client-logo-card.logo-wide .client-logo-img{max-width:138px;max-height:48px;}
-.client-logo-card.logo-timbo-card .client-logo-img{max-width:200px;max-height:88px;mix-blend-mode:multiply;}
-.client-logo-card.logo-vonfranken-card .client-logo-img{max-width:210px;max-height:90px;}
-.client-logo-card.logo-genser-card .client-logo-img{max-width:200px;max-height:85px;}
-.client-logo-card.logo-celusal-card .client-logo-img{max-width:210px;max-height:90px;}
+.client-logo-card.logo-wide .client-logo-img{max-width:136px;max-height:52px;}
+.client-logo-card.logo-timbo-card .client-logo-img{max-width:142px;max-height:54px;mix-blend-mode:multiply;}
+.client-logo-card.logo-vonfranken-card .client-logo-img,
+.client-logo-card.logo-genser-card .client-logo-img,
+.client-logo-card.logo-celusal-card .client-logo-img{max-width:142px;max-height:54px;}
 .client-logo-fallback{
   display:flex;align-items:center;justify-content:center;text-align:center;
   font-family:Arial, Helvetica, sans-serif;font-size:18px;font-weight:800;line-height:1.05;
@@ -2804,7 +2805,7 @@ window.addEventListener('load', () => {
   // ===== JS Marquee (RAF &mdash; works everywhere, even with mask-image) =====
   const track = document.querySelector('.clients-track');
   if(track){
-    const SPEED = 0.55; // px per frame ~33px/s at 60fps
+    const SPEED = 0.78; // px per frame ~47px/s at 60fps
     let pos = 0;
     let paused = false;
     const wrap = track.closest('.clients-marquee-wrap');
@@ -2826,6 +2827,7 @@ window.addEventListener('load', () => {
   // ===== JS Marquee segunda fila (sentido contrario) =====
   const track2 = document.querySelector('.clients-track-2');
   if(track2){
+    const SPEED_2 = 0.78;
     const half2 = track2.scrollWidth / 2;
     let pos2 = half2;
     let paused2 = false;
@@ -2835,7 +2837,7 @@ window.addEventListener('load', () => {
 
     function step2(){
       if(!paused2){
-        pos2 -= 0.55;
+        pos2 -= SPEED_2;
         if(pos2 <= 0) pos2 = track2.scrollWidth / 2;
         track2.style.transform = `translateX(-${pos2}px)`;
       }
