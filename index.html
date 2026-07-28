@@ -948,6 +948,7 @@ body.theme-light .belief-icon{
   background:#d5cab8;
   border-color:rgba(28,24,18,.18);
 }
+body.theme-light .belief-grid-six .belief-icon{background:var(--yellow);}
 body.theme-light .belief.open .belief-icon{
   background:var(--yellow);
 }
@@ -957,6 +958,7 @@ body.theme-light .belief:hover{
 }
 body.theme-light .belief .um-icon{color:#6a5216;}
 body.theme-light .belief.open .um-icon{color:var(--charcoal);}
+body.theme-light .belief-grid-six .belief .um-icon{color:var(--charcoal);}
 body.theme-light .mm-card:hover{
   background:#f1dfae;
   border-color:rgba(28,24,18,.24);
@@ -1117,6 +1119,11 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 
 /* ============ CREEMOS (manifesto) ============ */
 .belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.belief-grid-six .belief:nth-child(-n+3){display:none;}
+.belief-grid-six .belief-hint{display:none;}
+.belief-grid-six .belief p{max-height:none;opacity:1;margin-top:16px;}
+.belief-grid-six .belief-icon{background:var(--yellow);transform:scale(1.12);}
+.belief-grid-six .belief .um-icon{color:var(--charcoal);}
 @media (max-width:960px){.belief-grid{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:600px){.belief-grid{grid-template-columns:1fr;}}
 .belief:last-child{grid-column:auto;}
@@ -1398,7 +1405,7 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .team-caption .um-icon{color:var(--yellow);}
 .quote-sec .team-caption{color:#171612;}
 .partners-block{
-  margin-top:54px;
+  margin-top:32px;
   padding:30px;
   border:1px solid rgba(23,22,18,.14);
   border-radius:16px;
@@ -2296,7 +2303,7 @@ try{
         Equipo Ocho y Cinco
       </figcaption>
     </figure>
-    <div class="partners-block reveal">
+    <div class="partners-block">
       <div class="partners-title">Partners</div>
       <div class="partners-list" aria-label="Partners de Ocho y Cinco">
         <span>Brandal</span>
@@ -2304,7 +2311,7 @@ try{
         <span>Posta</span>
         <span>Surtido</span>
       </div>
-      <p>PodÃ©s sumarte como partner para desarrollos web y de plataformas/aplicaciones.</p>
+      <p>Podés sumarte como partner para desarrollos web y de plataformas/aplicaciones.</p>
     </div>
   </div>
 </section>
@@ -2367,7 +2374,7 @@ try{
       <h2 class="reveal" style="font-size:clamp(30px,4.4vw,50px);">Nuestras convicciones.</h2>
       <p class="reveal">No son frases de pared. Son la forma en la que decidimos trabajar, todos los dÃ­as.</p>
     </div>
-    <div class="belief-grid" id="beliefGrid">
+    <div class="belief-grid belief-grid-six" id="beliefGrid">
       <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">DescubrÃ­ mÃ¡s</span><p>La comunicaciÃ³n lo atraviesa todo.</p></button>
       <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">DescubrÃ­ mÃ¡s</span><p>Los primeros que trabajamos para conectar con el cliente somos nosotros.</p></button>
       <button type="button" class="belief reveal" onmouseenter="this.classList.add('open')" onclick="this.classList.add('open')"><span class="belief-icon"><svg class="um-icon" viewBox="0 0 100 100" fill="none"><path d="M50 8C27 8 8 27 8 50h10c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h8c0-3 4-6 8-6s8 3 8 6h10C92 27 73 8 50 8z" fill="currentColor"/><path d="M50 50v23c0 7 5 12 12 12 6 0 11-4 12-10h-8c-1 2-2 3-4 3-3 0-5-2-5-5V50h-7z" fill="currentColor"/></svg></span><span class="belief-hint">DescubrÃ­ mÃ¡s</span><p>MÃ¡s que una agencia de contenidos: un equipo que acompaÃ±a a cada marca de manera integral.</p></button>
@@ -2764,7 +2771,7 @@ revealEls.forEach(el => io.observe(el));
 // ===== Hero stat counters =====
 function animateCount(el){
   const target = parseInt(el.dataset.countTo, 10) || 0;
-  const prefix = el.dataset.prefix ?? '+';
+  const prefix = el.dataset.prefix   '+';
   const duration = 1600;
   const start = performance.now();
   function tick(now){
