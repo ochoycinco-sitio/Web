@@ -956,6 +956,14 @@ body.theme-light #proceso .proc-card li,
 body.theme-light #faq .proc-card.faq-card p{
   color:rgba(247,241,227,.72);
 }
+body.theme-light .testimonial-card{
+  background:linear-gradient(145deg, rgba(50,48,43,.92), rgba(31,30,27,.98));
+  border-color:rgba(247,201,72,.22);
+}
+body.theme-light .testimonial-text{color:#f7f1e3;}
+body.theme-light .testimonial-role{color:rgba(247,241,227,.62);}
+body.theme-light .testimonials-note{color:#595348;}
+body.theme-light .testimonial-meta{border-top-color:rgba(247,241,227,.14);}
 body.theme-light .belief-icon{
   background:#d5cab8;
   border-color:rgba(28,24,18,.18);
@@ -1310,6 +1318,59 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .case-body .client{font-family:var(--display);font-size:22px;margin-bottom:8px;}
 .case-body .transform{font-size:13px;color:var(--yellow);font-weight:700;margin-bottom:10px;}
 .case-body .desc{font-size:14px;color:var(--cream-dim);line-height:1.55;}
+.testimonials-block{
+  margin-top:54px;padding-top:42px;border-top:1px solid rgba(247,201,72,.18);
+}
+.testimonials-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:24px;
+}
+.testimonials-kicker{
+  font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--yellow);display:flex;align-items:center;gap:9px;
+}
+.testimonials-kicker::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow);
+  box-shadow:0 0 12px rgba(247,201,72,.34);
+}
+.testimonials-head h3{
+  margin:10px 0 0;font-size:clamp(28px,3.4vw,42px);line-height:.98;color:var(--cream);
+}
+.testimonials-note{
+  max-width:330px;margin:0;font-size:14px;line-height:1.5;color:rgba(247,241,227,.62);
+}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.testimonial-card{
+  min-height:260px;border:1px solid rgba(247,201,72,.18);border-radius:16px;
+  background:linear-gradient(145deg, rgba(47,45,41,.78), rgba(27,26,23,.95));
+  padding:28px 26px;display:flex;flex-direction:column;justify-content:space-between;
+  box-shadow:0 18px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(247,241,227,.04);
+  transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+}
+.testimonial-card:hover{
+  transform:translateY(-6px);border-color:rgba(247,201,72,.42);
+  box-shadow:0 24px 42px rgba(0,0,0,.34), inset 0 1px 0 rgba(247,241,227,.06);
+}
+.testimonial-quote-mark{
+  font-family:Georgia, 'Times New Roman', serif;font-size:68px;line-height:.7;color:var(--yellow);
+  margin-bottom:18px;
+}
+.testimonial-text{
+  margin:0;font-size:17px;line-height:1.55;color:var(--cream);
+}
+.testimonial-meta{
+  margin-top:26px;padding-top:18px;border-top:1px solid rgba(247,241,227,.12);
+}
+.testimonial-name{
+  font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--yellow);
+}
+.testimonial-role{margin-top:6px;font-size:13px;line-height:1.35;color:rgba(247,241,227,.62);}
+@media (max-width:900px){
+  .testimonials-head{display:block;}
+  .testimonials-note{margin-top:14px;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .testimonial-card{min-height:220px;}
+}
 
 /* ============ QUOTE ============ */
 .quote-sec{
@@ -2164,6 +2225,47 @@ try{
         </div>
       </div>
     </div>
+    <div class="testimonials-block reveal">
+      <div class="testimonials-head">
+        <div>
+          <div class="testimonials-kicker">Testimonios</div>
+          <h3>Lo que dicen quienes trabajan con nosotros.</h3>
+        </div>
+        <p class="testimonials-note">Espacio preparado para sumar voces reales de clientes y equipos en una próxima actualización.</p>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial-card reveal">
+          <div>
+            <div class="testimonial-quote-mark">“</div>
+            <p class="testimonial-text">Testimonio pendiente. Acá va una frase breve sobre el impacto del proyecto, el proceso de trabajo o el resultado alcanzado.</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Nombre y apellido</div>
+            <div class="testimonial-role">Cargo / Marca</div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <div>
+            <div class="testimonial-quote-mark">“</div>
+            <p class="testimonial-text">Testimonio pendiente. Acá va una frase breve sobre la experiencia de trabajar con Ocho y Cinco.</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Nombre y apellido</div>
+            <div class="testimonial-role">Cargo / Marca</div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <div>
+            <div class="testimonial-quote-mark">“</div>
+            <p class="testimonial-text">Testimonio pendiente. Acá va una frase breve sobre cómo la comunicación ayudó a conectar mejor con una comunidad.</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Nombre y apellido</div>
+            <div class="testimonial-role">Cargo / Marca</div>
+          </div>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2939,4 +3041,3 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
-
