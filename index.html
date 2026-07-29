@@ -334,13 +334,18 @@ body.theme-light .logo-badge .lb-mark{color:var(--charcoal);}
 .hero-stat-label{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#494238;margin-top:6px;}
 @media (min-width:881px){
   .hero-stats{
-    position:absolute;right:6%;top:calc(50vh + 164px);
-    width:auto;margin:0;grid-template-columns:repeat(4,1fr);gap:0;padding:16px 22px;
+    grid-template-columns:repeat(4,1fr);gap:0;padding:16px 22px;
   }
   .hero-stat{padding:0 16px;position:relative;}
   .hero-stat+.hero-stat::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(23,22,18,.14);}
 }
-@media (min-width:1280px){
+@media (min-width:1400px){
+  .hero-stats{
+    position:absolute;right:6%;top:calc(50vh + 164px);
+    width:auto;margin:0;
+  }
+}
+@media (min-width:1600px){
   .hero-stats{right:7%;top:calc(50vh + 184px);}
   .hero-stat{padding:0 20px;}
   .hero-stat-num{font-size:38px;}
