@@ -336,9 +336,14 @@ body.theme-light .logo-badge .lb-mark{color:var(--charcoal);}
 @media (min-width:881px){
   .hero-stats{
     grid-template-columns:repeat(4,1fr);gap:0;padding:16px 22px;
+    position:absolute;z-index:4;margin:0;
+    right:calc(21% - 20px);width:320px;top:calc(44vh + 164px);
   }
   .hero-stat{padding:0 16px;position:relative;}
   .hero-stat+.hero-stat::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(23,22,18,.14);}
+}
+@media (min-width:1280px){
+  .hero-stats{right:calc(21% - 20px);width:360px;top:calc(44vh + 184px);}
 }
 @media (min-width:1600px){
   .hero-stat{padding:0 20px;}
@@ -2128,13 +2133,14 @@ try{
         <a href="#casos" class="btn btn-fill">Ver casos de éxito</a>
         <a href="#contacto" class="btn btn-line">Trabajemos juntos</a>
       </div>
-      <div class="hero-stats reveal">
-        <div class="hero-stat"><span class="hero-stat-num" data-count-to="85">+0</span><span class="hero-stat-label">Experiencias</span></div>
-        <div class="hero-stat"><span class="hero-stat-num" data-count-to="45">+0</span><span class="hero-stat-label">Campañas</span></div>
-        <div class="hero-stat"><span class="hero-stat-num" data-count-to="32" data-prefix="">0</span><span class="hero-stat-label">Marcas nos eligieron</span></div>
-        <div class="hero-stat"><span class="hero-stat-num" data-count-to="4" data-prefix="">0</span><span class="hero-stat-label">Premios</span></div>
-      </div>
     </div>
+  </div>
+
+  <div class="hero-stats reveal" id="heroStats">
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="85">+0</span><span class="hero-stat-label">Experiencias</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="45">+0</span><span class="hero-stat-label">Campañas</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="32" data-prefix="">0</span><span class="hero-stat-label">Marcas nos eligieron</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" data-count-to="4" data-prefix="">0</span><span class="hero-stat-label">Premios</span></div>
   </div>
 
 
