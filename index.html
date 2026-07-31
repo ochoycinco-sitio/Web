@@ -1898,7 +1898,7 @@ body.theme-light .cta-final .btn-line:hover{
 
 footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(--chrome-dark);}
 .foot-row{
-  display:grid;grid-template-columns:240px minmax(360px,1fr) 240px;align-items:center;gap:42px;
+  display:grid;grid-template-columns:220px minmax(320px,1fr) 200px 200px;align-items:center;gap:32px;
   font-family:var(--display);font-size:17px;letter-spacing:.045em;text-transform:uppercase;color:var(--cream-dim);
 }
 .foot-row .brand{font-size:17px;}
@@ -1917,11 +1917,17 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 .social-link:hover{color:var(--yellow);border-color:rgba(247,201,72,.6);background:#100f0d;transform:translateY(-2px);}
 .social-link svg{width:18px;height:18px;display:block;fill:currentColor;}
 .foot-copy{font-size:14px;color:rgba(247,241,227,.62);text-align:center;letter-spacing:.055em;}
+.foot-members-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;width:fit-content;margin:0 auto;}
+.foot-members{display:flex;align-items:center;justify-content:center;gap:16px;width:100%;}
+.member-link{display:inline-flex;align-items:center;justify-content:center;opacity:.85;transition:opacity .25s var(--ease);}
+.member-link:hover{opacity:1;}
+.member-link img{height:34px;width:auto;max-width:90px;object-fit:contain;filter:brightness(0) invert(1);}
 @media (max-width:980px){
   .foot-row{grid-template-columns:1fr;justify-items:center;text-align:center;}
   .foot-links{max-width:560px;}
   .foot-social-wrap{align-items:center;width:fit-content;margin:0 auto;}
   .foot-social{justify-content:center;width:100%;}
+  .foot-members-wrap{align-items:center;width:fit-content;margin:0 auto;}
   .foot-copy{text-align:center;}
 }
 
@@ -2017,7 +2023,7 @@ try{
       <a href="#clientes">Clientes</a>
       <a href="#proceso">Cómo trabajamos</a>
       <a href="#equipo">Nuestro Equipo</a>
-      <a href="#proposito">Propósito, Visión, Misión</a>
+      <a href="#proposito">Propósito</a>
       <a href="#historia">Historia</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -2044,7 +2050,7 @@ try{
   <a href="#clientes">Clientes</a>
   <a href="#proceso">Cómo trabajamos</a>
   <a href="#equipo">Nuestro Equipo</a>
-  <a href="#proposito">Propósito, Visión, Misión</a>
+  <a href="#proposito">Propósito</a>
   <a href="#historia">Historia</a>
   <a href="#faq">FAQ</a>
   <a href="#contact-buttons" class="btn btn-fill">Hablemos</a>
@@ -2605,13 +2611,13 @@ try{
       <span class="brand-name"><svg viewBox="0 0 191.984375 53.8" aria-hidden="true"><use href="#logo-word-only-svg"></use></svg><span class="sr-only">Ocho y Cinco</span></span>
     </div>
     <nav class="foot-links" aria-label="Navegacion del footer">
-      <a href="#inicio">Inicio</a>
+      <a href="./" onclick="location.reload();return false;">Inicio</a>
+      <a href="#casos">Casos de &eacute;xito</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#proceso">C&oacute;mo trabajamos</a>
+      <a href="#equipo">Nuestro Equipo</a>
       <a href="#proposito">Prop&oacute;sito</a>
       <a href="#historia">Historia</a>
-      <a href="#equipo">Nuestro Equipo</a>
-      <a href="#proceso">C&oacute;mo trabajamos</a>
-      <a href="#casos">Casos</a>
-      <a href="#clientes">Clientes</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="foot-social-wrap">
@@ -2628,6 +2634,17 @@ try{
         </a>
       </div>
       <div class="foot-copy">&copy; 2026 OCHO Y CINCO</div>
+    </div>
+    <div class="foot-members-wrap">
+      <div class="foot-title">Miembros de:</div>
+      <div class="foot-members">
+        <a class="member-link" href="https://aadeci.com.ar" target="_blank" rel="noopener" aria-label="AADECI">
+          <img src="assets/members/aadeci.png" alt="AADECI">
+        </a>
+        <a class="member-link" href="https://aofrep.org.ar" target="_blank" rel="noopener" aria-label="AOFREP">
+          <img src="assets/members/aofrep.png" alt="AOFREP">
+        </a>
+      </div>
     </div>
   </div>
 </footer>
