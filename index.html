@@ -335,18 +335,18 @@ body.theme-light .logo-badge .lb-mark{color:var(--charcoal);}
 .hero-stat-label{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#494238;margin-top:6px;}
 @media (min-width:881px){
   .hero-stats{
-    grid-template-columns:repeat(4,1fr);gap:0;padding:16px 22px;
+    grid-template-columns:repeat(4,1fr);gap:0;padding:15px 16px;
     position:absolute;z-index:4;margin:0;
-    right:calc(21% - 80px);width:440px;top:calc(44vh + 164px);
+    right:calc(21% - 58px);width:390px;top:calc(44vh + 164px);
   }
-  .hero-stat{padding:0 16px;position:relative;}
+  .hero-stat{padding:0 12px;position:relative;}
   .hero-stat+.hero-stat::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(23,22,18,.14);}
 }
 @media (min-width:1280px){
-  .hero-stats{right:calc(21% - 80px);width:480px;top:calc(44vh + 184px);}
+  .hero-stats{right:calc(21% - 58px);width:410px;top:calc(44vh + 184px);}
 }
 @media (min-width:1600px){
-  .hero-stat{padding:0 20px;}
+  .hero-stat{padding:0 14px;}
   .hero-stat-num{font-size:38px;}
 }
 @media (max-width:520px){
@@ -1516,7 +1516,7 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   margin-top:24px;
 }
 .partner-logo{
-  height:96px;
+  height:82px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -1524,18 +1524,11 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .partners-list img{
   display:block;
   width:100%;
-  height:76px;
-  max-width:190px;
+  height:62px;
+  max-width:158px;
   object-fit:contain;
   filter:none;
   opacity:1;
-}
-.partners-note{
-  max-width:720px;
-  margin:18px 0 0;
-  color:rgba(23,22,18,.76);
-  font-size:15px;
-  line-height:1.45;
 }
 body.theme-light .team-wide-frame{
   border-color:rgba(23,22,18,.16);background:#e4dccd;box-shadow:0 30px 70px rgba(86,60,8,.18);
@@ -1556,8 +1549,8 @@ body.theme-light .partners-block{
 }
 @media (max-width:760px){
   .partners-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
-  .partner-logo{height:86px;}
-  .partners-list img{height:66px;max-width:150px;}
+  .partner-logo{height:76px;}
+  .partners-list img{height:56px;max-width:138px;}
 }
 @media (max-width:980px){
   .team-interactive{grid-template-columns:1fr;}
@@ -2475,12 +2468,11 @@ try{
     <div class="partners-block">
       <div class="partners-title">Partners</div>
       <div class="partners-list" aria-label="Partners de Ocho y Cinco">
-        <div class="partner-logo"><img src="assets/partners/brandal.png" alt="Brandal"></div>
-        <div class="partner-logo"><img src="assets/partners/posta.png" alt="Posta"></div>
-        <div class="partner-logo"><img src="assets/partners/surtido.png" alt="Surtido"></div>
-        <div class="partner-logo partner-logo--we-sell"><img src="assets/partners/we-sell.png" alt="We Sell"></div>
+        <div class="partner-logo"><img src="assets/partners/brandal-black.png" alt="Brandal"></div>
+        <div class="partner-logo"><img src="assets/partners/posta-black.png" alt="Posta"></div>
+        <div class="partner-logo"><img src="assets/partners/surtido-black.png" alt="Surtido"></div>
+        <div class="partner-logo partner-logo--we-sell"><img src="assets/partners/we-sell-black.png" alt="We Sell"></div>
       </div>
-      <p class="partners-note">Podés sumarte como partner para desarrollos web y de plataformas/aplicaciones.</p>
     </div>
   </div>
 </section>
