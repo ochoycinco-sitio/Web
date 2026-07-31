@@ -1922,11 +1922,16 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 .social-link:hover{color:var(--yellow);border-color:rgba(247,201,72,.6);background:#100f0d;transform:translateY(-2px);}
 .social-link svg{width:17px;height:17px;display:block;fill:currentColor;}
 .foot-copy{font-size:13px;color:rgba(247,241,227,.55);text-align:center;letter-spacing:.055em;}
-.foot-members-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;}
-.foot-members{display:flex;align-items:center;justify-content:center;gap:16px;}
-.member-link{display:inline-flex;align-items:center;justify-content:center;opacity:.85;transition:opacity .25s var(--ease);}
-.member-link:hover{opacity:1;}
-.member-link img{height:30px;width:auto;max-width:80px;object-fit:contain;filter:brightness(0) invert(1);}
+.foot-members-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.foot-members{display:flex;align-items:flex-start;justify-content:center;gap:24px;}
+.member-link{
+  display:inline-flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;
+  min-width:108px;color:rgba(247,241,227,.68);opacity:.9;text-align:center;
+  transition:opacity .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+}
+.member-link:hover{opacity:1;color:var(--yellow);transform:translateY(-2px);}
+.member-link img{height:40px;width:auto;max-width:150px;object-fit:contain;}
+.member-link .member-url{font-family:var(--mono);font-size:10px;letter-spacing:.03em;line-height:1.2;text-transform:none;}
 @media (max-width:980px){
   .foot-top{flex-direction:column;text-align:center;padding-bottom:20px;}
   .foot-meta{justify-content:center;}
@@ -1934,6 +1939,7 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 }
 @media (max-width:600px){
   .foot-meta{flex-direction:column;gap:22px;}
+  .foot-members{gap:18px;flex-wrap:wrap;}
 }
 
 /* ============ PRO: FILM GRAIN ============ */
@@ -2632,13 +2638,15 @@ try{
           </div>
         </div>
         <div class="foot-members-wrap">
-          <div class="foot-title">Miembros de:</div>
+          <div class="foot-title">Miembros de</div>
           <div class="foot-members">
             <a class="member-link" href="https://aadeci.com.ar" target="_blank" rel="noopener" aria-label="AADECI">
               <img src="assets/members/aadeci.png" alt="AADECI">
+              <span class="member-url">aadeci.com.ar</span>
             </a>
             <a class="member-link" href="https://aofrep.org.ar" target="_blank" rel="noopener" aria-label="AOFREP">
-              <img src="assets/members/aofrep.png" alt="AOFREP">
+              <img src="assets/members/aofrep-trimmed.png" alt="AOFREP">
+              <span class="member-url">aofrep.org.ar</span>
             </a>
           </div>
         </div>
