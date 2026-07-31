@@ -319,7 +319,8 @@ body.theme-light .logo-badge .lb-mark{color:var(--charcoal);}
   .logo-badge--hero .lb-mark{width:225px;}
 }
 @media (max-width:880px){
-  .logo-badge--hero{position:relative;right:auto;top:auto;transform:none;margin-bottom:22px;animation:none;}
+  .hero{flex-direction:column;align-items:center;}
+  .logo-badge--hero{position:relative;right:auto;top:auto;transform:none;margin-bottom:22px;animation:none;order:-1;}
   .logo-badge--hero::before{animation:badgeRingSpin 7s linear infinite;}
   .logo-badge--hero::after{animation:none;opacity:.5;}
 }
