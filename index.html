@@ -1497,29 +1497,36 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .quote-sec .team-caption{color:#171612;}
 .partners-block{
   margin-top:32px;
-  padding:30px;
+  padding:30px 34px;
   border:1px solid rgba(23,22,18,.14);
   border-radius:16px;
   background:var(--yellow);
+  display:grid;
+  grid-template-columns:minmax(150px,220px) 1fr;
+  align-items:center;
+  gap:28px 40px;
 }
 .partners-title{
   font-family:var(--display);
-  font-size:clamp(28px,3.2vw,42px);
+  font-size:clamp(34px,4.4vw,58px);
   line-height:1;
   color:var(--charcoal);
 }
 .partners-list{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(2,minmax(160px,1fr));
   align-items:center;
-  gap:22px;
-  margin-top:38px;
+  gap:24px 48px;
+  margin-top:0;
+  padding-left:36px;
+  border-left:1px solid rgba(23,22,18,.18);
 }
 .partner-logo{
-  height:72px;
+  min-height:70px;
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content:center;
+  padding:4px 10px;
 }
 .partners-list img{
   display:block;
@@ -1547,9 +1554,14 @@ body.theme-light .partners-block{
   background:var(--yellow);
   border-color:rgba(23,22,18,.14);
 }
+@media (max-width:900px){
+  .partners-block{grid-template-columns:1fr;gap:24px;padding:28px;}
+  .partners-title{font-size:clamp(34px,8vw,52px);}
+  .partners-list{padding-left:0;border-left:0;}
+}
 @media (max-width:760px){
-  .partners-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
-  .partner-logo{height:68px;}
+  .partners-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .partner-logo{min-height:72px;padding:8px 10px;}
   .partners-list img{height:56px;max-width:138px;}
 }
 @media (max-width:980px){
@@ -1913,19 +1925,24 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
   display:flex;flex-direction:column;align-items:center;gap:26px;
   font-family:var(--display);font-size:17px;letter-spacing:.045em;text-transform:uppercase;color:var(--cream-dim);
 }
-.foot-top{
-  display:flex;align-items:center;justify-content:space-between;gap:32px;width:100%;
+.foot-layout{
+  display:grid;grid-template-columns:minmax(360px,1fr) minmax(330px,460px);gap:42px;width:100%;
   padding-bottom:22px;border-bottom:1px solid rgba(247,241,227,.1);
 }
+.foot-left{display:flex;flex-direction:column;align-items:flex-start;gap:24px;}
 .foot-row .brand{font-size:17px;}
-.foot-meta{display:flex;align-items:center;gap:36px;flex-wrap:wrap;justify-content:flex-end;}
-.foot-links{display:flex;gap:14px 26px;justify-content:center;align-items:center;flex-wrap:wrap;max-width:720px;}
+.foot-meta{display:flex;align-items:flex-start;gap:34px;flex-wrap:wrap;justify-content:flex-start;}
+.foot-links{
+  display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:14px 28px;
+  justify-content:start;align-content:center;justify-items:start;
+  max-width:none;padding-left:42px;border-left:1px solid rgba(247,241,227,.1);
+}
 .foot-links a:hover{color:var(--yellow);}
-.foot-social-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.foot-social-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
 .foot-title{
   font-size:13px;letter-spacing:.12em;color:var(--yellow);line-height:1;white-space:nowrap;
 }
-.foot-social{display:flex;align-items:center;justify-content:center;gap:10px;}
+.foot-social{display:flex;align-items:center;justify-content:flex-start;gap:10px;}
 .social-link{
   width:36px;height:36px;border-radius:50%;border:1px solid rgba(247,241,227,.32);
   display:inline-flex;align-items:center;justify-content:center;color:rgba(247,241,227,.86);
@@ -1934,8 +1951,8 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 .social-link:hover{color:var(--yellow);border-color:rgba(247,201,72,.6);background:#100f0d;transform:translateY(-2px);}
 .social-link svg{width:17px;height:17px;display:block;fill:currentColor;}
 .foot-copy{font-size:13px;color:rgba(247,241,227,.55);text-align:center;letter-spacing:.055em;}
-.foot-members-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;}
-.foot-members{display:flex;align-items:flex-start;justify-content:center;gap:18px;}
+.foot-members-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.foot-members{display:flex;align-items:flex-start;justify-content:flex-start;gap:18px;}
 .member-link{
   display:inline-flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;
   min-width:92px;color:rgba(247,241,227,.68);opacity:.9;text-align:center;
@@ -1945,13 +1962,15 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 .member-link img{height:28px;width:auto;max-width:118px;object-fit:contain;}
 .member-link .member-url{font-family:var(--mono);font-size:9px;letter-spacing:.03em;line-height:1.2;text-transform:none;}
 @media (max-width:980px){
-  .foot-top{flex-direction:column;text-align:center;padding-bottom:20px;}
+  .foot-layout{grid-template-columns:1fr;gap:28px;text-align:center;padding-bottom:20px;}
+  .foot-left,.foot-social-wrap,.foot-members-wrap{align-items:center;}
   .foot-meta{justify-content:center;}
-  .foot-links{max-width:560px;}
+  .foot-links{grid-template-columns:repeat(2,minmax(130px,1fr));justify-items:center;padding-left:0;border-left:0;max-width:560px;width:100%;justify-self:center;}
 }
 @media (max-width:600px){
   .foot-meta{flex-direction:column;gap:22px;}
   .foot-members{gap:16px;flex-wrap:wrap;}
+  .foot-links{grid-template-columns:1fr;gap:12px;}
 }
 
 /* ============ PRO: FILM GRAIN ============ */
@@ -2627,53 +2646,55 @@ try{
 
 <footer>
   <div class="wrap foot-row">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div class="logo-badge logo-badge--nav logo-badge--footer" aria-hidden="true">
-          <span class="lb-mark"><svg viewBox="0 0 191.984375 89.171875"><use href="#logo-wordmark-svg"></use></svg></span>
+    <div class="foot-layout">
+      <div class="foot-left">
+        <div class="foot-brand">
+          <div class="logo-badge logo-badge--nav logo-badge--footer" aria-hidden="true">
+            <span class="lb-mark"><svg viewBox="0 0 191.984375 89.171875"><use href="#logo-wordmark-svg"></use></svg></span>
+          </div>
+          <span class="brand-name"><svg viewBox="0 0 191.984375 53.8" aria-hidden="true"><use href="#logo-word-only-svg"></use></svg><span class="sr-only">Ocho y Cinco</span></span>
         </div>
-        <span class="brand-name"><svg viewBox="0 0 191.984375 53.8" aria-hidden="true"><use href="#logo-word-only-svg"></use></svg><span class="sr-only">Ocho y Cinco</span></span>
-      </div>
-      <div class="foot-meta">
-        <div class="foot-social-wrap">
-          <div class="foot-title">Redes</div>
-          <div class="foot-social" aria-label="Redes sociales">
-            <a class="social-link" href="https://www.instagram.com/ochoycinco.agencia/" target="_blank" rel="noopener" aria-label="Instagram de Ocho y Cinco">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.1A4.9 4.9 0 1 1 7.1 12 4.9 4.9 0 0 1 12 7.1Zm0 2A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1Zm5.15-2.25a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z"/></svg>
-            </a>
-            <a class="social-link" href="#" aria-label="Facebook de Ocho y Cinco">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.1 22v-8.1h2.75l.42-3.16H14.1V8.72c0-.91.26-1.54 1.58-1.54h1.68V4.35A22.6 22.6 0 0 0 14.9 4c-2.43 0-4.1 1.48-4.1 4.2v2.54H8.05v3.16h2.75V22h3.3Z"/></svg>
-            </a>
-            <a class="social-link" href="#" aria-label="LinkedIn de Ocho y Cinco">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.35 8.9H2.2V22h3.15V8.9ZM3.77 2.4a1.83 1.83 0 1 0 0 3.66 1.83 1.83 0 0 0 0-3.66ZM22 14.52c0-3.52-1.88-5.16-4.38-5.16a3.77 3.77 0 0 0-3.4 1.87h-.05V8.9h-3.02V22h3.15v-6.48c0-1.71.32-3.36 2.44-3.36 2.08 0 2.11 1.95 2.11 3.47V22H22v-7.48Z"/></svg>
-            </a>
+        <div class="foot-meta">
+          <div class="foot-social-wrap">
+            <div class="foot-title">Redes</div>
+            <div class="foot-social" aria-label="Redes sociales">
+              <a class="social-link" href="https://www.instagram.com/ochoycinco.agencia/" target="_blank" rel="noopener" aria-label="Instagram de Ocho y Cinco">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.1A4.9 4.9 0 1 1 7.1 12 4.9 4.9 0 0 1 12 7.1Zm0 2A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1Zm5.15-2.25a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z"/></svg>
+              </a>
+              <a class="social-link" href="#" aria-label="Facebook de Ocho y Cinco">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.1 22v-8.1h2.75l.42-3.16H14.1V8.72c0-.91.26-1.54 1.58-1.54h1.68V4.35A22.6 22.6 0 0 0 14.9 4c-2.43 0-4.1 1.48-4.1 4.2v2.54H8.05v3.16h2.75V22h3.3Z"/></svg>
+              </a>
+              <a class="social-link" href="#" aria-label="LinkedIn de Ocho y Cinco">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.35 8.9H2.2V22h3.15V8.9ZM3.77 2.4a1.83 1.83 0 1 0 0 3.66 1.83 1.83 0 0 0 0-3.66ZM22 14.52c0-3.52-1.88-5.16-4.38-5.16a3.77 3.77 0 0 0-3.4 1.87h-.05V8.9h-3.02V22h3.15v-6.48c0-1.71.32-3.36 2.44-3.36 2.08 0 2.11 1.95 2.11 3.47V22H22v-7.48Z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="foot-members-wrap">
+            <div class="foot-title">Miembros de</div>
+            <div class="foot-members">
+              <a class="member-link" href="https://aadeci.com.ar" target="_blank" rel="noopener" aria-label="AADECI">
+                <img src="assets/members/aadeci.png" alt="AADECI">
+                <span class="member-url">aadeci.com.ar</span>
+              </a>
+              <a class="member-link" href="https://aofrep.org.ar" target="_blank" rel="noopener" aria-label="AOFREP">
+                <img src="assets/members/aofrep-trimmed.png" alt="AOFREP">
+                <span class="member-url">aofrep.org.ar</span>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="foot-members-wrap">
-          <div class="foot-title">Miembros de</div>
-          <div class="foot-members">
-            <a class="member-link" href="https://aadeci.com.ar" target="_blank" rel="noopener" aria-label="AADECI">
-              <img src="assets/members/aadeci.png" alt="AADECI">
-              <span class="member-url">aadeci.com.ar</span>
-            </a>
-            <a class="member-link" href="https://aofrep.org.ar" target="_blank" rel="noopener" aria-label="AOFREP">
-              <img src="assets/members/aofrep-trimmed.png" alt="AOFREP">
-              <span class="member-url">aofrep.org.ar</span>
-            </a>
-          </div>
-        </div>
       </div>
+      <nav class="foot-links" aria-label="Navegacion del footer">
+        <a href="./" onclick="location.reload();return false;">Inicio</a>
+        <a href="#casos">Casos de &eacute;xito</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#proceso">C&oacute;mo trabajamos</a>
+        <a href="#equipo">Nuestro Equipo</a>
+        <a href="#proposito">Prop&oacute;sito</a>
+        <a href="#historia">Historia</a>
+        <a href="#faq">FAQ</a>
+      </nav>
     </div>
-    <nav class="foot-links" aria-label="Navegacion del footer">
-      <a href="./" onclick="location.reload();return false;">Inicio</a>
-      <a href="#casos">Casos de &eacute;xito</a>
-      <a href="#clientes">Clientes</a>
-      <a href="#proceso">C&oacute;mo trabajamos</a>
-      <a href="#equipo">Nuestro Equipo</a>
-      <a href="#proposito">Prop&oacute;sito</a>
-      <a href="#historia">Historia</a>
-      <a href="#faq">FAQ</a>
-    </nav>
     <div class="foot-copy">&copy; 2026 OCHO Y CINCO</div>
   </div>
 </footer>
