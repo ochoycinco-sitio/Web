@@ -1500,42 +1500,28 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   padding:30px;
   border:1px solid rgba(23,22,18,.14);
   border-radius:16px;
-  background:rgba(255,255,255,.22);
+  background:var(--yellow);
 }
 .partners-title{
   font-family:var(--display);
   font-size:clamp(28px,3.2vw,42px);
   line-height:1;
-  color:var(--stone-text);
+  color:var(--charcoal);
 }
 .partners-list{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;
-  margin-top:20px;
-}
-.partners-list span{
-  display:inline-flex;
   align-items:center;
-  min-height:38px;
-  padding:8px 16px;
-  border:1px solid rgba(23,22,18,.16);
-  border-radius:999px;
-  font-family:var(--mono);
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:var(--stone-text);
-  background:rgba(247,201,72,.26);
+  gap:32px;
+  margin-top:24px;
 }
-.partners-block p{
-  margin:18px 0 0;
-  max-width:720px;
-  font-family:var(--body);
-  font-size:16px;
-  line-height:1.55;
-  color:var(--steel-deep);
+.partners-list img{
+  height:34px;
+  width:auto;
+  max-width:140px;
+  object-fit:contain;
+  filter:brightness(0);
+  opacity:.92;
 }
 body.theme-light .team-wide-frame{
   border-color:rgba(23,22,18,.16);background:#e4dccd;box-shadow:0 30px 70px rgba(86,60,8,.18);
@@ -1551,7 +1537,7 @@ body.theme-light .team-info-role{color:rgba(247,241,227,.78);}
 body.theme-light .team-info-quote{color:rgba(247,241,227,.9);}
 body.theme-light .team-caption{color:#171612;}
 body.theme-light .partners-block{
-  background:rgba(255,255,255,.2);
+  background:var(--yellow);
   border-color:rgba(23,22,18,.14);
 }
 @media (max-width:980px){
@@ -2453,12 +2439,11 @@ try{
     <div class="partners-block">
       <div class="partners-title">Partners</div>
       <div class="partners-list" aria-label="Partners de Ocho y Cinco">
-        <span>Brandal</span>
-        <span>Listos para Rodar</span>
-        <span>Posta</span>
-        <span>Surtido</span>
+        <img src="assets/partners/brandal.png" alt="Brandal">
+        <img src="assets/partners/listos-para-rodar.png" alt="Listos para Rodar">
+        <img src="assets/partners/posta.png" alt="Posta">
+        <img src="assets/partners/surtido.png" alt="Surtido">
       </div>
-      <p>Podés sumarte como partner para desarrollos web y de plataformas/aplicaciones.</p>
     </div>
   </div>
 </section>
