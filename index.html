@@ -1509,19 +1509,33 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   color:var(--charcoal);
 }
 .partners-list{
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
   align-items:center;
-  gap:32px;
+  gap:22px;
   margin-top:24px;
 }
+.partner-logo{
+  height:96px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 .partners-list img{
-  height:34px;
-  width:auto;
-  max-width:140px;
+  display:block;
+  width:100%;
+  height:76px;
+  max-width:190px;
   object-fit:contain;
-  filter:brightness(0);
-  opacity:.92;
+  filter:none;
+  opacity:1;
+}
+.partners-note{
+  max-width:720px;
+  margin:18px 0 0;
+  color:rgba(23,22,18,.76);
+  font-size:15px;
+  line-height:1.45;
 }
 body.theme-light .team-wide-frame{
   border-color:rgba(23,22,18,.16);background:#e4dccd;box-shadow:0 30px 70px rgba(86,60,8,.18);
@@ -1539,6 +1553,11 @@ body.theme-light .team-caption{color:#171612;}
 body.theme-light .partners-block{
   background:var(--yellow);
   border-color:rgba(23,22,18,.14);
+}
+@media (max-width:760px){
+  .partners-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .partner-logo{height:86px;}
+  .partners-list img{height:66px;max-width:150px;}
 }
 @media (max-width:980px){
   .team-interactive{grid-template-columns:1fr;}
@@ -1922,16 +1941,16 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 .social-link:hover{color:var(--yellow);border-color:rgba(247,201,72,.6);background:#100f0d;transform:translateY(-2px);}
 .social-link svg{width:17px;height:17px;display:block;fill:currentColor;}
 .foot-copy{font-size:13px;color:rgba(247,241,227,.55);text-align:center;letter-spacing:.055em;}
-.foot-members-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;}
-.foot-members{display:flex;align-items:flex-start;justify-content:center;gap:24px;}
+.foot-members-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.foot-members{display:flex;align-items:flex-start;justify-content:center;gap:18px;}
 .member-link{
-  display:inline-flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;
-  min-width:108px;color:rgba(247,241,227,.68);opacity:.9;text-align:center;
+  display:inline-flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;
+  min-width:92px;color:rgba(247,241,227,.68);opacity:.9;text-align:center;
   transition:opacity .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
 }
 .member-link:hover{opacity:1;color:var(--yellow);transform:translateY(-2px);}
-.member-link img{height:40px;width:auto;max-width:150px;object-fit:contain;}
-.member-link .member-url{font-family:var(--mono);font-size:10px;letter-spacing:.03em;line-height:1.2;text-transform:none;}
+.member-link img{height:28px;width:auto;max-width:118px;object-fit:contain;}
+.member-link .member-url{font-family:var(--mono);font-size:9px;letter-spacing:.03em;line-height:1.2;text-transform:none;}
 @media (max-width:980px){
   .foot-top{flex-direction:column;text-align:center;padding-bottom:20px;}
   .foot-meta{justify-content:center;}
@@ -1939,7 +1958,7 @@ footer{padding:42px 0 38px;border-top:1px solid var(--line-soft);background:var(
 }
 @media (max-width:600px){
   .foot-meta{flex-direction:column;gap:22px;}
-  .foot-members{gap:18px;flex-wrap:wrap;}
+  .foot-members{gap:16px;flex-wrap:wrap;}
 }
 
 /* ============ PRO: FILM GRAIN ============ */
@@ -2456,11 +2475,12 @@ try{
     <div class="partners-block">
       <div class="partners-title">Partners</div>
       <div class="partners-list" aria-label="Partners de Ocho y Cinco">
-        <img src="assets/partners/brandal.png" alt="Brandal">
-        <img src="assets/partners/posta.png" alt="Posta">
-        <img src="assets/partners/surtido.png" alt="Surtido">
-        <img src="assets/partners/we-sell.png" alt="We Sell">
+        <div class="partner-logo"><img src="assets/partners/brandal.png" alt="Brandal"></div>
+        <div class="partner-logo"><img src="assets/partners/posta.png" alt="Posta"></div>
+        <div class="partner-logo"><img src="assets/partners/surtido.png" alt="Surtido"></div>
+        <div class="partner-logo partner-logo--we-sell"><img src="assets/partners/we-sell.png" alt="We Sell"></div>
       </div>
+      <p class="partners-note">Podés sumarte como partner para desarrollos web y de plataformas/aplicaciones.</p>
     </div>
   </div>
 </section>
