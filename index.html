@@ -1514,14 +1514,15 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 }
 .partners-list{
   display:grid;
-  grid-template-columns:repeat(2,minmax(160px,1fr));
+  grid-template-columns:repeat(6,minmax(78px,1fr));
   align-items:center;
-  gap:24px 48px;
+  gap:20px 26px;
   margin-top:0;
   padding-left:36px;
   border-left:1px solid rgba(23,22,18,.18);
 }
 .partner-logo{
+  grid-column:span 2;
   min-height:70px;
   display:flex;
   align-items:center;
@@ -1537,6 +1538,8 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
   filter:none;
   opacity:1;
 }
+.partner-logo:nth-child(4){grid-column:2 / span 2;}
+.partner-logo:nth-child(5){grid-column:4 / span 2;}
 body.theme-light .team-wide-frame{
   border-color:rgba(23,22,18,.16);background:#e4dccd;box-shadow:0 30px 70px rgba(86,60,8,.18);
 }
@@ -1561,6 +1564,7 @@ body.theme-light .partners-block{
 }
 @media (max-width:760px){
   .partners-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .partner-logo,.partner-logo:nth-child(4),.partner-logo:nth-child(5){grid-column:auto;}
   .partner-logo{min-height:72px;padding:8px 10px;}
   .partners-list img{height:56px;max-width:138px;}
 }
@@ -2492,6 +2496,7 @@ try{
         <div class="partner-logo"><img src="assets/partners/posta-black.png" alt="Posta"></div>
         <div class="partner-logo"><img src="assets/partners/surtido-black.png" alt="Surtido"></div>
         <div class="partner-logo partner-logo--we-sell"><img src="assets/partners/we-sell-black.png" alt="We Sell"></div>
+        <div class="partner-logo"><img src="assets/partners/magna-dm-black.png" alt="Magna DM"></div>
       </div>
     </div>
   </div>
