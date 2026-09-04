@@ -2085,11 +2085,75 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
   .case-card:nth-child(3) .case-media,
   .case-card:nth-child(5) .case-media{height:190px;}
 }
+/* ============ CASOS: 6 TARJETAS GRANDES, PAREJAS Y ANIMADAS ============ */
+#casos > .wrap{max-width:1500px;}
+#casos .casos-scroll{align-items:stretch;}
+#casos .case-card{
+  display:flex;
+  flex-direction:column;
+  height:440px;
+}
+#casos .case-media{height:220px;min-height:220px;}
+#casos .case-body{
+  display:flex;
+  flex:1;
+  min-height:0;
+  flex-direction:column;
+  padding:18px 18px 20px;
+}
+#casos .case-body .client{font-size:21px;line-height:1.02;}
+#casos .case-body .transform{
+  font-size:12.5px;
+  line-height:1.4;
+  min-height:54px;
+  margin-bottom:10px;
+}
+#casos .case-toggle{margin-top:auto;align-self:flex-start;}
+#casos .case-card.is-open{height:auto;min-height:440px;}
+#casos .case-card.is-open .case-toggle{margin-top:12px;}
+
+/* Entrada escalonada de cada caso al aparecer */
+#casos .case-card.reveal{
+  opacity:0;
+  transform:translateY(34px) scale(.965);
+  filter:blur(5px);
+  transition:
+    opacity .72s var(--ease),
+    transform .82s var(--ease),
+    filter .72s var(--ease),
+    border-color .4s,
+    box-shadow .4s;
+}
+#casos .case-card.reveal.in{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
+#casos .case-card:nth-child(1){transition-delay:.03s;}
+#casos .case-card:nth-child(2){transition-delay:.10s;}
+#casos .case-card:nth-child(3){transition-delay:.17s;}
+#casos .case-card:nth-child(4){transition-delay:.24s;}
+#casos .case-card:nth-child(5){transition-delay:.31s;}
+#casos .case-card:nth-child(6){transition-delay:.38s;}
+#casos .case-card:nth-child(n+7){transition-delay:.08s;}
+
 @media (min-width:1100px){
-  .case-card{flex:0 0 calc((100% - 100px)/6);}
+  #casos .case-card{flex:0 0 calc((100% - 100px)/6);}
 }
 @media (min-width:881px) and (max-width:1099px){
-  .case-card{flex:0 0 calc((100% - 60px)/4);}
+  #casos > .wrap{max-width:1180px;}
+  #casos .case-card{flex:0 0 calc((100% - 60px)/4);height:430px;}
+  #casos .case-media{height:205px;min-height:205px;}
+}
+@media (max-width:620px){
+  #casos > .wrap{max-width:var(--max);}
+  #casos .case-card{height:420px;}
+  #casos .case-media{height:190px;min-height:190px;}
+  #casos .case-body .transform{min-height:0;}
+}
+@media (prefers-reduced-motion:reduce){
+  #casos .case-card.reveal,
+  #casos .case-card.reveal.in{opacity:1;transform:none;filter:none;transition:none;}
 }
 </style>
 </head>
