@@ -1406,6 +1406,15 @@ body.theme-light .case-toggle{color:#6a5216;border-color:rgba(106,82,22,.36);}bo
 .testimonial-avatar{
   width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;
   border:1px solid rgba(247,201,72,.35);
+  transition:transform .32s var(--ease), box-shadow .32s var(--ease), border-color .32s var(--ease);
+  transform-origin:center;
+}
+@media (hover:hover) and (pointer:fine){
+  .testimonial-avatar:hover{
+    transform:scale(1.28);
+    border-color:var(--yellow);
+    box-shadow:0 8px 22px rgba(0,0,0,.28), 0 0 0 3px rgba(247,201,72,.12);
+  }
 }
 .testimonial-name{
   font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
