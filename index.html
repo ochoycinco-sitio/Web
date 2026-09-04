@@ -1411,9 +1411,11 @@ body.theme-light .case-toggle{color:#6a5216;border-color:rgba(106,82,22,.36);}bo
 }
 @media (hover:hover) and (pointer:fine){
   .testimonial-avatar:hover{
-    transform:scale(1.28);
+    transform:scale(1.6);
     border-color:var(--yellow);
-    box-shadow:0 8px 22px rgba(0,0,0,.28), 0 0 0 3px rgba(247,201,72,.12);
+    box-shadow:0 14px 30px rgba(0,0,0,.34), 0 0 0 4px rgba(247,201,72,.18);
+    z-index:2;
+    position:relative;
   }
 }
 .testimonial-name{
@@ -2164,6 +2166,26 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
   #casos .case-card.reveal,
   #casos .case-card.reveal.in{opacity:1;transform:none;filter:none;transition:none;}
 }
+
+/* ============ CASOS: IMÁGENES COMPLETAS SIN RECORTE ============ */
+#casos .case-media{
+  background:#f6f1e7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#casos .case-media img{
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#f6f1e7;
+  transform:none !important;
+}
+#casos .case-card:hover .case-media img{
+  transform:none !important;
+}
+
 </style>
 </head>
 <body>
