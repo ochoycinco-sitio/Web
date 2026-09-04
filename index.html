@@ -1320,45 +1320,36 @@ body.theme-light .pv-image img{filter:saturate(1.04) contrast(1.02);}
 .mm-q{font-size:14px;color:var(--cream-dim);line-height:1.55;transition:color .3s;}
 
 /* ============ CASOS ============ */
-.casos-scroll{display:flex;align-items:flex-start;gap:16px;overflow-x:auto;padding:6px 0 22px;margin:0 -32px;padding-left:32px;padding-right:32px;scroll-snap-type:x proximity;}
-.casos-scroll::-webkit-scrollbar{height:6px;}
-.casos-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px;}
-.case-card{
-  flex:none;width:250px;scroll-snap-align:start;
-  background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;
-  transition:transform .4s var(--ease), border-color .4s;
-}
-.case-card:hover{transform:translateY(-6px);border-color:var(--yellow);}
-.case-media{height:145px;overflow:hidden;position:relative;}
+.cases-carousel{position:relative;}
+.cases-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px;}
+.cases-counter{font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--cream-dim);}
+.cases-counter strong{color:var(--yellow);font-weight:900;}
+.cases-nav{display:flex;align-items:center;gap:10px;}
+.case-nav-btn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,201,72,.38);background:transparent;color:var(--yellow);display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s,opacity .25s;}
+.case-nav-btn:hover{background:var(--yellow);color:var(--charcoal);border-color:var(--yellow);transform:translateY(-2px);}
+.case-nav-btn:disabled{opacity:.28;cursor:default;transform:none;background:transparent;color:var(--yellow);}
+.case-nav-btn svg{width:19px;height:19px;display:block;}
+.casos-scroll{display:flex;align-items:flex-start;gap:20px;overflow-x:auto;overflow-y:hidden;padding:6px 2px 22px;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-inline:contain;}
+.casos-scroll::-webkit-scrollbar{display:none;}
+.case-card{flex:0 0 calc((100% - 40px)/3);min-width:0;scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;}
+.case-card:hover{transform:translateY(-5px);border-color:var(--yellow);box-shadow:0 18px 38px rgba(0,0,0,.2);}
+.case-media{height:160px;overflow:hidden;position:relative;}
 .case-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
-.case-card:hover .case-media img{transform:scale(1.07);}
-.case-tag{position:absolute;top:14px;left:14px;background:var(--yellow);color:var(--charcoal);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:100px;}
-.case-body{padding:16px 16px 18px;}
+.case-card:hover .case-media img{transform:scale(1.055);}
+.case-tag{position:absolute;top:12px;left:12px;background:var(--yellow);color:var(--charcoal);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:100px;}
+.case-body{padding:15px 16px 17px;}
 .case-body .client{font-family:var(--display);font-size:19px;margin-bottom:5px;line-height:1.05;}
-.case-body .transform{font-size:12px;color:var(--yellow);font-weight:700;margin-bottom:8px;line-height:1.35;}
+.case-body .transform{font-size:12px;color:var(--yellow);font-weight:700;margin-bottom:8px;line-height:1.35;min-height:32px;}
 .case-body .desc{font-size:13px;color:var(--cream-dim);line-height:1.5;}
 .case-media-link{display:block;color:inherit;text-decoration:none;}
-.case-detail p{margin:0 0 11px;}
-.case-detail p:last-child{margin-bottom:0;}
-.case-detail strong{color:var(--cream);font-weight:700;}
-body.theme-light .case-detail strong{color:#171612;}
-.case-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
-.case-card.is-open .case-detail{display:block;}
-.case-toggle{
-  margin-top:10px;padding:8px 13px;border-radius:999px;border:1px solid rgba(247,201,72,.45);
-  background:transparent;color:var(--yellow);cursor:pointer;font-family:var(--body);font-size:11.5px;font-weight:800;
-  letter-spacing:.03em;transition:background .25s,color .25s,border-color .25s,transform .25s;
-}
-.case-toggle:hover{background:var(--yellow);color:var(--charcoal);border-color:var(--yellow);transform:translateY(-1px);}
-.case-toggle::after{content:" +";}
-.case-card.is-open .case-toggle::after{content:" −";}
-body.theme-light .case-toggle{color:#6a5216;border-color:rgba(106,82,22,.36);}
-body.theme-light .case-toggle:hover{background:#171612;color:var(--yellow);border-color:#171612;}
-@media (max-width:600px){
-  .case-card{width:228px;}
-  .case-media{height:132px;}
-  .case-body{padding:14px 14px 16px;}
-}
+.case-detail p{margin:0 0 11px;}.case-detail p:last-child{margin-bottom:0;}.case-detail strong{color:var(--cream);font-weight:700;}body.theme-light .case-detail strong{color:#171612;}
+.case-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}.case-card.is-open .case-detail{display:block;}
+.case-toggle{margin-top:8px;padding:8px 13px;border-radius:999px;border:1px solid rgba(247,201,72,.45);background:transparent;color:var(--yellow);cursor:pointer;font-family:var(--body);font-size:11.5px;font-weight:800;letter-spacing:.03em;transition:background .25s,color .25s,border-color .25s,transform .25s;}
+.case-toggle:hover{background:var(--yellow);color:var(--charcoal);border-color:var(--yellow);transform:translateY(-1px);}.case-toggle::after{content:" +";}.case-card.is-open .case-toggle::after{content:" −";}
+body.theme-light .case-toggle{color:#6a5216;border-color:rgba(106,82,22,.36);}body.theme-light .case-toggle:hover{background:#171612;color:var(--yellow);border-color:#171612;}body.theme-light .cases-counter{color:#595348;}body.theme-light .case-nav-btn{color:#6a5216;border-color:rgba(106,82,22,.36);}body.theme-light .case-nav-btn:hover{background:#171612;color:var(--yellow);border-color:#171612;}
+.cases-swipe-hint{display:none;font-size:11px;color:var(--cream-dim);margin-top:-10px;margin-bottom:8px;}
+@media (max-width:980px){.case-card{flex-basis:calc((100% - 20px)/2);}}
+@media (max-width:620px){.cases-toolbar{margin-bottom:12px;}.cases-counter{font-size:11px;}.case-nav-btn{width:40px;height:40px;}.casos-scroll{gap:14px;padding-bottom:18px;}.case-card{flex-basis:86%;}.case-media{height:145px;}.case-body{padding:14px 14px 16px;}.case-body .transform{min-height:0;}.cases-swipe-hint{display:block;}}
 
 .testimonials-block{
   margin-top:54px;padding-top:42px;border-top:1px solid rgba(247,201,72,.18);
@@ -2293,7 +2284,16 @@ try{
     </div>
   </div>
   <div class="wrap">
-    <div class="casos-scroll" id="casosScroll">
+    <div class="cases-carousel">
+      <div class="cases-toolbar" aria-label="Navegación de casos">
+        <div class="cases-counter"><strong id="caseCurrent">01</strong> / <span id="caseTotal">13</span></div>
+        <div class="cases-nav">
+          <button class="case-nav-btn" id="casePrev" type="button" aria-label="Caso anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="case-nav-btn" id="caseNext" type="button" aria-label="Caso siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="cases-swipe-hint">Deslizá para explorar los casos →</div>
+      <div class="casos-scroll" id="casosScroll">
       <div class="case-card reveal">
         <a class="case-media case-media-link" href="https://drive.google.com/file/d/1Z5JBaKXiSqn55PmNkB1eVGERBF-Uvvl7/view?usp=share_link" target="_blank" rel="noopener" aria-label="Ver foto de Cementos Artigas">
           <span class="case-tag">Estrategia digital</span>
@@ -2515,7 +2515,8 @@ try{
         </div>
       </div>
     </div>
-    <div class="testimonials-block reveal">
+        </div>
+<div class="testimonials-block reveal">
       <div class="testimonials-head">
         <div>
           <div class="testimonials-kicker">Testimonios</div>
@@ -3253,6 +3254,35 @@ window.addEventListener('scroll', () => {
   const scale = 1.08 + Math.min(y / 4000, 0.06);
   heroBg.style.transform = `scale(${scale}) translateY(${y*0.06}px)`;
 }, {passive:true});
+
+// ===== Cases carousel =====
+const casesScroll = document.getElementById('casosScroll');
+const casePrev = document.getElementById('casePrev');
+const caseNext = document.getElementById('caseNext');
+const caseCurrent = document.getElementById('caseCurrent');
+const caseTotal = document.getElementById('caseTotal');
+if (casesScroll && casePrev && caseNext) {
+  const caseCards = Array.from(casesScroll.querySelectorAll('.case-card'));
+  if (caseTotal) caseTotal.textContent = String(caseCards.length).padStart(2, '0');
+  const getStep = () => {
+    const first = caseCards[0]; if (!first) return casesScroll.clientWidth;
+    const styles = getComputedStyle(casesScroll);
+    const gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
+    return first.getBoundingClientRect().width + gap;
+  };
+  const getIndex = () => Math.max(0, Math.min(caseCards.length - 1, Math.round(casesScroll.scrollLeft / Math.max(getStep(), 1))));
+  const updateCasesNav = () => {
+    const idx = getIndex(); if (caseCurrent) caseCurrent.textContent = String(idx + 1).padStart(2, '0');
+    const maxScroll = casesScroll.scrollWidth - casesScroll.clientWidth;
+    casePrev.disabled = casesScroll.scrollLeft <= 4;
+    caseNext.disabled = casesScroll.scrollLeft >= maxScroll - 4;
+  };
+  casePrev.addEventListener('click', () => casesScroll.scrollBy({left:-getStep(),behavior:'smooth'}));
+  caseNext.addEventListener('click', () => casesScroll.scrollBy({left:getStep(),behavior:'smooth'}));
+  casesScroll.addEventListener('scroll', () => requestAnimationFrame(updateCasesNav), {passive:true});
+  window.addEventListener('resize', updateCasesNav);
+  updateCasesNav();
+}
 
 // ===== Reveal on scroll =====
 const revealEls = document.querySelectorAll('.reveal');
