@@ -2190,6 +2190,140 @@ body.cursor-ready a, body.cursor-ready button, body.cursor-ready .belief{cursor:
 /* ============ CASOS: SIN ETIQUETAS SOBRE LAS FOTOS ============ */
 #casos .case-tag{display:none !important;}
 
+
+
+/* ============ HERO: LOGO MÁS CHICO + MÉTRICAS INTEGRADAS ============ */
+
+/* Desktop: reduce el protagonismo del círculo */
+@media (min-width:881px){
+  .logo-badge--hero{
+    width:245px !important;
+    height:245px !important;
+    right:22% !important;
+  }
+  .logo-badge--hero::before,
+  .logo-badge--hero::after{
+    inset:-18px !important;
+  }
+  .logo-badge--hero .lb-word{font-size:27px !important;}
+  .logo-badge--hero .lb-tag{font-size:9.8px !important;margin-top:9px !important;}
+  .logo-badge--hero .lb-mark{width:170px !important;}
+
+  /* Métricas sin tarjeta blanca: una franja editorial directamente sobre el amarillo */
+  .hero-stats{
+    position:absolute !important;
+    z-index:4 !important;
+    right:calc(22% - 48px) !important;
+    top:calc(44vh + 142px) !important;
+    width:342px !important;
+    margin:0 !important;
+    padding:8px 0 6px !important;
+    display:grid !important;
+    grid-template-columns:repeat(4,1fr) !important;
+    gap:0 !important;
+    background:transparent !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    border-top:1px solid rgba(27,26,23,.38) !important;
+    border-bottom:1px solid rgba(27,26,23,.38) !important;
+  }
+
+  .hero-stat{
+    padding:2px 10px !important;
+    position:relative !important;
+  }
+
+  .hero-stat+.hero-stat::before{
+    content:"" !important;
+    position:absolute !important;
+    left:0 !important;
+    top:5px !important;
+    bottom:5px !important;
+    width:1px !important;
+    background:rgba(27,26,23,.28) !important;
+  }
+
+  .hero-stat-num{
+    font-size:34px !important;
+    color:#171612 !important;
+    line-height:.95 !important;
+  }
+
+  .hero-stat-label{
+    margin-top:5px !important;
+    font-size:9px !important;
+    line-height:1.15 !important;
+    letter-spacing:.055em !important;
+    color:#2c2921 !important;
+  }
+}
+
+@media (min-width:1280px){
+  .logo-badge--hero{
+    width:270px !important;
+    height:270px !important;
+    right:22% !important;
+  }
+  .logo-badge--hero .lb-word{font-size:30px !important;}
+  .logo-badge--hero .lb-tag{font-size:10.5px !important;}
+  .logo-badge--hero .lb-mark{width:188px !important;}
+
+  .hero-stats{
+    right:calc(22% - 46px) !important;
+    top:calc(44vh + 158px) !important;
+    width:362px !important;
+  }
+}
+
+/* Mobile/tablet: conservar legibilidad, pero quitar también la caja blanca */
+@media (max-width:880px){
+  .hero-stats{
+    background:transparent !important;
+    box-shadow:none !important;
+    border-radius:0 !important;
+    border-top:1px solid rgba(27,26,23,.32) !important;
+    border-bottom:1px solid rgba(27,26,23,.32) !important;
+    padding:13px 0 !important;
+    gap:10px 0 !important;
+  }
+  .hero-stat{
+    position:relative !important;
+    padding:0 10px !important;
+  }
+  .hero-stat-num{color:#171612 !important;}
+  .hero-stat-label{color:#2c2921 !important;}
+}
+
+
+/* ============ HERO: MOVER BLOQUE DERECHO SIN AFECTAR MOBILE ============ */
+@media (min-width:1100px){
+  .logo-badge--hero{
+    right:15% !important;
+  }
+  .hero-stats{
+    right:calc(15% - 46px) !important;
+  }
+}
+
+@media (min-width:1500px){
+  .logo-badge--hero{
+    right:16% !important;
+  }
+  .hero-stats{
+    right:calc(16% - 46px) !important;
+  }
+}
+
+/* Tablet y mobile: conservar el comportamiento centrado original */
+@media (max-width:1099px){
+  .logo-badge--hero{
+    right:auto !important;
+  }
+  .hero-stats{
+    right:auto !important;
+  }
+}
+
 </style>
 </head>
 <body>
